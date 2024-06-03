@@ -32,7 +32,7 @@ const ContactCom = () => {
         if (name.length <= 4) {
             setError((pev) => ({ ...pev, nameEr: "Please Enter a Correct Name" }))
             setError((pev) => ({ ...pev, emailEr: "" }))
-          
+
             toast.error('Please Enter a Correct Name', {
                 position: "top-right",
                 autoClose: 1500,
@@ -49,7 +49,7 @@ const ContactCom = () => {
             setError((pev) => ({ ...pev, nameEr: "" }))
 
 
-    
+
             toast.error('Please Enter a Correct Email', {
                 position: "top-right",
                 autoClose: 1500,
@@ -102,7 +102,7 @@ const ContactCom = () => {
                 }
                 setError((pev) => ({ ...pev, nameEr: "" }))
                 setError((pev) => ({ ...pev, emailEr: "" }))
-           
+
             }
             subData();
             setRegValue({
@@ -127,7 +127,7 @@ const ContactCom = () => {
             <main className='w-full  my-[20px] sm:my-[20px] h-full flex items-center justify-center flex-col mdd:flex-row gap-[60px] mx-auto'>
 
                 <div className=' w-full sm:w-10/12 mdd:flex-1'>
-                    <Image src='/assets/images/contacimg.png' loading='lazy' width={600} height={600} className='w-full h-auto' alt='contact image' />
+                    <Image src='/Untitled design - 2024-06-02T110913.411.png' loading='lazy' width={600} height={600} className='w-full h-auto' alt='contact image' />
 
                 </div>
 
@@ -238,7 +238,7 @@ const ContactCom = () => {
                             transition={{ duration: 1, type: 'tween' }} className='w-full '>
                             <label className='font-Montserrat font-semibold'>Message</label>
                             <textarea className='w-full resize-none pl-2 border-2 border-[#D7DCDE] rounded-md  bg-white py-3 font-Montserrat text-[#2E2E2E] mt-[10px] min-h-[140px] outline-none  focus:border-[#2957A7]' name="Message" value={regValue.message} onChange={(e) => setRegValue((prev) => ({ ...prev, message: e.target.value }))}></textarea>
-                         
+
 
                         </motion.div>
 

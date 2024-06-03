@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 
 
-const GoalTimeLine = ({ title, description, id, rgt }) => {
+const GoalTimeLine = ({ title, description, id, rgt, img }) => {
 
     const [isMobile, setIsMobile] = useState(false);
     const closed = !isMobile ? { scale: 0, opacity: 0 } : { scale: 1, opacity: 1 };
@@ -32,6 +32,7 @@ const GoalTimeLine = ({ title, description, id, rgt }) => {
                 <div>
                     <h2 className=' text-dark text-[18px] xsm:text-[20px] sm:text-[24px] font-worksans font-semibold'>{title}</h2>
                     <p className=' text-sm sm:text-[16px] capitalize text-black-text font-poppins'>{description}</p>
+                    {img && <Image src={img} alt="logos" height={70} width={600} className='mt-3' />}
                 </div>
 
             </motion.div>

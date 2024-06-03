@@ -39,6 +39,25 @@ export const DropLinksTree = [
     },
 ]
 
+const aboutDropdown = [
+    {
+        dropTitle: 'FAQ',
+        id: "/faq",
+    },
+
+]
+
+const uniqueProject = [
+    {
+        dropTitle: 'Flight Offset Luggage Tag',
+        id: "/flight",
+    },
+    {
+        dropTitle: 'Coffee Shop Loyalty Card',
+        id: "/coffee",
+    },
+]
+
 export const navLinks = [
     {
         id: "/",
@@ -46,20 +65,9 @@ export const navLinks = [
         title: "Home"
     },
     {
-        id: "/contact",
-        dropdown: false,
-        title: "Contact",
-    },
-    {
         id: "/for-Business",
         dropdown: false,
         title: "For Business",
-    },
-    {
-        id: "/tree-planting",
-        dropdown: true,
-        title: "Tree Planting",
-        dropdownItems: DropLinksTree // Use DropLinksTree array for Tree Planting dropdown
     },
     {
         id: "/carbon-offsets",
@@ -67,8 +75,21 @@ export const navLinks = [
         title: "Carbon Offsets",
     },
     {
+        id: "/tree-planting",
+        dropdown: true,
+        title: "Tree Planting",
+        dropdownItems: DropLinksTree
+    },
+    {
+        id: "/flight",
+        dropdown: true,
+        title: "Our Unique Projects",
+        dropdownItems: uniqueProject
+    },
+    {
         id: "/about",
-        dropdown: false,
-        title: "About Us"
+        dropdown: true,
+        title: "About Us",
+        dropdownItems: aboutDropdown
     },
 ]

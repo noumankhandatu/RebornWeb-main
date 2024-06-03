@@ -18,29 +18,29 @@ const BgNavbar = () => {
   const [searchOpen, setseacrchOpen] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
   const [username, setUsername] = useState(null);
-  useEffect(() =>{
+  useEffect(() => {
     const cookies = parseCookies();
 
     const accessToken = cookies?.access_token;
     const name = cookies?.user_name;
-    const getFrist = name?.slice(0,1)
-    if(accessToken){
+    const getFrist = name?.slice(0, 1)
+    if (accessToken) {
       setAccessToken(accessToken)
       setUsername(getFrist)
-    }else{
+    } else {
       setAccessToken(null)
     }
-  },[accessToken])
-  
+  }, [accessToken])
+
   const LogoutButton = () => {
-      // Clear the access_token and refresh_token cookies
-      destroyCookie(null, 'access_token', { path: '/' });
-      destroyCookie(null, 'refresh_token', { path: '/' });
-      setAccessToken(null)
-      router.push('/login');
-    };
-  
-  
+    // Clear the access_token and refresh_token cookies
+    destroyCookie(null, 'access_token', { path: '/' });
+    destroyCookie(null, 'refresh_token', { path: '/' });
+    setAccessToken(null)
+    router.push('/login');
+  };
+
+
 
 
 
@@ -48,25 +48,25 @@ const BgNavbar = () => {
     setOpen(false);
   }
 
-  const[navscroll,setNavscroll] = useState(false);
-  useEffect(() =>{
-    
-    const Click  = () =>{
-      if(window.scrollY>=80){
+  const [navscroll, setNavscroll] = useState(false);
+  useEffect(() => {
+
+    const Click = () => {
+      if (window.scrollY >= 80) {
         setNavscroll(true)
-      }else{
-        setNavscroll(false)   
+      } else {
+        setNavscroll(false)
       }
     }
-      window.addEventListener('scroll',Click)
-    
-  },[])
+    window.addEventListener('scroll', Click)
+
+  }, [])
 
   const dropOpen = (e) => {
     e.stopPropagation(); // Stop event bubbling
     setDropDown(!dropDown);
   };
-  
+
 
   return (
     <>
@@ -144,7 +144,7 @@ const BgNavbar = () => {
                   {i.dropdown ? <>
                     <div className='gap-x-2 flex items-end'>
                       <Link href={i.id} className='grop-li flex items-end' >{i.title}</Link>
-                      <p  onClick={dropOpen}className='cursor-pointer inline-block'>{dropDown ? <MdKeyboardArrowUp className="text-black-text  drop-icon" size={20} /> : <MdKeyboardArrowDown className="text-black-text  drop-icon" size={20} />}</p>
+                      <p onClick={dropOpen} className='cursor-pointer inline-block'>{dropDown ? <MdKeyboardArrowUp className="text-black-text  drop-icon" size={20} /> : <MdKeyboardArrowDown className="text-black-text  drop-icon" size={20} />}</p>
                     </div>
                     <div className={`absolute -w-[150px] top-12 shadow-sm show-drop z-10 bg-white px-1 py-2 min-w-[170px] gap-y-3 flex-col left-0 ${dropDown ? 'flex' : 'hidden'}`}>
                       {DropLinks.map((i) => (
@@ -157,18 +157,18 @@ const BgNavbar = () => {
 
               })
             }
-                {
+            {
               accessToken ?
                 <>
-                <button onClick={LogoutButton} className='px-6 py-2 bg-green rounded-lg text-white font-poppins'>Logout</button>
-                <li>
+                  <button onClick={LogoutButton} className='px-6 py-2 bg-green rounded-lg text-white font-poppins'>Logout</button>
+                  <li>
 
-                <Link href={'/user-profile'} className='w-[50px] h-[50px] text-3xl flex items-center text-white justify-center font-medium   bg-blue-600 rounded-full'>
-                   <p className='mb-1'>
-                     {username}
-                    </p>
-                  </Link>
-                </li>
+                    <Link href={'/user-profile'} className='w-[50px] h-[50px] text-3xl flex items-center text-white justify-center font-medium   bg-blue-600 rounded-full'>
+                      <p className='mb-1'>
+                        {username}
+                      </p>
+                    </Link>
+                  </li>
                 </> :
                 <li>
                   <Link className='btn' href='/login'>Login</Link>
@@ -177,7 +177,7 @@ const BgNavbar = () => {
 
 
           </ul>
-          
+
           <CiMenuFries onClick={() => setOpen(true)} className='text-black text-[30px]  cursor-pointer inline-block lg:hidden' />
         </div>
       </nav>

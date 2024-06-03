@@ -103,13 +103,16 @@ const GoalTimeLineData = [
     id: 1,
     title: "Plant Trees, Save Lives",
     description: "Every tree you plant helps restore habitats and protect the lives of countless animals.",
-    rgt: true
+    rgt: true,
+    img: '/assets/images/aboutmain.jpg'
   },
   {
     id: 2,
     title: "Transforming Businesses, Preserving Nature",
     description: "Give back to nature and make a positive impact on the planet.",
-    rgt: false
+    rgt: false,
+    img: '/assets/images/airplaneimg.jpg'
+
   },
   {
     id: 3,
@@ -196,7 +199,7 @@ export default function Home() {
           <div className=' w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center lg:items-end justify-center flex-col'>
             <div className='relative xsm:w-[350px] h-auto'>
               <Image src="/assets/images/sec4img1.jpg" width={350} height={350} alt='bussnessec2' loading='lazy' className=' rounded-lg w-full sm:w-5/6 md:w-[350px] h-auto md:h-[500px]' />
-              <Image src="/assets/images/sec4img2.png" width={250} height={200} alt='bussnessec2' loading='lazy' className='absolute top-3 left-[-200px] hidden md:inline-block z-10 rounded-full' />
+              <Image src="/WHY RGB.png" width={250} height={200} alt='bussnessec2' loading='lazy' className='absolute top-3 left-[-200px] hidden md:inline-block z-10 rounded-full' />
               <Image src="/assets/images/sec4img3.jpg" width={350} height={250} alt='bussnessec2' loading='lazy' className='absolute bottom-[-10px] h-[220px] left-[-200px]  hidden md:inline-block z-0 rounded-lg' />
             </div>
 
@@ -215,7 +218,6 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Image src='/assets/images/sec4img4.png' width={200} height={200} alt='image' className='w-[200px] lg:w-[150px] xlg:w-[200px] h-auto' />
             </div>
           </div>
 
@@ -235,7 +237,7 @@ export default function Home() {
 
 
           {
-            GoalTimeLineData?.map((item) => (<GoalTimeLine key={item.id} title={item.title} description={item.description} id={item.id} rgt={item.rgt} />))
+            GoalTimeLineData?.map((item) => (<GoalTimeLine key={item.id} title={item.title} description={item.description} id={item.id} rgt={item.rgt} img={item.img} />))
           }
         </div>
 
@@ -254,8 +256,17 @@ export default function Home() {
           <p className=' mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]'>Discover our wide range of programs aimed at creating a sustainable future. Find out how you can get involved and make a difference.</p>
         </div>
         <div className='flex gap-6 flex-wrap items-center justify-center'>
-          {bigCardData?.map((item, index) => (<BigCard key={index} img={item.image} title={item.title} text={item.text} btnLink={item.btnLink} span={item.span} />))}
-
+          {/* {bigCardData?.map((item, index) => (<BigCard key={index} img={item.image} title={item.title} text={item.text} btnLink={item.btnLink} span={item.span} />))} */}
+          <video className='w-full' autoPlay muted loop playsInline width="320" height="240" >
+            <source src="/assets/videos/hvideo.mp4" type="video/mp4" />
+            <track
+              src="/assets/videos/hvideo.mp4"
+              kind="subtitles"
+              srcLang="en"
+              label="English"
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <Link className='btn inline-block mt-10' href={'/'}>Explore Our Programs</Link>
 
@@ -263,7 +274,7 @@ export default function Home() {
 
 
 
-      <CardCoursel />
+      {/* <CardCoursel /> */}
 
       {/* Contac Us section 8 */}
       <section className='w-full bg-[#f6f6f6] mt-0 max-w-[1800px] px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto'>
