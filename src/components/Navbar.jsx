@@ -120,7 +120,7 @@ const Navbar = () => {
                         {dropDown === link.id ? <MdKeyboardArrowUp className={`${navScroll ? 'text-black' : 'text-white'} drop-icon`} size={20} /> : <MdKeyboardArrowDown className={`${navScroll ? 'text-black' : 'text-white'} drop-icon`} size={20} />}
                       </p>
                     </div>
-                    <div style={{ overflow: 'hidden', width: '100%', padding: 0, textAlign: 'center' }} className={`bg-white absolute top-12 shadow-sm show-drop z-10 px-1 py-2 gap-y-3 flex-col left-0 ${dropDown === link.id ? 'flex' : 'hidden'}`}>
+                    <div style={{ overflow: 'hidden', width: '100%', padding: 0, textAlign: 'center', opacity: 0.8 }} className={`bg-white absolute top-12 shadow-sm show-drop z-10 px-1 py-2 gap-y-3 flex-col left-0 ${dropDown === link.id ? 'flex' : 'hidden'}`}>
                       {link.dropdownItems.map((item) => (
                         <Link className='px-2 link py-2 text-black-text border-b' key={item.id} href={item.id}>{item.dropTitle}</Link>
                       ))}
