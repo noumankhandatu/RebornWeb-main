@@ -50,22 +50,22 @@ const flatcardData = [
 const textcardData = [
   {
     image: '/svg/Untitled design (36).svg',
-    title: 'Helping Communities',
-    text: 'We empower locals and create a positive impact on communities. Read the inspiring stories of our tree planting initiatives.',
+    title: 'Tree Planting',
+    text: 'Contribute to vital tree planting projects worldwide. Benefit wildlife habitat, combat climate change, and promote a healthier planet.',
     btnText: 'Explore Our Work',
     btnLink: "/tree-planting"
   },
   {
     image: '/assets/images/hsec3img2.png',
     title: 'Carbon Offset',
-    text: 'Learn why companies should offset their carbon footprint and how RebornGreen can assist you in achieving sustainability goals.',
+    text: 'We create new methods that help individuals and businesses calculate, reduce, and offset their emissions.',
     btnText: 'Learn More',
     btnLink: "/carbon-offsets"
   },
   {
     image: '/assets/images/hsec3img3.png',
     title: 'Our Mission',
-    text: 'We are dedicated to planting trees in areas that need them most, forging partnerships with businesses for a greener, eco-friendly future.',
+    text: 'Climate change demands immediate action. Our mission is to create, innovate, and make climate projects easily accessible for everyone.',
     btnText: 'About Us',
     btnLink: "/about"
   },
@@ -165,7 +165,7 @@ export default function Home() {
 
       {/* Plat Card Section */}
       <section className='w-full mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto'>
-        <h1 className=' text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'><span className='font-bold text-[#14a800]'>Green Horizons:</span> People & Nature </h1>
+        <h1 className=' text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'><span className='font-bold text-[#14a800]'>Easy Access to</span>  Climate Action Solutions </h1>
         <div className='flex gap-6 flex-wrap items-center justify-center'>
           {flatcardData?.map((item, index) => (<FlipCard key={index} img={item.image} title={item.title} intro={item.intro} text={item.text} link={item.link} />))}
         </div>
@@ -194,7 +194,7 @@ export default function Home() {
       {/* Section 4 */}
       <section className='w-full bg-[#f6f6f6] mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto'>
         <h1 className='text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'>
-          <span className='font-bold text-[#14a800]'>Empowering Communities & Carbon:</span> Green Mission
+          <span className='font-bold text-[#14a800]'>Building a Better </span>Tomorrow
         </h1>
         <div className='flex gap-6 flex-wrap items-center justify-center'>
           {textcardData?.map((item, index) => (<TextCard key={index} img={item.image} title={item.title} text={item.text} btnText={item.btnText} btnLink={item.btnLink} />))}
@@ -242,7 +242,7 @@ export default function Home() {
       {/* Goal Time Line Section 6 */}
       <section className='w-full bg-[#f6f6f6] mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto'>
         <h1 className='text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'>
-          <span className='font-bold text-[#14a800]'>Our Green Goals</span></h1>
+          <span className='font-bold text-[#14a800]'>Projects Created by Us, Supported by You, </span>For our Planet</h1>
 
         <div className="timeLine  relative w-full mx-auto bg-[#F3F4F9] py-[5rem] rounded-xl my-[100px]">
 
@@ -262,10 +262,11 @@ export default function Home() {
       {/* Section big card 7 */}
       <section className='w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto'>
         <div className='w-full flex flex-col items-center justify-center'>
-          <h1 className='text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'> Checkout our
-            <span className='font-bold text-[#14a800]'> Programs</span>
+          <h1 className='text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'> Climate
+
+            <span className='font-bold text-[#14a800]'> Projects</span>
           </h1>
-          <p className=' mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]'>Discover our wide range of programs aimed at creating a sustainable future. Find out how you can get involved and make a difference.</p>
+          <p className=' mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]'>Support climate projects around the world and help us fight climate change, reduce air pollution, and create jobs for local communities.</p>
         </div>
         <div className='flex gap-6 flex-wrap items-center justify-center'>
           {/* {bigCardData?.map((item, index) => (<BigCard key={index} img={item.image} title={item.title} text={item.text} btnLink={item.btnLink} span={item.span} />))} */}
@@ -294,7 +295,7 @@ export default function Home() {
           <h1 className='text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'>
             <span className='font-bold text-[#14a800]'>Contact Us</span>
           </h1>
-          <p className=' mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px] '>Get in touch with us today to discuss how we can help you create a green profile and enhance your corporate social responsibility. Together, we can create a better future for our planet and our communities.</p>
+          <p className=' mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px] '>Get in touch with us today to discuss how we can help you or your company achieve green goals. Together, we can create a better future for our planet and our communities.</p>
         </div>
 
         <ContactCom />
