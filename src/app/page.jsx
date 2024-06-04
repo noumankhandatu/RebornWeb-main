@@ -19,28 +19,32 @@ const Hero = dynamic(() => import('@/components/Hero.jsx'), { ssr: false });
 
 const flatcardData = [
   {
-    image: '/assets/flipcardimg1.png',
-    title: 'Restoring Nature',
+    image: '/svg/Restore Nature.svg',
+    title: 'Restore Nature',
     intro: 'We plant your tree where it\'s most needed',
     text: 'We are dedicated to strategic reforestation efforts that combat climate change, restore ecosystems, and empower communities',
+    link: '/plant-tree',
   },
   {
-    image: '/assets/flipcardimg2.png',
-    title: 'Protecting Earth',
+    image: '/svg/Reduce Emissions.svg',
+    title: 'Reduce Emissions',
     intro: 'A Simple Act That Can Change the World',
-    text: 'Protecting Earth\'s beauty and vital ecosystems. Our commitment to sustainability, innovation, and global impact for a brighter, greener future.',
+    text: 'We help reduce carbon emissions through customized solutions.',
+    link: '/carbon-offsets',
   },
   {
-    image: '/assets/flipcardimg3.png',
-    title: '100% Transparency',
+    image: '/svg/Make an Impact.svg',
+    title: 'Make an Impact',
     intro: 'Each tree is accompanied by a photo, a label, and a unique serial number',
-    text: 'Connecting you with the forest, one tree at a time. Explore our process, each tree with a photo, label, and serial number.',
+    text: 'Utilize our flexible climate store for reforestation, carbon mitigation, and removal initiatives through e-commerce tools or monthly subscriptions.',
+    link: '',
   },
   {
-    image: '/assets/flipcardimg4.png',
-    title: 'Animal Welfare',
+    image: '/svg/Share Your Progress.svg',
+    title: 'Share Your Progress',
     intro: 'Plant trees with us to aid both wild and domestic animals',
-    text: 'Join our mission for nature, and know that a portion of each tree\'s cost goes towards aiding animals without food, shelter, or those facing health challenges.',
+    text: 'You can use your profile dashboard to track progress on climate-related initiatives and engage with clients, customers, employees, and stakeholders',
+    link: '',
   },
 ]
 const textcardData = [
@@ -155,7 +159,7 @@ export default function Home() {
       <section className='w-full mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto'>
         <h1 className=' text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'><span className='font-bold text-[#14a800]'>Green Horizons:</span> People & Nature </h1>
         <div className='flex gap-6 flex-wrap items-center justify-center'>
-          {flatcardData?.map((item, index) => (<FlipCard key={index} img={item.image} title={item.title} intro={item.intro} text={item.text} />))}
+          {flatcardData?.map((item, index) => (<FlipCard key={index} img={item.image} title={item.title} intro={item.intro} text={item.text} link={item.link} />))}
         </div>
 
       </section>
