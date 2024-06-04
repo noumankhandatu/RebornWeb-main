@@ -23,7 +23,7 @@ const flatcardData = [
     title: 'Restore Nature',
     intro: 'We plant your tree where it\'s most needed',
     text: 'We are dedicated to strategic reforestation efforts that combat climate change, restore ecosystems, and empower communities',
-    link: '/plant-tree',
+    link: '/tree-planting',
   },
   {
     image: '/svg/Reduce Emissions.svg',
@@ -49,25 +49,25 @@ const flatcardData = [
 ]
 const textcardData = [
   {
-    image: '/assets/images/hsec3img1.png',
+    image: '/svg/Untitled design (36).svg',
     title: 'Helping Communities',
     text: 'We empower locals and create a positive impact on communities. Read the inspiring stories of our tree planting initiatives.',
     btnText: 'Explore Our Work',
-    btnLink: "/"
+    btnLink: "/tree-planting"
   },
   {
     image: '/assets/images/hsec3img2.png',
     title: 'Carbon Offset',
     text: 'Learn why companies should offset their carbon footprint and how RebornGreen can assist you in achieving sustainability goals.',
     btnText: 'Learn More',
-    btnLink: "/"
+    btnLink: "/carbon-offsets"
   },
   {
     image: '/assets/images/hsec3img3.png',
     title: 'Our Mission',
     text: 'We are dedicated to planting trees in areas that need them most, forging partnerships with businesses for a greener, eco-friendly future.',
     btnText: 'About Us',
-    btnLink: "/About US"
+    btnLink: "/about"
   },
 ]
 const bigCardData = [
@@ -212,7 +212,7 @@ export default function Home() {
           <div className='w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col'>
             <h3 className='  leading-normal lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-black-text font-medium font-worksans'><span className='text-green font-semibold'>Creating Life</span>  Inside and Outside the Forest</h3>
             <p className='leading-[24px] text-[16px]  font-poppins tracking-wide text-black-text'>At RebornGreen, we believe in giving back to nature. As part of our commitment, a portion of the proceeds from each tree planted goes towards animal welfare initiatives. By choosing us, you&apos;re not only contributing to the growth of forests, but also helping to protect and care for the animals that depend on them.</p>
-            <Link className='btn mt-10' href={'/'}>Read more</Link>
+            {/* <Link className='btn mt-10' href={'/'}>Read more</Link> */}
             <div className='w-full flex flex-col mt-14 sm:flex-row items-center justify-between'>
               <div className='flex gap-2 flex-col'>
                 {sec4pData.map(item => (
@@ -262,9 +262,9 @@ export default function Home() {
         <div className='flex gap-6 flex-wrap items-center justify-center'>
           {/* {bigCardData?.map((item, index) => (<BigCard key={index} img={item.image} title={item.title} text={item.text} btnLink={item.btnLink} span={item.span} />))} */}
           <video className='w-full' autoPlay muted loop playsInline width="320" height="240" >
-            <source src="/assets/videos/hvideo.mp4" type="video/mp4" />
+            <source src="/Brazil.mp4" type="video/mp4" />
             <track
-              src="/assets/videos/hvideo.mp4"
+              src="/Brazil.mp4"
               kind="subtitles"
               srcLang="en"
               label="English"
