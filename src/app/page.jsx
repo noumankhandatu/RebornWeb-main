@@ -94,13 +94,17 @@ const bigCardData = [
   },
 ]
 
+// const sec4pData = [
+//   { id: 1, text: 'Reforestation & Tree Planting' },
+//   { id: 2, text: 'Animal Welfare Support' },
+//   { id: 3, text: 'Biodiversity Conservation' },
+//   { id: 4, text: 'Protecting Wildlife Habitats' }
+// ];
 const sec4pData = [
-  { id: 1, text: 'Reforestation & Tree Planting' },
-  { id: 2, text: 'Animal Welfare Support' },
-  { id: 3, text: 'Biodiversity Conservation' },
-  { id: 4, text: 'Protecting Wildlife Habitats' }
+  { id: 1, text: 'We support only trusted and verified projects.' },
+  { id: 2, text: 'We aim to create yearly projects promoting environmental initiatives for individuals and businesses, leading to a positive impact.' },
+  { id: 3, text: 'We dedicate most subscriptions to education & green initiatives' },
 ];
-
 const GoalTimeLineData = [
 
   {
@@ -210,15 +214,15 @@ export default function Home() {
           </div>
 
           <div className='w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col'>
-            <h3 className='  leading-normal lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-black-text font-medium font-worksans'><span className='text-green font-semibold'>Creating Life</span>  Inside and Outside the Forest</h3>
-            <p className='leading-[24px] text-[16px]  font-poppins tracking-wide text-black-text'>At RebornGreen, we believe in giving back to nature. As part of our commitment, a portion of the proceeds from each tree planted goes towards animal welfare initiatives. By choosing us, you&apos;re not only contributing to the growth of forests, but also helping to protect and care for the animals that depend on them.</p>
+            <h3 className='  leading-normal lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-black-text font-medium font-worksans'><span className='text-green font-semibold'>Why RebornGreen?</span></h3>
+            <p className='leading-[24px] text-[16px]  font-poppins tracking-wide text-black-text'>We break down barriers, making it easy for everyone to join the fight against climate change.</p>
             {/* <Link className='btn mt-10' href={'/'}>Read more</Link> */}
             <div className='w-full flex flex-col mt-14 sm:flex-row items-center justify-between'>
               <div className='flex gap-2 flex-col'>
                 {sec4pData.map(item => (
-                  <div key={item.id} className='flex items-center gap-x-2 text-[12px] ssm:text-[14px] xlg:text-[16px] text-green font-semibold'>
+                  <div key={item.id} className='flex mb-3 items-start gap-x-2  text-[12px] ssm:text-[14px] xlg:text-[16px] text-green font-semibold'>
                     <span><FaRegCheckCircle size={20} /></span>
-                    <p>{item.text}</p>
+                    <p >{item.text}</p>
                   </div>
                 ))}
               </div>
