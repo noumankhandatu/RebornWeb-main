@@ -4,33 +4,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 import toast from 'react-hot-toast'
 import React, { useEffect, useState } from 'react'
-import { parseCookies, setCookie  } from 'nookies';
+import { parseCookies, setCookie } from 'nookies';
 import { redirect, useRouter } from 'next/navigation';
 
 const Page = () => {
 
-    const [loading,setLoading] = useState(false)
-    
+    const [loading, setLoading] = useState(false)
+
     const router = useRouter();
-    
+
 
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
 
-    useEffect(() =>{
+    useEffect(() => {
         const cookies = parseCookies();
 
 
         const accesstoken = cookies?.access_token;
 
-        if(accesstoken){
+        if (accesstoken) {
             redirect('/')
         }
-        
 
-    },[])
+
+    }, [])
 
 
     const handleChange = (e) => {
@@ -45,53 +45,53 @@ const Page = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-         // Basic validation - check if form data is not empty
-         setLoading(true)
-    if (!formData.password || !formData.email) {
-        setLoading(false)
-        toast.error('Please fill in all required fields.');
-        return;
-    }
+        // Basic validation - check if form data is not empty
+        setLoading(true)
+        if (!formData.password || !formData.email) {
+            setLoading(false)
+            toast.error('Please fill in all required fields.');
+            return;
+        }
 
         try {
             const apiUrl = process.env.API_URL;
-            
+
             const response = await axios.post(`${apiUrl}/auth/login`, formData, {
-                             headers: {
-                                 'Content-Type': 'application/json'
-                             }
-                         });
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
             if (response.status === 200) {
                 // Registration successful, handle accordingly
                 if (response.data.status === 200) {
                     toast.success(response.data.message);
-                     // Set cookies using nookies
-                     setLoading(false)
-                     const { access, refresh } = response.data.data.tokens;
-                     const { name } = response.data.data.user;
-                     
-                     setCookie(null, 'access_token', access.token, {
+                    // Set cookies using nookies
+                    setLoading(false)
+                    const { access, refresh } = response.data.data.tokens;
+                    const { name } = response.data.data.user;
+
+                    setCookie(null, 'access_token', access.token, {
                         maxAge: 12 * 60 * 60, // 12 hours expiration
                         path: '/',
-                        sameSite:'lax',
+                        sameSite: 'lax',
                         httpOnly: false
                     });
-                     setCookie(null, 'refresh_token', refresh.token, {
+                    setCookie(null, 'refresh_token', refresh.token, {
                         maxAge: 30 * 24 * 60 * 60, // 30 days expiration
                         path: '/',
-                        sameSite:'lax',
+                        sameSite: 'lax',
                         httpOnly: false
                     });
-                     setCookie(null, 'user_name', name, {
+                    setCookie(null, 'user_name', name, {
                         maxAge: 12 * 60 * 60, // 12 hours expiration
                         path: '/',
-                        sameSite:'lax',
+                        sameSite: 'lax',
                         httpOnly: false
                     });
 
                     router.push('/')
-                   
+
                 } else if (response.data.status === 400) {
                     console.log(response)
                     setLoading(false)
@@ -105,7 +105,7 @@ const Page = () => {
                 // Registration failed, handle error
                 setLoading(false)
                 console.log(response)
-                 toast.error('Login failed');
+                toast.error('Login failed');
             }
         } catch (error) {
             setLoading(false)
@@ -113,7 +113,7 @@ const Page = () => {
         }
     };
 
-    
+
     return (
         <div className='overflow-hidden h-full'>
 
@@ -142,10 +142,10 @@ const Page = () => {
                         </div>
 
                         <div className='flex flex-col gap-4 items-center justify-start w-full'>
-                            <button disabled={loading} className={`w-full px-7 py-3 hover:bg-blue-700 duration-300 text-white rounded-lg font-poppins text-[16px] xll:text-[18px] font-medium tracking-wide ${loading ? 'bg-blue-900 opacity-50'  : 'bg-blue-900'}`}>Login</button>
+                            <button disabled={loading} className={`w-full px-7 py-3 hover:bg-blue-700 duration-300 text-white rounded-lg font-poppins text-[16px] xll:text-[18px] font-medium tracking-wide ${loading ? 'bg-blue-900 opacity-50' : 'bg-blue-900'}`}>Login</button>
 
                             <p>Not Have Account <Link className='font-semibold hover:text-blue-900 text-green' href='/register'>Register </Link></p>
-                            <Link  className='font-semibold hover:text-blue-900 text-green' href='/Forget-password'>Forget password</Link>
+                            <Link className='font-semibold hover:text-blue-900 text-green' href='/Forget-password'>Forget password</Link>
                         </div>
                     </form>
                 </div>
