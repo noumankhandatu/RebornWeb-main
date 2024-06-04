@@ -109,30 +109,34 @@ const GoalTimeLineData = [
 
   {
     id: 1,
-    title: "Plant Trees, Save Lives",
-    description: "Every tree you plant helps restore habitats and protect the lives of countless animals.",
+    title: "Instant Carbon Footprint Offset Luggage Tag",
+    description: "A luggage tag that enables users to swiftly scan, calculate carbon emissions, and offset their flight footprint in 30 seconds or less!",
     rgt: true,
-    img: '/assets/images/aboutmain.jpg'
+    img: '/assets/images/aboutmain.jpg',
+    links: '/carbon-offsets'
   },
   {
     id: 2,
-    title: "Transforming Businesses, Preserving Nature",
-    description: "Give back to nature and make a positive impact on the planet.",
+    title: "Coffee Shop Loyalty Program",
+    description: "An initiative for coffee enthusiasts that advocates for environmental conservation. Earn stamps on a loyalty card to redeem a complimentary coffee and contribute to tree-planting efforts.",
     rgt: false,
-    img: '/assets/images/airplaneimg.jpg'
+    img: '/assets/images/airplaneimg.jpg',
+    links: '/coffee'
 
   },
   {
     id: 3,
-    title: "Combat Climate Change",
-    description: "Create a sustainable future for our planet and future generations.",
-    rgt: true
+    title: "Upcoming Project 2025",
+    description: "",
+    rgt: true,
+    links: ''
   },
   {
     id: 4,
-    title: "Promote Sustainability and Join the Green Movement",
-    description: "Inspire and educate the audience to make a positive impact on the planet.",
-    rgt: false
+    title: "Upcoming Project 2026",
+    description: "",
+    rgt: false,
+    links: ''
   }
 ];
 
@@ -245,7 +249,7 @@ export default function Home() {
 
 
           {
-            GoalTimeLineData?.map((item) => (<GoalTimeLine key={item.id} title={item.title} description={item.description} id={item.id} rgt={item.rgt} img={item.img} />))
+            GoalTimeLineData?.map((item) => (<GoalTimeLine key={item.id} title={item.title} description={item.description} id={item.id} rgt={item.rgt} img={item.img} link={item.links} />))
           }
         </div>
 
