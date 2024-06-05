@@ -167,7 +167,17 @@ export default function Home() {
       <section className='w-full mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto'>
         <h1 className=' text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'><span className='font-bold text-[#14a800]'>Easy Access to</span>  Climate Action Solutions </h1>
         <div className='flex gap-6 flex-wrap items-center justify-center'>
-          {flatcardData?.map((item, index) => (<FlipCard key={index} img={item.image} title={item.title} intro={item.intro} text={item.text} link={item.link} />))}
+          {flatcardData?.map((item, index) => (
+            <FlipCard
+              key={index}
+              img={item.image}
+              title={item.title}
+              intro={item.intro}
+              text={item.text}
+              link={item.link}
+              index={index}
+            />
+          ))}
         </div>
 
       </section>
