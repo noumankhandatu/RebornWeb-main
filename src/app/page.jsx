@@ -35,14 +35,14 @@ const flatcardData = [
   {
     image: '/svg/Make an Impact.svg',
     title: 'Make an Impact',
-    intro: 'Each tree is accompanied by a photo, a label, and a unique serial number',
+    intro: 'For a healthy planet for future generations',
     text: 'Utilize our flexible climate store for reforestation, carbon mitigation, and removal initiatives through e-commerce tools or monthly subscriptions.',
     link: '/login',
   },
   {
     image: '/svg/Share Your Progress.svg',
     title: 'Share Your Progress',
-    intro: 'Plant trees with us to aid both wild and domestic animals',
+    intro: 'Inspire others and showcase your commitment',
     text: 'You can use your profile dashboard to track progress on climate-related initiatives and engage with clients, customers, employees, and stakeholders',
     link: '/login',
   },
@@ -113,7 +113,7 @@ const GoalTimeLineData = [
     description: "A luggage tag that enables users to swiftly scan, calculate carbon emissions, and offset their flight footprint in 30 seconds or less!",
     rgt: true,
     img: '/assets/images/aboutmain.jpg',
-    links: '/carbon-offsets'
+    links: '/flight'
   },
   {
     id: 2,
@@ -181,7 +181,7 @@ export default function Home() {
           <div className='w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start justify-center flex-col'>
             <h3 className='  leading-normal lg:leading-[60px] mb-4  text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[55px] text-black-text font-medium font-worksans'>Sustainability for <span className='text-green font-semibold'>Businesses</span></h3>
             <p className='leading-normal font-poppins text-[14px] xll:text-[16px] tracking-normal text-black-text'>Achieve CSR & Net-Zero goals and boost your brand with a tailored sustainability solution!</p>
-            <Link className='btn mt-10' href={'/'}>Read more</Link>
+            {/* <Link className='btn mt-10' href={'/'}>Read more</Link> */}
           </div>
           <div className=' w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1 relative flex items-center justify-center flex-col'>
             <Image src="/images/Sustainability for Businesses.png" width={500} height={500} alt='bussnessec2' loading='lazy' className='w-full h-full rounded-lg' />
@@ -281,7 +281,7 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
         </div>
-        <Link className='btn inline-block mt-10' href={'/'}>Explore Our Programs</Link>
+        {/* <Link className='btn inline-block mt-10' href={'/'}>Explore Our Programs</Link> */}
 
       </section>
 
