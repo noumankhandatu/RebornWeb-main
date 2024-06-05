@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 import { parseCookies, setCookie } from 'nookies';
 import { redirect, useRouter } from 'next/navigation';
 
-const Page = () => {
+const Login = () => {
 
     const [loading, setLoading] = useState(false)
 
@@ -154,4 +154,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default Login
