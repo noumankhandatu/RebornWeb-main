@@ -8,20 +8,20 @@ const Footer = () => (
   <footer className=' bg-green px-[20px] sm:px-[60px] lg:px-[90px] xlb:px-[120px] pt-[4rem] opacity-[0.8] w-full flex items-center flex-col justify-start'>
     <div className="w-full h-full max-w-[1440px] mx-auto">
       <div className=" flex-wrap px-[20px] xxm:px-[40px]  md:flex-nowrap flex gap-[5px] xxm:gap-[10px] mdd:gap-[30px] lg:gap-[50px] items-start justify-start md:justify-center w-full">
-        {/* <div className=" w-full xsm:w-[60%] md:w-[45%] mdd:w-[40%] flex flex-col gap-[20px]"> */}
+        <div className=" w-full xsm:w-[60%] md:w-[45%] mdd:w-[40%] flex flex-col gap-[20px]">
 
-        {/* <Link href={'/'} className='relative'>
+          <Link href={'/'} className='relative'>
             <Image src='/assets/logos/logo.png' width={1000} height={1000} alt='Picture of the author' priority className='w-[120px] xsm:w-[240px] h-auto object-cover' />
-          </Link> */}
+          </Link>
 
-        {/* <p className="text-white text-[12px] lg:text-[16px] font-normal font-poppins tracking-wide">At RebornGreen, we believe in giving back to nature.</p>
+          <p className="text-white text-[12px] lg:text-[16px] font-normal font-poppins tracking-wide">At RebornGreen, we believe in giving back to nature.</p>
           <div className="flex items-center justify-start gap-[10px]">
             <Link target="_blank" className="text-[23px] hover:text-[#1d1d1e] duration-500 hover:scale-110 text-white" href="https://www.linkedin.com/company/reborngreen/" > <FaLinkedinIn className="text-[23px] hover:text-[#1d1d1e] duration-500 hover:scale-110 text-white" /></Link>
             <Link href="mailto:contact@reborngreen.org" ><FiMail className="text-[23px] hover:text-[#1d1d1e] duration-500 hover:scale-110 text-white" /></Link>
-            <Link href="https://www.linkedin.com/company/reborngreen/" > <FiPhone className="text-[23px] hover:text-[#1d1d1e] duration-500 hover:scale-110 text-white" /></Link>
-          </div> */}
+            {/* <Link href="https://www.linkedin.com/company/reborngreen/" > <FiPhone className="text-[23px] hover:text-[#1d1d1e] duration-500 hover:scale-110 text-white" /></Link> */}
+          </div>
 
-        {/* </div> */}
+        </div>
 
         <div className="flex flex-col md:mt-0 mt-[30px] w-full ssm:w-[60%] xxm:w-[60%] md:w-[30%] gap-4 items-start">
           <p className="text-white text-[16px] xll:text-[20px] font-Noto font-[500] mb-0 xsm:mb-[20px]">Programs</p>

@@ -281,7 +281,7 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
         </div>
-        {/* <Link className='btn inline-block mt-10' href={'/'}>Explore Our Programs</Link> */}
+        <Link className='btn inline-block mt-10' href={'/tree-planting'}>Find out more</Link>
 
       </section>
 
