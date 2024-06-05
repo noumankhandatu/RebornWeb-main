@@ -12,10 +12,10 @@ const FlipCard = ({ img, title, intro, text, link, index }) => {
           <Image
             src={img}
             alt='card image'
-            width={isLarge ? 100 : 60}
-            height={isLarge ? 100 : 60}
+            width={isLarge ? 100 : 50}
+            height={isLarge ? 100 : 50}
           />
-          <div>
+          <div className='mt-3'>
             <h2 className='text-dark text-[16px] xsm:text-[20px] font-worksans font-semibold'>{title}</h2>
             <p className='text-[12px] xsm:text-sm text-earthy-brown'>{intro}</p>
           </div>
