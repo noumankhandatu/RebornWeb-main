@@ -191,7 +191,7 @@ export default function Home() {
           <div className='w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start justify-center flex-col'>
             <h3 className='  leading-normal lg:leading-[60px] mb-4  text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[55px] text-black-text font-medium font-worksans'>Sustainability for <span className='text-green font-semibold'>Businesses</span></h3>
             <p className='leading-normal font-poppins text-[14px] xll:text-[16px] tracking-normal text-black-text'>Achieve CSR & Net-Zero goals and boost your brand with a tailored sustainability solution!</p>
-            <Link className='btn mt-10' href={'/for-Business'}>Redirect to Bussiness Page</Link>
+            <Link className='btn mt-10' href={'/for-Business'}>Read More</Link>
           </div>
           <div className=' w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1 relative flex items-center justify-center flex-col'>
             <Image src="/images/Sustainability for Businesses.png" width={500} height={500} alt='bussnessec2' loading='lazy' className='w-full h-full rounded-lg' />
@@ -236,7 +236,7 @@ export default function Home() {
                 {sec4pData.map(item => (
                   <div key={item.id} className='flex mb-3 items-start gap-x-2  text-[12px] ssm:text-[14px] xlg:text-[16px] text-green font-semibold'>
                     <span><FaRegCheckCircle size={20} /></span>
-                    <p >{item.text}</p>
+                    <p style={{ textAlign: 'start' }} >{item.text}</p>
                   </div>
                 ))}
               </div>
