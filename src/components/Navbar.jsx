@@ -83,13 +83,13 @@ const Navbar = () => {
                   </span>
                 </Link>
               ))}
-              <span onClick={() => setSearchOpen(true)} className='inline-block md:hidden cursor-pointer text-white hover:text-[#c2c2c2]'>
+              {/* <span onClick={() => setSearchOpen(true)} className='inline-block md:hidden cursor-pointer text-white hover:text-[#c2c2c2]'>
                 <FaSearch size={16} />
-              </span>
-              <div className='hidden w-[250px] md:flex items-center rounded-sm py-2 px-2 bg-[#ffffff55]'>
+              </span> */}
+              {/* <div className='hidden w-[250px] md:flex items-center rounded-sm py-2 px-2 bg-[#ffffff55]'>
                 <input type='text' placeholder='search here...' className='w-full pl-2 placeholder:text-white placeholder:text-[14px] text-white h-full outline-none bg-transparent' />
                 <FaSearch className='text-white cursor-pointer' />
-              </div>
+              </div> */}
               <div className={`absolute duration-500 bg-[#181a189f] z-[99] flex items-center justify-center left-0 w-full h-1/2 md:hidden ${searchOpen ? 'top-20' : 'top-[-9999px]'}`}>
                 <div className='w-[250px] flex items-center rounded-sm py-2 px-2 bg-[#ffffff55]'>
                   <input type='text' placeholder='search here...' className='w-full pl-2 placeholder:text-white placeholder:text-[14px] text-white h-full outline-none bg-transparent' />
