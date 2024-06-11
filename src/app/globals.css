@@ -163,4 +163,5 @@ input[type="number"] {
   background-color: rgba(97, 206, 112, 0);
   background-position: bottom;
   background-size: cover;
+  filter: brightness(1.5)
 }
