@@ -97,7 +97,7 @@ const page = () => {
           >
             <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
               <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
-                <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[700] text-green">
+                <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[700] text-black">
                   Trees for Coastal Defenses
                 </h3>
                 <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
@@ -125,7 +125,7 @@ const page = () => {
       {/* Section 2 */}
       <section className="w-full bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
         <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[50px] xll:text-[55px] font-[500] text-[#3d3d3d]">
-          <span className="font-bold text-green">
+          <span className="font-bold text-black">
             Why Planting Trees in Mozambique?
           </span>
         </h1>
@@ -161,7 +161,7 @@ const page = () => {
             transition={{ duration: 0.5 }}
             className="w-full flex flex-col items-center justify-center"
           >
-            <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-green">
+            <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-black">
               Coastal Restoration
             </h1>
           </motion.div>
