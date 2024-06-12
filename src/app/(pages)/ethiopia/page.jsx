@@ -176,7 +176,7 @@ const page = () => {
             className="w-full flex flex-col items-center justify-center"
           >
             <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-black">
-            Reforestation and Livelihood Support in Shebedino Community
+              Reforestation and Livelihood Support in Shebedino Community
             </h1>
           </motion.div>
           <motion.div
@@ -214,7 +214,19 @@ const page = () => {
               loading="lazy"
               className=" rounded-lg w-full  h-auto"
             />
-            <PlantingPartner />
+            <div className="w-full flex flex-col items-end justify-end">
+              <Image
+                src="/pla.png"
+                width={800}
+                height={600}
+                alt="bussnessec2"
+                loading="lazy"
+                className=" rounded-lg w-[180px]  h-auto lg:mr-24"
+              />
+              <p className="text-[black] mt-8 font-medium text-[24px] lg:mr-24">
+                Planting Partner
+              </p>
+            </div>
           </motion.div>
         </section>
       </section>
