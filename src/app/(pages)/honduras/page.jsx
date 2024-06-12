@@ -167,7 +167,7 @@ const page = () => {
                 filter: "brightness(1.5)",
               }}
               className={`${
-                index !== 1 ? "ima " : ""
+                index !== 0 ? "ima " : ""
               }w-full xsm:w-[90%] flex items-end relative bg-cover bg-no-repeat justify-between duration-500 hover:scale-110 md:w-[48%] xlg:w-[30%] xll:w-[30%] h-full rounded-xl shadow-lg border min-h-[520px]`}
             >
               <div className="gap-y-5 mb-20 relative z-20 text-center w-full h-full rounded-xl flex items-center justify-center flex-col p-4">
@@ -196,8 +196,7 @@ const page = () => {
             className="w-full flex flex-col items-center justify-center"
           >
             <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-black">
-            Tropical Moist Forest & Tropical Rainforest
-
+              Tropical Moist Forest & Tropical Rainforest
             </h1>
           </motion.div>
           <motion.div
@@ -249,7 +248,7 @@ const page = () => {
             className="w-full flex flex-col items-center justify-center"
           >
             <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-black">
-            Tropical Dry Forest
+              Tropical Dry Forest
             </h1>
           </motion.div>
           <motion.div
