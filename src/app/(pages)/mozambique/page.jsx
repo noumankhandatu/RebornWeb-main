@@ -130,25 +130,30 @@ const page = () => {
           </span>
         </h1>
         <div className="flex gap-6 flex-wrap items-center justify-center">
-        {textcardData?.map((item, index) => (
-    <div
-        key={index}
-        style={{ backgroundImage: `url(${item.image})` }}
-        className={`${index === 1 ? 'ima ' : ''}w-full xsm:w-[90%] flex items-end relative bg-cover bg-no-repeat justify-between duration-500 hover:scale-110 md:w-[48%] xlg:w-[30%] xll:w-[30%] h-full rounded-xl shadow-lg border min-h-[520px]`}
-    >
-        <div className="gap-y-5 mb-20 relative z-20 text-center w-full h-full rounded-xl flex items-center justify-center flex-col p-4">
-            <div>
-                <h2 className="text-[#ffffff] text-[18px] xsm:text-[24px] font-worksans font-semibold">
+          {textcardData?.map((item, index) => (
+            <div
+              key={index}
+              style={{
+                backgroundImage: `url(${item.image})`,
+                filter: "brightness(1.5)",
+              }}
+              className={`${
+                index === 4 ? "ima " : ""
+              }w-full xsm:w-[90%] flex items-end relative bg-cover bg-no-repeat justify-between duration-500 hover:scale-110 md:w-[48%] xlg:w-[30%] xll:w-[30%] h-full rounded-xl shadow-lg border min-h-[520px]`}
+            >
+              <div className="gap-y-5 mb-20 relative z-20 text-center w-full h-full rounded-xl flex items-center justify-center flex-col p-4">
+                <div>
+                  <h2 className="text-[#ffffff] text-[18px] xsm:text-[24px] font-worksans font-semibold">
                     {item.title}
-                </h2>
-                <p className="text-[14px] tracking-wide capitalize text-[#ffffffc2] font-poppins mt-3">
+                  </h2>
+                  <p className="text-[14px] tracking-wide capitalize text-[#ffffffc2] font-poppins mt-3">
                     {item.text}
-                </p>
+                  </p>
+                </div>
+              </div>
+              <div className="w-full h-full absolute top-0 left-0 bg-black opacity-40 z-0"></div>
             </div>
-        </div>
-        <div className="w-full h-full absolute top-0 left-0 bg-black opacity-40 z-0"></div>
-    </div>
-))}
+          ))}
         </div>
       </section>
       {/* sec 23 */}
@@ -171,27 +176,27 @@ const page = () => {
             transition={{ type: "tween", duration: 0.5 }}
             className="flex gap-28 flex-col  my-20 items-start justify-start w-full lg:p-32 xs:p:0"
           >
-              <ul className="timeline timeline-snap-icon timeline-compact timeline-vertical">
-                {sec3TimelineData?.map((item, index) => {
-                  return (
-                    <li key={item.id}>
-                      <hr />
-                      <div className="timeline-middle w-[80px] text-white text-2xl h-[80px] flex items-center justify-center font-semibold  rounded-full mx-3">
-                        {item.icon}
-                      </div>
-                      <div className="timeline-end  px-4 py-6 mb-10">
-                        <h5 className="text-black-text text-[20px] font-semibold mb-1 font-poppins">
-                          {item.title}
-                        </h5>
-                        <p className="text-[#6E6B6B] font-medium text-[14px] font-worksans">
-                          {item.desc}
-                        </p>
-                      </div>
-                      <hr />
-                    </li>
-                  );
-                })}
-              </ul>
+            <ul className="timeline timeline-snap-icon timeline-compact timeline-vertical">
+              {sec3TimelineData?.map((item, index) => {
+                return (
+                  <li key={item.id}>
+                    <hr />
+                    <div className="timeline-middle w-[80px] text-white text-2xl h-[80px] flex items-center justify-center font-semibold  rounded-full mx-3">
+                      {item.icon}
+                    </div>
+                    <div className="timeline-end  px-4 py-6 mb-10">
+                      <h5 className="text-black-text text-[20px] font-semibold mb-1 font-poppins">
+                        {item.title}
+                      </h5>
+                      <p className="text-[#6E6B6B] font-medium text-[14px] font-worksans">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <hr />
+                  </li>
+                );
+              })}
+            </ul>
             <Image
               src="/assets/treeplanting-images/Mozambique/Mozambiquemangroves.jpg"
               width={800}
@@ -200,10 +205,9 @@ const page = () => {
               loading="lazy"
               className=" rounded-lg w-full  h-auto"
             />
-           <PlantingPartner/>
+            <PlantingPartner />
           </motion.div>
         </section>
-      
       </section>
     </div>
   );

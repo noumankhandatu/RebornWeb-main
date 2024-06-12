@@ -15,9 +15,6 @@ const PlantingPartner = () => {
       <p className="text-[black] mt-8 font-medium text-[24px] lg:mr-24">
         Planting Partner
       </p>
-      <p className="text-[black] mt-24 font-medium text-[15px]">
-      ©2023 RebornGreen. All right reserved.
-      </p>
     </div>
   );
 };
