@@ -137,14 +137,15 @@ const page = () => {
           </Link>
 
           <Link
-            className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green  z-10 rounded-xl "
+            style={{ border: "1px solid green" }}
+            className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-white  z-10 rounded-xl "
             href="/plant-tree"
           >
             <Image src="/Box 2.svg" alt="img" height={100} width={100} />
-            <h4 className="text-2xl text-white font-semibold mt-8">
+            <h4 className="text-2xl text-black font-semibold mt-8">
               Support Verified Carbon Projects
             </h4>
-            <p className="text-[16px] text-white font-worksans pt-2">
+            <p className="text-[16px] text-black font-worksans pt-2">
               Offset your carbon footprint and fight climate change.
             </p>
           </Link>
