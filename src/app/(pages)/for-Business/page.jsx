@@ -69,7 +69,7 @@ const page = () => {
   return (
     <div className="overflow-hidden h-full">
       <div
-        style={{ backgroundImage: "url('/assets/images/bussnessmain.jpg')" }}
+        style={{ backgroundImage: "url('/sus.png')" }}
         className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
       >
         <motion.h3
@@ -79,7 +79,7 @@ const page = () => {
           transition={{ duration: 0.5 }}
           className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
-          For Business
+          Sustainable Solutions for Your Business
         </motion.h3>
         <motion.p
           initial={{ y: 200 }}
@@ -88,47 +88,13 @@ const page = () => {
           transition={{ duration: 0.5 }}
           className=" w-full font-worksans mt-6 sm:w-[70%] mdd:w-[60%] text-white z-[1] text-center"
         >
-          We support hundreds of brands with their sustainability goals by
-          funding climate projects and planting trees where they’re most needed.
+          We help businesses achieve their sustainability goals through climate
+          action.
         </motion.p>
 
         <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
       </div>
-      {/* sustain */}
-      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
-        <motion.div
-          initial={{ y: 200 }}
-          viewport={{ once: true }}
-          whileInView={{ y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="w-full flex flex-col items-center justify-center"
-        >
-          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
-            <span className="font-bold text-[#14a800]">Sustainable</span>{" "}
-            Solutions for Your Business
-          </h1>
-          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
-            We help businesses achieve their sustainability goals through
-            climate action.
-          </p>
-        </motion.div>
 
-        <motion.div
-          initial={{ y: 200 }}
-          viewport={{ once: true }}
-          whileInView={{ y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap"
-        >
-          <Image
-            src={"/sus.png"}
-            className="w-full h-full"
-            alt="img"
-            height={600}
-            width={600}
-          />
-        </motion.div>
-      </section>
       {/* simplify climate */}
 
       <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
