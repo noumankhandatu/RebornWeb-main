@@ -1,12 +1,19 @@
-'use client'
-import CardCarousel from '@/components/Coursel';
-import Image from 'next/image';
-import { easeIn, easeInOut, motion } from 'framer-motion'
-import BussnesCard from '@/components/BussnesCard';
-import BussnesCardReversed from '@/components/BussnesCardReversed';
-import { FaBalanceScale, FaGlobe, FaGlobeAfrica, FaLeaf, FaRecycle, FaTree } from 'react-icons/fa';
-import Link from 'next/link';
-import ProjectsCard from '@/components/ProjectsCard';
+"use client";
+import CardCarousel from "@/components/Coursel";
+import Image from "next/image";
+import { easeIn, easeInOut, motion } from "framer-motion";
+import BussnesCard from "@/components/BussnesCard";
+import BussnesCardReversed from "@/components/BussnesCardReversed";
+import {
+  FaBalanceScale,
+  FaGlobe,
+  FaGlobeAfrica,
+  FaLeaf,
+  FaRecycle,
+  FaTree,
+} from "react-icons/fa";
+import Link from "next/link";
+import ProjectsCard from "@/components/ProjectsCard";
 
 // export const metadata = {
 //   title: "Explore Our Comprehensive Services | Joyn Digital",
@@ -15,178 +22,411 @@ import ProjectsCard from '@/components/ProjectsCard';
 
 const sec3CardData = [
   {
-    title: "Creating Your Green Profile-How We Can Help",
-    desc: "Elevate your eco-profile with our tailored support and solutions. Let us guide you towards sustainable practices for a greener future.",
-    img: "/assets/images/enver-protection.jpg",
+    title: "Calculate Your Carbon Footprint",
+    desc: "Receive a comprehensive carbon emissions report for your business, calculated by experts, and obtain a customized plan to reduce and offset your carbon emissions",
+    img: "/ca.png",
   },
   {
-    title: "Corporate Social Responsibility",
-    desc: "Many businesses want to give back to their communities, and we can help you do that in a way that also promotes sustainability. We create partnerships that enable businesses to sponsor tree planting initiatives, educate their employees and customers on sustainable practices, and make a positive impact on the environment.",
-    img: "/assets/images/csr.jpg",
+    title: "Climate Impact for Your Team",
+    desc: "Our monthly subscription plan is designed to empower your team to make a positive difference in the fight against climate change. By subscribing, you'll be supporting verified carbon avoidance and tree planting projects every month",
+    img: "/ca2.png",
   },
   {
-    title: "Tree Planting Projects",
-    desc: "Our programs simplify business participation in tree planting for a sustainable environment. Tailored to your budget and goals, we ensure trees planted make a positive impact. With streamlined processes, trusted partnerships, and innovative solutions, we prioritize transparency and gender equality.",
-    img: "/assets/images/tpp.jpg",
+    title: "APIs for Climate Change Solutions",
+    desc: "Automatically plant trees with our API integration for every order, invoice, or other business activity. Use our widget to display the number of trees planted on your website, showcasing your commitment to environmental sustainability.",
+    img: "/ca3.png",
   },
-]
-
+];
 
 const projCardDara = [
   {
-    icon: <FaRecycle size={45} className='text-green mb-3' />,
-    title: "Carbon Offset Projects",
-    desc: "Businesses seek to shrink their carbon footprint, offsetting emissions they can't avoid. Our certified projects gauge your footprint, tally needed carbon credits for net-zero, or goal fulfillment. We guide you toward carbon neutrality, setting you ahead of rivals.",
+    icon: <FaRecycle size={45} className="text-green mb-3" />,
+    title: "Get in Touch",
+    desc: "If your business plans to make a positive impact but is unsure where to begin, contact us. Our team is here to guide you on your sustainability journey",
     btnLink: "/carbon-offsets",
     img: "/assets/images/cop.jpg",
     reverse: false,
   },
-  {
-    icon: <FaBalanceScale size={45} className='text-green mb-3' />,
-    title: "Sustainability Consulting",
-    desc: "We provide holistic consulting to align businesses with sustainable practices. Collaborating closely, we pinpoint areas for environmental improvement and tailor programs to your needs.",
-    btnLink: "/carbon-offsets",
-    img: "/assets/images/soutbuss.jpg",
-    reverse: true,
-  },
-  {
-    icon: <FaLeaf size={45} className='text-green mb-3' />,
-    title: "Green Marketing",
-    desc: "After establishing your green profile, we assist in community promotion. Green marketing enhances brand image, setting you apart in today's market. Transparently showcasing sustainable practices fosters trust between your company and consumers.",
-    btnLink: "/carbon-offsets",
-    img: "/assets/images/grm.jpg",
-    reverse: false,
-  },
-]
+  // {
+  //   icon: <FaBalanceScale size={45} className="text-green mb-3" />,
+  //   title: "Sustainability Consulting",
+  //   desc: "We provide holistic consulting to align businesses with sustainable practices. Collaborating closely, we pinpoint areas for environmental improvement and tailor programs to your needs.",
+  //   btnLink: "/carbon-offsets",
+  //   img: "/assets/images/soutbuss.jpg",
+  //   reverse: true,
+  // },
+  // {
+  //   icon: <FaLeaf size={45} className="text-green mb-3" />,
+  //   title: "Green Marketing",
+  //   desc: "After establishing your green profile, we assist in community promotion. Green marketing enhances brand image, setting you apart in today's market. Transparently showcasing sustainable practices fosters trust between your company and consumers.",
+  //   btnLink: "/carbon-offsets",
+  //   img: "/assets/images/grm.jpg",
+  //   reverse: false,
+  // },
+];
 
 const page = () => {
   return (
-    <div className='overflow-hidden h-full'>
+    <div className="overflow-hidden h-full">
+      <div
+        style={{ backgroundImage: "url('/assets/images/bussnessmain.jpg')" }}
+        className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
+      >
+        <motion.h3
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
+        >
+          For Business
+        </motion.h3>
+        <motion.p
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className=" w-full font-worksans mt-6 sm:w-[70%] mdd:w-[60%] text-white z-[1] text-center"
+        >
+          We support hundreds of brands with their sustainability goals by
+          funding climate projects and planting trees where they’re most needed.
+        </motion.p>
 
-
-
-      <div style={{ backgroundImage: "url('/assets/images/bussnessmain.jpg')" }} className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto">
-        <motion.h3 initial={{y:200}} viewport={{once:true}} whileInView={{y:0}} transition={{duration:0.5}} className=' z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans'>For Business</motion.h3>
-        <motion.p initial={{y:200}} viewport={{once:true}} whileInView={{y:0}} transition={{duration:0.5}} className=' w-full font-worksans mt-6 sm:w-[70%] mdd:w-[60%] text-white z-[1] text-center'>We support hundreds of brands with their sustainability goals by funding climate projects and planting trees where they’re most needed.</motion.p>
-    
-        <div className='w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0'></div>
+        <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
       </div>
-
-
-
-      <section className='w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto'>
-        <motion.div initial={{y:200}} viewport={{once:true}} whileInView={{y:0}} transition={{duration:0.5}} className='w-full flex flex-col items-center justify-center'>
-          <h1 className='text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'> 
-            <span className='font-bold text-[#14a800]'>Transform</span> Your Business with Quick Impact
+      {/* sustain */}
+      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            <span className="font-bold text-[#14a800]">Sustainable</span>{" "}
+            Solutions for Your Business
           </h1>
-          <p className=' mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]'>We empower brands to achieve sustainability goals by funding climate projects and planting trees in critical areas.</p>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            We help businesses achieve their sustainability goals through
+            climate action.
+          </p>
         </motion.div>
-          
-        <motion.div initial={{y:200}} viewport={{once:true}} whileInView={{y:0}} transition={{duration:0.5}} className='flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap'>
-            <Link className=' w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green  z-10 rounded-xl ' href='/plant-tree'>
-              <p><FaTree className='text-white' size={25} /></p>
-              <h4 className='text-2xl text-white font-semibold'>Plant trees for my company</h4>
-              <p className='text-[16px] text-white font-worksans pt-2'>Reach your sustainability objectives by growing your company forest.</p>
-            </Link>
 
-            <Link className=' w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green  z-10 rounded-xl ' href='/plant-tree'>
-              <p><FaGlobeAfrica className='text-white' size={25} /></p>
-              <h4 className='text-2xl text-white font-semibold'>Offset your business</h4>
-              <p className='text-[16px] text-white font-worksans pt-2'>Choose what you want to offset through our carbon projects & track your impact</p>
-            </Link>
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap"
+        >
+          <Image
+            src={"/sus.png"}
+            className="w-full h-full"
+            alt="img"
+            height={600}
+            width={600}
+          />
         </motion.div>
-          </section>
+      </section>
+      {/* simplify climate */}
+
+      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            <span className="font-bold text-[#14a800]">Simplifying</span>{" "}
+            Climate Action in a Few Clicks
+          </h1>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Simple actions can have a significant impact. Determine how you
+            would like to contribute to climate initiatives and discover the
+            best options for both your business and the planet.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap"
+        >
+          <Link
+            className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green  z-10 rounded-xl "
+            href="/plant-tree"
+          >
+            <p>
+              <FaTree className="text-white" size={25} />
+            </p>
+            <h4 className="text-2xl text-white font-semibold">
+              Support Tree-Planting Projects
+            </h4>
+            <p className="text-[16px] text-white font-worksans pt-2">
+              Grow your business sustainably and make the planet greener.
+            </p>
+          </Link>
+
+          <Link
+            className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green  z-10 rounded-xl "
+            href="/plant-tree"
+          >
+            <p>
+              <FaGlobeAfrica className="text-white" size={25} />
+            </p>
+            <h4 className="text-2xl text-white font-semibold">
+              Support Verified Carbon Projects
+            </h4>
+            <p className="text-[16px] text-white font-worksans pt-2">
+              Offset your carbon footprint and fight climate change.
+            </p>
+          </Link>
+        </motion.div>
+      </section>
       {/* section 1  */}
 
-      <CardCarousel />
-
+      {/* <CardCarousel /> */}
 
       {/* section 2  */}
-      <section className='bg-[#f6f6f6]'>
-
-
-        <div className='w-full flex items-center justify-start flex-col  mt-10 max-w-[1800px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto'>
-
-          <h1 className='text-center my-[80px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]'>
-            Importance of Planting Trees
+      <section className="bg-[#f6f6f6]">
+        <div className="w-full flex items-center justify-start flex-col  mt-10 max-w-[1800px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+          <h1 className="text-center my-[80px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            For the Planet, For People, For Your Business Future
           </h1>
 
-          <div className='flex items-center gap-5 xsm:gap-16 justify-center flex-wrap'>
-            <div className='bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4'>
-              <Image src='/assets/images/cleanair.png' className='h-full w-[80px] xsm:w-[150px] object-cover' alt='clean air image' width={150} height={80} />
-              <p className='font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl'>Cleaner air </p>
+          <div className="flex items-center gap-5 xsm:gap-16 justify-center flex-wrap">
+            <div className="bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4">
+              <Image
+                src="/svg/Cleaner air.svg"
+                className="h-full w-[80px] xsm:w-[150px] object-cover"
+                alt="clean air image"
+                width={150}
+                height={80}
+              />
+              <p className="font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl">
+                Cleaner Air
+              </p>
             </div>
-            <div className='bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4'>
-              <Image src='/assets/images/biodiversity.png' className='h-full w-[80px] xsm:w-[150px] object-cover' alt='clean air image' width={150} height={80} />
-              <p className='font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl'>Biodiversity support </p>
+            <div className="bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4">
+              <Image
+                src="/svg/Biodiversity support.svg"
+                className="h-full w-[80px] xsm:w-[150px] object-cover"
+                alt="clean air image"
+                width={150}
+                height={80}
+              />
+              <p className="font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl">
+                Biodiversity Support
+              </p>
             </div>
-            <div className='bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4'>
-              <Image src='/assets/images/corbon.png' className='h-full w-[80px] xsm:w-[150px] object-cover' alt='clean air image' width={150} height={80} />
-              <p className='font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl'>Carbon sequestration  </p>
+            <div className="bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4">
+              <Image
+                src="/svg/Carbon sequestration.svg"
+                className="h-full w-[80px] xsm:w-[150px] object-cover"
+                alt="clean air image"
+                width={150}
+                height={80}
+              />
+              <p className="font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl">
+                Carbon Sequestration
+              </p>
             </div>
-            <div className='bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4'>
-              <Image src='/assets/images/climate.png' className='h-full w-[80px] xsm:w-[150px] object-cover' alt='clean air image' width={150} height={80} />
-              <p className='font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl'>Climate regulation</p>
+            <div className="bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4">
+              <Image
+                src="/svg/Climate regulation.svg"
+                className="h-full w-[80px] xsm:w-[150px] object-cover"
+                alt="clean air image"
+                width={150}
+                height={80}
+              />
+              <p className="font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl">
+                Climate Regulation
+              </p>
             </div>
-            <div className='bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4'>
-              <Image src='/assets/images/comunity.png' className='h-full w-[80px] xsm:w-[150px] object-cover' alt='clean air image' width={150} height={80} />
-              <p className='font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl'>Community well-being </p>
+            <div className="bg-white w-[120px] xsm:w-[150px] sm:w-[200px] text-center px-3 sm:px-6 h-[160px] xsm:h-[220px] gap-[10px] flex flex-col items-center justify-center shadow-sm hover:shadow-xl duration-300 rounded-lg py-4">
+              <Image
+                src="/svg/Community well-being.svg"
+                className="h-full w-[80px] xsm:w-[150px] object-cover"
+                alt="clean air image"
+                width={150}
+                height={80}
+              />
+              <p className="font-bold text-green font-poppins tracking-wide text-sm xsm:text-[16px] sm:text-xl">
+                Community Well-being
+              </p>
             </div>
           </div>
-
         </div>
       </section>
 
-
-
-
-      {/* Enverment Protection Section 3 */}
-      <section className='w-full max-w-[1800px] my-[100px] sm:my-[160px] px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto'>
-
-        {
-          sec3CardData.map((item, index) => (
-            index % 2 !== 0 ? (<BussnesCard key={index} title={item.title} desc={item.desc} img={item.img} />) : (
-              <BussnesCardReversed key={index} title={item.title} desc={item.desc} img={item.img} />
-            )
-          ))
-        }
-
+      {/* What do we offer */}
+      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            What We
+            <span className="font-bold text-[#14a800]"> Offer</span>{" "}
+          </h1>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Accessible Climate Change Solutions for Any Business
+          </p>
+        </motion.div>
       </section>
-
-
+      {/* Enverment Protection Section 3 */}
+      <section className="w-full max-w-[1800px] my-[100px] sm:my-[160px] px-[30px] lg:px-[60px] xll:px-[120px]  mx-auto">
+        {sec3CardData.map((item, index) =>
+          index % 2 !== 0 ? (
+            <BussnesCard
+              key={index}
+              title={item.title}
+              desc={item.desc}
+              img={item.img}
+            />
+          ) : (
+            <BussnesCardReversed
+              key={index}
+              title={item.title}
+              desc={item.desc}
+              img={item.img}
+            />
+          )
+        )}
+      </section>
+      {/* Showcase */}
+      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            Showcase Your Positive Climate <br />
+            <span className="font-bold text-[#14a800]"> Impact</span>{" "}
+          </h1>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Unlock RebornGreen's rewards and share your positive climate <br />
+            impact at your workplace.{" "}
+          </p>
+        </motion.div>
+      </section>
+      {/* Climate  */}
+      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            Climate change and biodiversity loss require urgent action.
+          </h1>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Business operations are being impacted by the physical changes in
+            our environment, and, in turn, the way businesses operate. Climate
+            changes are contributing to biodiversity loss on our planet. By
+            supporting our projects, your business can take part in addressing
+            these issues.
+          </p>
+        </motion.div>
+      </section>
+      {/* Carbon  */}
+      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            Carbon Offset
+            <span className="font-bold text-[#14a800]"> Projects</span>{" "}
+          </h1>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Support verified carbon offset projects that are carefully selected
+            to ensure they deliver real carbon emission reductions and removals
+            and life-enhancing social benefits.
+          </p>
+        </motion.div>
+      </section>
+      {/* Carbon  */}
+      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+            Increased focus on trust and
+            <span className="font-bold text-[#14a800]"> transparency</span>{" "}
+          </h1>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Transparency creates trust. We offer you access to resources
+            documenting our impact because we want you to feel confident in our
+            partnership. Explore, learn, and witness the tangible difference
+            your support makes.
+          </p>
+        </motion.div>
+      </section>
       {/* Project Card Section 3 */}
-      <section className='bg-[#f6f6f6]'>
-        <div className='w-full max-w-[1800px] my-[100px] sm:my-[160px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto'>
+      <section className="bg-[#f6f6f6]">
+        <div className="w-full max-w-[1800px] my-[100px] sm:my-[160px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto">
           {projCardDara.map((item, index) => (
-            <ProjectsCard key={index} icon={item.icon} title={item.title} desc={item.desc} btnLink={item.btnLink} image={item.img} reverse={item.reverse} />
+            <ProjectsCard
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              desc={item.desc}
+              btnLink={item.btnLink}
+              image={item.img}
+              reverse={item.reverse}
+            />
           ))}
         </div>
       </section>
 
+      <motion.section
+        initial={{ y: 200 }}
+        viewport={{ once: true }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-[#1b2f47]"
+      >
+        <div className="w-full max-w-[1800px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto">
+          <div className="flex items-center flex-wrap justify-center gap-5 sm:justify-between">
+            <div className=" w-full sm:w-[70%] mdd:w-[60%]">
+              <h1 className="text-center my-[40px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-sunshine-yellow">
+                Green Partnerships Made
+              </h1>
+              <p className=" text-center text-white tracking-wide font-poppins text-[16px] ">
+                Experience the Benefits: Cost savings, Enhanced brand image,
+                Increased customer loyalty, Improved employee morale
+              </p>
+            </div>
 
-      <motion.section  initial={{y:200}} viewport={{once:true}} whileInView={{y:0}} transition={{duration:0.5}} className='bg-[#1b2f47]'>
-        <div className='w-full max-w-[1800px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto'>
-
-          <div className='flex items-center flex-wrap justify-center gap-5 sm:justify-between'>
-         <div className=' w-full sm:w-[70%] mdd:w-[60%]'>
-         <h1 className='text-center my-[40px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-sunshine-yellow'>
-          Green Partnerships Made
-          </h1>
-            <p className=' text-center text-white tracking-wide font-poppins text-[16px] '>Experience the Benefits: Cost savings, Enhanced brand image, Increased customer loyalty, Improved employee morale</p>
-         </div>
-
-          <Link href='/contact' className='btn ' >Contact Us</Link>
+            <Link href="/contact" className="btn ">
+              Contact Us
+            </Link>
           </div>
-
-
         </div>
-
       </motion.section>
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
