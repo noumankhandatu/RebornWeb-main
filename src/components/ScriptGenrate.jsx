@@ -71,7 +71,7 @@ const ScriptGenrate = ({ userApi }) => {
                         p.classList.add('tree-text');
                         
                         divInner.innerText = JSON.stringify(data.data !== undefined ? data.data.tree_planted : 0);
-                        imgEle.src = "https://i.postimg.cc/jjppsGCy/leaf.png";
+                        imgEle.src = "https://reborngreen.fra1.cdn.digitaloceanspaces.com/general/Tree%20Widget.png";
                         p.innerHTML = "Trees Planted";
                         
                         document.querySelector('body').appendChild(divElement);
