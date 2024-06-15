@@ -12,42 +12,52 @@ const ScriptGenrate = ({ userApi }) => {
     if (userApi) {
       try {
         const scriptContent = `
-            <style>
-                .tree-container {
-                    background-color: #42b932;
-                    padding: 10px;
-                    margin: 20px auto;
-                    border-radius: 5px;
-                    min-width: 180px;
-                    max-width: 280px;
-                    font-size: 30px;
-                    color: white;
-                    display: flex;
-                    align-items: center;
-                    font-family: sans-serif;
-                }
-                
-                .inner-container {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width:100%;
-                    flex-direction: column;
-                    gap: 10px;
-                    line-height: 0px;
-                    margin-top: 20px;
-                    height: 50px;
-                    padding: 10px 0;
-                }
-                
-                .tree-image {
-                    width: 60px;
-                }
-                
-                .tree-text {
-                    font-size: 18px;
-                }
-            </style>
+           <style>
+  .tree-container {
+    background-color: #42b932;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 500px;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    position: relative; /* Added */
+    overflow: hidden; /* Added */
+    cursor: pointer; /* Added */
+    transition: background-color 0.3s ease; /* Added */
+    border: 2px solid transparent; /* Added */
+    box-shadow: 2px 4px 8px #5c391a;
+  }
+
+  .tree-container:hover {
+    background-color: #2b7a21; /* Darker shade on hover */
+    border-color: #fff; /* Border color on hover */
+  }
+
+  .inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 0px;
+    margin-top: 20px;
+    height: 50px;
+    padding: 10px 0;
+  }
+
+  .tree-image {
+    width: 200px;
+  }
+
+  .tree-text {
+    font-size: 18px;
+  }
+</style>
             <script>
                 function fetchData() {
                     fetch('${process.env.API_URL}/user/tree-record-api?api_key=${userApi}', {
