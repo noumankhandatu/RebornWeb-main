@@ -154,7 +154,41 @@ export default function Home() {
   return (
     <div className="overflow-hidden h-full">
       {/* Hero Section */}
+      <Head>
+        {/* Primary Meta Tags */}
+        <title>Global Climate Projects | RebornGreen</title>
+        <meta name="title" content="Global Climate Projects | RebornGreen" />
+        <meta
+          name="description"
+          content="Join the fight against climate change. Discover our programs and learn how you can contribute to global climate projects."
+        />
 
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://website.com" />
+        <meta
+          property="og:title"
+          content="Global Climate Projects | RebornGreen"
+        />
+        <meta
+          property="og:description"
+          content="Join the fight against climate change. Discover our programs and learn how you can contribute to global climate projects."
+        />
+        <meta property="og:image" content="" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://website.com" />
+        <meta
+          property="twitter:title"
+          content="Global Climate Projects | RebornGreen"
+        />
+        <meta
+          property="twitter:description"
+          content="Join the fight against climate change. Discover our programs and learn how you can contribute to global climate projects."
+        />
+        <meta property="twitter:image" content="" />
+      </Head>
       <section className="w-full h-[60vh] lg:h-[calc(100vh-75px)] mx-auto">
         <Hero videoSrc="/assets/videos/hvideo.mp4" />
       </section>
