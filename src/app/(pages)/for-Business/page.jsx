@@ -1,5 +1,5 @@
 "use client";
-import CardCarousel from "@/components/Coursel";
+import CardCarousel, { ThreeImageCarousel } from "@/components/Coursel";
 import Image from "next/image";
 import { easeIn, easeInOut, motion } from "framer-motion";
 import BussnesCard from "@/components/BussnesCard";
@@ -24,14 +24,14 @@ import { useState } from "react";
 const sec3CardData = [
   {
     title: "Calculate Your Carbon Footprint",
-    desc: "Receive a comprehensive carbon emissions report for your business, calculated by experts, and obtain a customized plan to reduce and offset your carbon emissions",
+    desc: "Receive a comprehensive carbon emissions report for your business, calculated by experts, and obtain a customized plan to reduce and offset your carbon emissions.",
     img: "/ca.png",
-    link: "/plant-tree",
+    link: "/for-Business#team",
     btnText: "Speak to the team",
   },
   {
     title: "Climate Impact for Your Team",
-    desc: "Our monthly subscription plan is designed to empower your team to make a positive difference in the fight against climate change. By subscribing, you'll be supporting verified carbon avoidance and tree planting projects every month",
+    desc: "Our monthly subscription plan is designed to empower your team to make a positive difference in the fight against climate change. By subscribing, you'll be supporting verified carbon avoidance and tree planting projects every month.",
     img: "/ca2.png",
     link: "/plant-tree",
     btnText: "Subscribe Now",
@@ -101,9 +101,7 @@ const page = () => {
 
         <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
       </div>
-
       {/* simplify climate */}
-
       <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
         <motion.div
           initial={{ y: 200 }}
@@ -159,7 +157,6 @@ const page = () => {
         </motion.div>
       </section>
       {/* section 1  */}
-
       {/* section 2  */}
       <section className="bg-[#f6f6f6]">
         <div className="w-full flex items-center justify-start flex-col  mt-10 max-w-[1800px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
@@ -231,7 +228,6 @@ const page = () => {
           </div>
         </div>
       </section>
-
       {/* What do we offer */}
       <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
         <motion.div
@@ -241,17 +237,17 @@ const page = () => {
           transition={{ duration: 0.5 }}
           className="w-full flex flex-col items-center justify-center"
         >
-          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+          <h1 className="text-center  font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
             What We
             <span className="font-bold text-[#14a800]"> Offer</span>{" "}
           </h1>
-          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+          <p className=" w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
             Accessible Climate Change Solutions for Any Business
           </p>
         </motion.div>
       </section>
       {/* Enverment Protection Section 3 */}
-      <section className="w-full max-w-[1800px] my-[100px] sm:my-[160px] px-[30px] lg:px-[60px] xll:px-[120px]  mx-auto">
+      <section className="w-full max-w-[1800px] px-[30px] lg:px-[60px] xll:px-[120px]  mx-auto">
         {sec3CardData.map((item, index) =>
           index % 2 !== 0 ? (
             <BussnesCard
@@ -312,18 +308,9 @@ const page = () => {
             business. The globe can be customized to suit your business. Contact
             us to find out more.
           </p>
-          <Image
-            src="/Temporary Image.png"
-            alt="img"
-            width={300}
-            height={300}
-            layout="responsive"
-            className="max-w-xs md:max-w-md lg:max-w-lg"
-          />
+          <ThreeImageCarousel />
         </motion.div>
       </section>
-      <CardCarousel />
-
       {/* Carbon  */}
       {/* <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
         <motion.div
@@ -345,6 +332,8 @@ const page = () => {
         </motion.div>
       </section> */}
       {/* Carbon  */}
+      {/* <CardCarousel /> */}
+
       <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
         <motion.div
           initial={{ y: 200 }}
@@ -372,12 +361,12 @@ const page = () => {
             width={1000}
             height={1000}
             layout="intrinsic"
-            className="w-full h-full xl:w-[70%] xl:h-[70%]"
+            className="w-full h-full xl:w-[95%] xl:h-[95%]"
           />
         </motion.div>
       </section>
       {/* Project Card Section 3 */}
-      <section className="bg-[#f6f6f6]">
+      {/* <section id="team" className="bg-[#f6f6f6]">
         <div className="w-full max-w-[1800px] my-[100px] sm:my-[160px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto">
           {projCardDara.map((item, index) => (
             <ProjectsCard
@@ -391,8 +380,9 @@ const page = () => {
             />
           ))}
         </div>
-      </section>
-      <GetInTouch />
+      </section> */}
+
+      <GetInTouch id="team" />
       {/* 
       <motion.section
         initial={{ y: 200 }}
@@ -465,7 +455,7 @@ const GetInTouch = () => {
       </p>
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
+        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
           <label
             htmlFor="name"
             className="block text-gray-700 font-medium mb-1"
@@ -484,7 +474,7 @@ const GetInTouch = () => {
           />
         </div>
 
-        <div className="mb-4">
+        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
           <label
             htmlFor="email"
             className="block text-gray-700 font-medium mb-1"
@@ -503,7 +493,7 @@ const GetInTouch = () => {
           />
         </div>
 
-        <div className="mb-4">
+        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
           <label
             htmlFor="assistanceType"
             className="block text-gray-700 font-medium mb-1"
@@ -535,7 +525,7 @@ const GetInTouch = () => {
           </select>
         </div>
 
-        <div className="mb-4">
+        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
           <label
             htmlFor="message"
             className="block text-gray-700 font-medium mb-1"
