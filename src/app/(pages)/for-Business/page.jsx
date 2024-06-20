@@ -26,7 +26,7 @@ const sec3CardData = [
     title: "Calculate Your Carbon Footprint",
     desc: "Receive a comprehensive carbon emissions report for your business, calculated by experts, and obtain a customized plan to reduce and offset your carbon emissions.",
     img: "/ca.png",
-    link: "/for-Business#team",
+    link: "/for-Business#GIT",
     btnText: "Speak to the team",
   },
   {
@@ -364,6 +364,7 @@ const page = () => {
             className="w-full h-full xl:w-[95%] xl:h-[95%]"
           />
         </motion.div>
+        <div id="GIT" />
       </section>
       {/* Project Card Section 3 */}
       {/* <section id="team" className="bg-[#f6f6f6]">
@@ -382,7 +383,7 @@ const page = () => {
         </div>
       </section> */}
 
-      <GetInTouch id="team" />
+      <GetInTouch />
       {/* 
       <motion.section
         initial={{ y: 200 }}
