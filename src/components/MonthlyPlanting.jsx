@@ -91,7 +91,7 @@ const MonthlyPlanting = ({ month }) => {
         >
           <div className="flex h-full p-4 shadow-lg shadow-[#2c2c2c] bg-[#00000036] flex-col items-center py-20 justify-between">
             <h2 className="text-center text-[16px] xsm:text-[18px] sm:text-[22px] font-semibold text-white">
-              Great, pick how many trees you’d like to plant!
+              Select Number of Trees
             </h2>
             <div className="w-[200px] bg-white rounded-lg my-3 flex items-center justify-center flex-col h-auto px-8 text-center py-6">
               <input
@@ -109,35 +109,35 @@ const MonthlyPlanting = ({ month }) => {
           <div className="flex flex-wrap my-10 items-center justify-center gap-10 sm:gap-0 mdd:justify-between  w-full sm:w-[90%] mdd:w-[85%] lg:w-[75%]">
             <div className="flex gap-y-2 flex-col items-center justify-start">
               <p className=" text-[12px] text-white sm:text-[14px] font-light font-poppins">
-                Just getting started?
+                Perfect for a green start!
               </p>
               <button
-                onClick={() => setTreeInp(30)}
+                onClick={() => setTreeInp(50)}
                 className=" px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px] bg-green py-3 rounded-full text-white font-semibold font-worksans tracking-wide"
               >
-                30 Trees
+                50 Trees
               </button>
             </div>
             <div className="flex gap-y-2 flex-col items-center justify-start">
               <p className=" text-[12px] text-white sm:text-[14px] font-light font-poppins">
-                Started making some sales?
+                Double the impact!
               </p>
               <button
-                onClick={() => setTreeInp(200)}
+                onClick={() => setTreeInp(100)}
                 className=" px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px] bg-green py-3 rounded-full text-white font-semibold font-worksans tracking-wide"
               >
-                200 Trees
+                100 Trees
               </button>
             </div>
             <div className="flex gap-y-2 flex-col items-center justify-start">
               <p className=" text-[12px] text-white sm:text-[14px] font-light font-poppins">
-                Growing your impact?
+                Make a profound difference!
               </p>
               <button
-                onClick={() => setTreeInp(1000)}
+                onClick={() => setTreeInp(600)}
                 className=" px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px] bg-green py-3 rounded-full text-white font-semibold font-worksans tracking-wide"
               >
-                1,000 Trees
+                600 Trees
               </button>
             </div>
           </div>

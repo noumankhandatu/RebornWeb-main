@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react"; // Ensure useEffect is imported
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -6,7 +7,6 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { FaGlobeAfrica, FaTree } from "react-icons/fa";
@@ -14,22 +14,12 @@ import MonthlyPlanting from "./MonthlyPlanting";
 import MyTeam from "./MyTeam";
 import Image from "next/image";
 
-const steps = [
-  "Choose your objective",
-  "Choose your product",
-  "Choose your scale",
-  "Finalise your impact",
-];
+const steps = ["Step 1", "Step 2", "Step 3", "Step 4"];
 
 export default function StepperComp() {
   const [activeStep, setActiveStep] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [step1, setStep1] = useState("");
   const [step2, setStep2] = useState("");
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -67,9 +57,12 @@ export default function StepperComp() {
           <main className="mx-auto flex items-center justify-center flex-col">
             <h1 className="text-center w-full sm:w-[70%] my-[60px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-[#3d3d3d]">
               <span className="font-bold text-[#14a800]">
-                Empower Your Impact-{" "}
+                Support tree planting <br />
               </span>
-              How Will You Make a Difference?
+              <span className="text-[25px]">
+                {" "}
+                Grow Your Bussiness Sustainably
+              </span>
             </h1>
             <motion.div
               onClick={step1plantClick}
@@ -85,19 +78,20 @@ export default function StepperComp() {
                     <FaTree className="text-white my-6 stepicon " size={35} />
                   </p>
                   <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-white">
-                    Plant trees for my company
+                    Reforestation
                   </h3>
                   <p className="leading-[26px] text-sm sm:text-[16px]  font-poppins tracking-wide text-[#dedbdb]">
-                    Reach your sustainability objectives by growing your company
-                    forest.
+                    Reforestation involves recovering destroyed forest areas by
+                    planting new trees. This crucial effort combats climate
+                    change, restores habitats, and supports local communities.
                   </p>
                 </div>
               </div>
               <div className=" overflow-hidden rounded-br-lg rounded-bl-lg  lg:rounded-bl-none lg:rounded-e-lg w-full h-full relative sm:w-[80%] mdd:w-[60%] lg:flex-1 ">
                 <Image
-                  src="/assets/images/planttree.jpg"
-                  width={300}
-                  height={200}
+                  src="/Untitled design - 2024-06-17T131310.595.png"
+                  width={1000}
+                  height={1000}
                   alt="Plant Tree Image"
                   loading="lazy"
                   className="w-full h-full"
@@ -116,9 +110,9 @@ export default function StepperComp() {
             >
               <div className=" overflow-hidden rounded-tr-lg rounded-tl-lg  lg:rounded-tr-none lg:rounded-s-xl  w-full h-full relative sm:w-[80%] mdd:w-[60%] lg:flex-1">
                 <Image
-                  src="/assets/images/bussness-offset.jpg"
-                  width={300}
-                  height={200}
+                  src="/Untitled design - 2024-06-17T132802.901.png"
+                  width={1000}
+                  height={1000}
                   alt="bussnessec2"
                   loading="lazy"
                   className="w-full border h-full"
@@ -134,11 +128,14 @@ export default function StepperComp() {
                     />
                   </p>
                   <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-white">
-                    Offset your business
+                    Afforestation
                   </h3>
                   <p className="leading-[26px] text-sm sm:text-[16px]  font-poppins tracking-wide text-[#dedbdb]">
-                    Choose what you want to offset through our carbon projects &
-                    track your impact
+                    Afforestation is the establishment of a forest or stand of
+                    trees (forestation) in an area where there was no recent
+                    tree cover. The benefits of afforestation include helping
+                    protect bare ground from soil erosion, flooding, and
+                    sequestering carbon dioxide from the atmosphere.
                   </p>
                 </div>
               </div>
@@ -147,7 +144,7 @@ export default function StepperComp() {
         );
       case 1:
         return (
-          <>
+          <div style={{ marginTop: 100, marginBottom: 50 }}>
             {step1 === "offset" ? (
               <div
                 initial={{ y: 200 }}
@@ -205,45 +202,68 @@ export default function StepperComp() {
                 className="flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap"
               >
                 <div
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                    boxShadow: "2px 4px 8px #434343",
+                    borderRadius: "10px 10px 0px 0px",
+                  }}
                   onClick={everymonth}
-                  className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
+                  className=" cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px]  hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <h4 className="text-2xl  font-semibold">
-                    Every <span className="text-green gr-span"> month</span>
+                  <BsArrowRight size={30} className="mb-8 arrow text-white" />
+
+                  <h4 className="text-2xl text-white  font-semibold">
+                    Monthly{" "}
+                    <span className="text-white gr-span"> Subscription</span>
                   </h4>
-                  <p className="text-[16px]  font-worksans pt-2">
-                    Make a regular commitment that&apos;s completely flexible
+                  <p className="text-[16px] text-white  font-worksans pt-2">
+                    Making the planet greener every month.
                   </p>
-                  <BsArrowRight size={30} className="my-5 arrow" />
                 </div>
                 <div
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                    boxShadow: "2px 4px 8px #434343",
+                    borderRadius: "10px 10px 0px 0px",
+                  }}
                   onClick={oneOff}
-                  className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
+                  className="cursor-pointer  border-2 border-green w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <h4 className="text-2xl  font-semibold">
-                    As a <span className="text-green gr-span">one-offset</span>
+                  <BsArrowRight size={30} className=" arrow text-white" />
+
+                  <h4 className="text-2xl mt-5  font-semibold">
+                    <span className="text-white gr-span">Occasional</span>
                   </h4>
-                  <p className="text-[16px]  font-worksans pt-2">
-                    Choose to plant a set amount to make an impact today
+                  <p className="text-[16px]  text-white font-worksans pt-2">
+                    Flexible tree planting support.
                   </p>
-                  <BsArrowRight size={30} className="my-5 arrow" />
                 </div>
                 <Link
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                    boxShadow: "2px 4px 8px #434343",
+                    borderRadius: "10px 10px 0px 0px",
+                  }}
                   href={"/contact"}
-                  className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
+                  className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-green hover:shadow-xl card  z-10 shadow-lg"
                 >
+                  <BsArrowRight size={30} className="mb-10 arrow text-white" />
                   <h4 className="text-2xl  font-semibold">
-                    <span className="text-green gr-span">Automatically</span>
+                    <span className=" text-white gr-span">
+                      Tree Planting Integration
+                    </span>
                   </h4>
-                  <p className="text-[16px]  font-worksans pt-2">
-                    Integrate tree planting into your business with our
-                    automated solutions
+                  <p className="text-[16px] text-white  font-worksans pt-2">
+                    Plant a tree for every sale or other company activity using
+                    our API integrations.
                   </p>
-                  <BsArrowRight size={30} className="my-5 arrow" />
                 </Link>
               </div>
             )}
-          </>
+          </div>
         );
       case 2:
         return (
@@ -258,14 +278,17 @@ export default function StepperComp() {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeStep]);
   return (
     <Box mt={20} sx={{ width: "100%" }}>
       <div className="hidden sm:block">
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => (
             <Step key={label}>
-              <StepLabel className="px-4 py-4 rounded-lg bg-green ">
-                {label}
+              <StepLabel className="px-4 py-4 rounded-lg bg-[#14A800] border-2 border-green ">
+                <span className="text-white"> {label}</span>
               </StepLabel>
             </Step>
           ))}
@@ -283,7 +306,6 @@ export default function StepperComp() {
         </>
       ) : (
         <>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
           <Box mt={4}>{renderStepContent()}</Box>
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Button
