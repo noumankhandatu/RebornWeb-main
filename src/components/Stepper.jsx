@@ -75,7 +75,14 @@ export default function StepperComp() {
               <div className=" h-full rounded-tr-lg rounded-tl-lg  lg:rounded-tr-none lg:rounded-s-xl  gre-card w-full  sm:w-[80%] mdd:w-[60%] py-16 lg:flex-1  flex items-center justify-center flex-col">
                 <div className="w-full h-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
                   <p>
-                    <FaTree className="text-white my-6 stepicon " size={35} />
+                    <Image
+                      src={"/Reforestation .svg"}
+                      alt="image"
+                      height={1000}
+                      width={1000}
+                      className="w-[80px] h-[80px]"
+                    />
+                    {/* <FaTree className="text-white my-6 stepicon " size={35} /> */}
                   </p>
                   <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-white">
                     Reforestation
@@ -122,12 +129,15 @@ export default function StepperComp() {
               <div className=" h-full rounded-br-lg rounded-bl-lg  lg:rounded-bl-none lg:rounded-e-lg  gre-card w-full  sm:w-[80%] mdd:w-[60%] py-16 lg:flex-1  flex items-center justify-center flex-col">
                 <div className="w-full h-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
                   <p>
-                    <FaGlobeAfrica
-                      className="text-white my-6 stepicon "
-                      size={35}
+                    <Image
+                      src={"/Afforestation .svg"}
+                      alt="image"
+                      height={1000}
+                      width={1000}
+                      className="w-[80px] h-[80px]"
                     />
                   </p>
-                  <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-white">
+                  <h3 className="mt-2 text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-white">
                     Afforestation
                   </h3>
                   <p className="leading-[26px] text-sm sm:text-[16px]  font-poppins tracking-wide text-[#dedbdb]">
@@ -206,7 +216,7 @@ export default function StepperComp() {
                     background:
                       "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
                     boxShadow: "2px 4px 8px #434343",
-                    borderRadius: "10px 10px 0px 0px",
+                    borderRadius: "30px 0px 30px 0px",
                   }}
                   onClick={everymonth}
                   className=" cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px]  hover:shadow-xl card  z-10 shadow-lg"
@@ -226,7 +236,7 @@ export default function StepperComp() {
                     background:
                       "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
                     boxShadow: "2px 4px 8px #434343",
-                    borderRadius: "10px 10px 0px 0px",
+                    borderRadius: "31% 31% 20% 23% / 30% 26% 26% 28%",
                   }}
                   onClick={oneOff}
                   className="cursor-pointer  border-2 border-green w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
@@ -245,7 +255,7 @@ export default function StepperComp() {
                     background:
                       "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
                     boxShadow: "2px 4px 8px #434343",
-                    borderRadius: "10px 10px 0px 0px",
+                    borderRadius: "30px 30px 0px 0px",
                   }}
                   href={"/contact"}
                   className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-green hover:shadow-xl card  z-10 shadow-lg"

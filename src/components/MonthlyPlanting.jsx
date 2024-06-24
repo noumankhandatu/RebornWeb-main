@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { loadStripe } from "@stripe/stripe-js";
+import AppButton from "./AppButton";
 
 const MonthlyPlanting = ({ month }) => {
   const stripePromise = loadStripe(
@@ -86,7 +87,9 @@ const MonthlyPlanting = ({ month }) => {
       <section className="mx-auto my-4 flex items-center justify-center">
         {/* image and buttons main  */}
         <div
-          style={{ backgroundImage: "url('/assets/images/csr.jpg')" }}
+          style={{
+            backgroundImage: "url('/Screenshot 2024-06-24 131924.png')",
+          }}
           className="w-full  px-10 flex flex-col min-h-[90vh] object-cover bg-no-repeat bg-cover object-center rounded-lg items-center justify-center"
         >
           <div className="flex h-full p-4 shadow-lg shadow-[#2c2c2c] bg-[#00000036] flex-col items-center py-20 justify-between">
@@ -111,34 +114,26 @@ const MonthlyPlanting = ({ month }) => {
               <p className=" text-[12px] text-white sm:text-[14px] font-light font-poppins">
                 Perfect for a green start!
               </p>
-              <button
-                onClick={() => setTreeInp(50)}
-                className=" px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px] bg-green py-3 rounded-full text-white font-semibold font-worksans tracking-wide"
-              >
-                50 Trees
-              </button>
+              <AppButton onClick={() => setTreeInp(50)} text="50 Trees" />
             </div>
             <div className="flex gap-y-2 flex-col items-center justify-start">
               <p className=" text-[12px] text-white sm:text-[14px] font-light font-poppins">
                 Double the impact!
               </p>
-              <button
-                onClick={() => setTreeInp(100)}
-                className=" px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px] bg-green py-3 rounded-full text-white font-semibold font-worksans tracking-wide"
-              >
-                100 Trees
-              </button>
+
+              <AppButton onClick={() => setTreeInp(100)} text="100 Trees" />
             </div>
             <div className="flex gap-y-2 flex-col items-center justify-start">
               <p className=" text-[12px] text-white sm:text-[14px] font-light font-poppins">
                 Make a profound difference!
               </p>
-              <button
+              <AppButton onClick={() => setTreeInp(600)} text="600 Trees" />
+              {/* <button
                 onClick={() => setTreeInp(600)}
                 className=" px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px] bg-green py-3 rounded-full text-white font-semibold font-worksans tracking-wide"
               >
                 600 Trees
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="flex my-10 items-center justify-between w-full">

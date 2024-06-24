@@ -4,16 +4,8 @@ import Image from "next/image";
 import { easeIn, easeInOut, motion } from "framer-motion";
 import BussnesCard from "@/components/BussnesCard";
 import BussnesCardReversed from "@/components/BussnesCardReversed";
-import {
-  FaBalanceScale,
-  FaGlobe,
-  FaGlobeAfrica,
-  FaLeaf,
-  FaRecycle,
-  FaTree,
-} from "react-icons/fa";
+import { FaRecycle } from "react-icons/fa";
 import Link from "next/link";
-import ProjectsCard from "@/components/ProjectsCard";
 import { useState } from "react";
 
 // export const metadata = {
@@ -144,7 +136,7 @@ const page = () => {
           <Link
             style={{ border: "1px solid green" }}
             className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-white  z-10 rounded-xl "
-            href="/plant-tree"
+            href="/plant-tree-offset"
           >
             <Image src="/Box 2.svg" alt="img" height={100} width={100} />
             <h4 className="text-2xl text-black font-semibold mt-8">
