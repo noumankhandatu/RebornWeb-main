@@ -31,7 +31,7 @@ const MyTeamOffset = () => {
     <select
       value={value}
       onChange={handleSelectChange(setter)}
-      className="text-[22px] font-semibold text-white"
+      className="text-[22px] font-semibold text-white bg-gray-800 max-h-40 overflow-y-auto"
     >
       {[...Array(101).keys()].slice(1).map((num) => (
         <option className="text-white" key={num} value={num}>
@@ -45,7 +45,14 @@ const MyTeamOffset = () => {
     <section className="mx-auto my-4 flex flex-col items-center justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 mdd:grid-cols-3 items-center justify-center gap-10 flex-wrap">
         {/* card 1 */}
-        <div className="rounded-lg min-h-[450px]  hover:shadow-sm border px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm bg-green flex items-center flex-col justify-center">
+        <div
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(20,168,0,1) 65%, rgba(255,255,255,1) 100%)",
+            borderRadius: "0px 30px 30px 0px",
+          }}
+          className="rounded-lg min-h-[450px]  hover:shadow-sm border px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm bg-green flex items-center flex-col justify-center"
+        >
           <Image
             src="/assets/images/list__image-remote-worker.svg"
             width={60}

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -61,9 +62,9 @@ export default function page() {
                 <div
                   style={{
                     background:
-                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                      "linear-gradient(90deg, rgba(20,168,0,1) 65%, rgba(255,255,255,1) 100%)",
                     boxShadow: "2px 4px 8px #434343",
-                    borderRadius: "30px 0px 30px 0px",
+                    borderRadius: "0px 30px 30px 0px",
                   }}
                   onClick={everymonth}
                   className=" cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px]  hover:shadow-xl card  z-10 shadow-lg"
@@ -82,9 +83,9 @@ export default function page() {
                 <Link
                   style={{
                     background:
-                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                      "linear-gradient(90deg, rgba(20,168,0,1) 65%, rgba(255,255,255,1) 100%)",
                     boxShadow: "2px 4px 8px #434343",
-                    borderRadius: "30px 30px 0px 0px",
+                    borderRadius: "30px 0px 0px 30px",
                   }}
                   href={"/contact"}
                   className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-green hover:shadow-xl card  z-10 shadow-lg"
