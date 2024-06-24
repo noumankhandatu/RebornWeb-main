@@ -137,8 +137,10 @@ const MonthlyPlanting = ({ month }) => {
             </div>
           </div>
           <div className="flex my-10 items-center justify-between w-full">
-            <p className="font-semibold text-[16px] xsm:text-[20px] sm:text-[30px] text-white">
-              Total: £ {treeInp}.00 / {month && "month"}
+            <p class="block max-w-sm p-6 bg-green  border border-green rounded-lg shadow hover:bg-lime-700 ">
+              <p class="font-normal text-white ">
+                Total: £ {treeInp}.00 / {month && "month"}
+              </p>
             </p>
             <button
               disabled={treeInp === 0}
