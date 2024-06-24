@@ -101,7 +101,6 @@ export default function page() {
             </motion.div>
           </main>
         );
-
       case 1:
         return (
           <>

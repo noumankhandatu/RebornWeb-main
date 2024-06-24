@@ -16,9 +16,9 @@ const MyTeamOffset = () => {
     } else {
       setDisable(false);
     }
-    const sw = standWork * 8.25;
+    const sw = standWork * 26.7;
     const ft = freqTravel * 15.5;
-    const gt = globalTror * 26.7;
+    const gt = globalTror * 8.25;
 
     setAllPrice(sw + ft + gt);
   }, [standWork, freqTravel, globalTror]);
@@ -63,7 +63,7 @@ const MyTeamOffset = () => {
             Big Impact
           </h3>
           <div>
-            <h5 className="text-[20px] font-semibold  text-white">£8.25</h5>
+            <h5 className="text-[20px] font-semibold  text-white">£26.70</h5>
             <p className="text-[12px] text-white">Per employee per month</p>
           </div>
           <p className="text-[14px] font-worksans text-white">
@@ -107,7 +107,7 @@ const MyTeamOffset = () => {
             Start Sustainable
           </h3>
           <div>
-            <h5 className="text-[20px] font-semibold text-white">£26.70</h5>
+            <h5 className="text-[20px] font-semibold text-white">£8.25</h5>
             <p className="text-[12px] text-white">Per employee per month</p>
           </div>
           <p className="text-white text-[14px] font-worksans">
