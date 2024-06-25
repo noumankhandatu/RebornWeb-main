@@ -1,16 +1,12 @@
-'use client'
-import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import Head from 'next/head'
-import { usePathname } from 'next/navigation';
-import BgNavbar from '@/components/BgNavbar';
+"use client";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Head from "next/head";
+import { usePathname } from "next/navigation";
+import BgNavbar from "@/components/BgNavbar";
 import { Toaster } from "react-hot-toast";
-import { UserProvider } from '../../lib/UserConext'
-
-
-
-
+import { UserProvider } from "../../lib/UserConext";
 
 // export const metadata = {
 //   title: 'Robort Green: Your Ultimate Destination for Plant EnthusiastsGreen',
@@ -37,34 +33,46 @@ import { UserProvider } from '../../lib/UserConext'
 //   }
 // };
 
-
 export default function RootLayout({ children }) {
   const path = usePathname();
   return (
-    <html lang="en" className='scroll-smooth'>
+    <html lang="en" className="scroll-smooth">
       <Head>
-
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <body  >
-
+      <body>
         <UserProvider>
-
-
-          {path === '/' || path === '/for-Business' || path === "/tree-planting" || path === '/Register' || path === "/Login" || path === "/Reset-password" || path === '/Forget-password' || path === '/about' || path === '/flight' || path === '/coffee' || path === '/madagascar' || path === '/mozambique' || path === '/kenya' || path === '/honduras' || path === '/ethiopia' || path === '/carbon-offsets' ? <Navbar /> : <BgNavbar />}
+          {path === "/" ||
+          path === "/for-Business" ||
+          path === "/tree-planting" ||
+          path === "/Register" ||
+          path === "/Login" ||
+          path === "/Reset-password" ||
+          path === "/Forget-password" ||
+          path === "/about" ||
+          path === "/flight" ||
+          path === "/coffee" ||
+          path === "/madagascar" ||
+          path === "/mozambique" ||
+          path === "/kenya" ||
+          path === "/honduras" ||
+          path === "/ethiopia" ||
+          path === "/plant-tree" ||
+          path === "/carbon-offsets" ? (
+            <Navbar />
+          ) : (
+            <BgNavbar />
+          )}
           <Toaster position="center-right" />
-
 
           {children}
           <Footer />
         </UserProvider>
-
-
       </body>
     </html>
-  )
+  );
 }
