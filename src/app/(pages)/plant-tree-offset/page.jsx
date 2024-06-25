@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import MyTeamOffset from "@/components/MyTeamOffset";
+import { FaGlobeAfrica, FaTree } from "react-icons/fa";
 
 const steps = ["Step 1", "Step 2", "Step 3"];
 
@@ -39,11 +40,11 @@ export default function page() {
               <span className="font-bold text-[#14a800]">
                 Select Offset Plan <br />
               </span>
-              <span className="text-[16px]">
+              <p className="text-[16px] ">
                 Certified Carbon Credits will be allocated to your company,
-                which can be used to offset your emissions and included in your
-                EGS (Environmental, Social, and Governance) reports.
-              </span>
+                which can be used to offset your emissions and <br /> included
+                in your EGS (Environmental, Social, and Governance) reports.
+              </p>
             </h1>
             <motion.div
               initial={{ x: -250, opacity: 0 }}
@@ -69,7 +70,7 @@ export default function page() {
                   onClick={everymonth}
                   className=" cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px]  hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <BsArrowRight size={30} className="mb-8 arrow text-white" />
+                  <FaTree size={30} className="mb-8 arrow text-white" />
 
                   <h4 className="text-2xl text-white  font-semibold">
                     Monthly
@@ -90,7 +91,7 @@ export default function page() {
                   href={"/contact"}
                   className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-green hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <BsArrowRight size={30} className="mb-10 arrow text-white" />
+                  <FaTree size={30} className="mb-10 arrow text-white" />
                   <h4 className="text-2xl  font-semibold"></h4>
                   <p className="text-[16px] text-white  font-worksans pt-2">
                     For groups larger than 100 people, reach out to us for a

@@ -51,31 +51,31 @@ const MyTeamOffset = () => {
               "linear-gradient(90deg, rgba(20,168,0,1) 65%, rgba(255,255,255,1) 100%)",
             borderRadius: "0px 30px 30px 0px",
           }}
-          className="rounded-lg min-h-[450px]  hover:shadow-sm border px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm bg-green flex items-center flex-col justify-center"
+          className="min-h-[450px] rounded-lg bg-green hover:shadow-sm border px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm  flex items-center flex-col justify-center"
         >
           <Image
-            src="/assets/images/list__image-remote-worker.svg"
+            src="/svg/£8.25 Per employee per month (1).svg"
             width={60}
             height={60}
             alt="image"
           />
           <h3 className="text-[22px] font-semibold font-poppins text-white">
-            Big Impact
+            Start Sustainable
           </h3>
           <div>
-            <h5 className="text-[20px] font-semibold  text-white">£26.70</h5>
+            <h5 className="text-[20px] font-semibold text-white">£8.25</h5>
             <p className="text-[12px] text-white">Per employee per month</p>
           </div>
-          <p className="text-[14px] font-worksans text-white">
-            Make the biggest difference for the environment.
+          <p className="text-white text-[14px] font-worksans">
+            Take the first step towards a sustainable workplace.
           </p>
-          {renderSelect(standWork, setStandWork)}
+          {renderSelect(globalTror, setGlobalTror)}
         </div>
 
         {/* card 2 */}
         <div className="min-h-[450px] border-4 border-green  rounded-lg hover:shadow-sm  px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm bg-white flex items-center flex-col justify-center">
           <Image
-            src="/assets/images/list__image-plane.svg"
+            src="/svg/£15.50 Per employee per month.svg"
             width={60}
             height={60}
             alt="image"
@@ -96,24 +96,24 @@ const MyTeamOffset = () => {
         </div>
 
         {/* card 3 */}
-        <div className="min-h-[450px] rounded-lg bg-green hover:shadow-sm border px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm  flex items-center flex-col justify-center">
+        <div className="rounded-lg min-h-[450px]  hover:shadow-sm border px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm bg-green flex items-center flex-col justify-center">
           <Image
-            src="/assets/images/list__image-plane.svg"
+            src="/svg/£26.70 Per employee per month.svg"
             width={60}
             height={60}
             alt="image"
           />
           <h3 className="text-[22px] font-semibold font-poppins text-white">
-            Start Sustainable
+            Big Impact
           </h3>
           <div>
-            <h5 className="text-[20px] font-semibold text-white">£8.25</h5>
+            <h5 className="text-[20px] font-semibold  text-white">£26.70</h5>
             <p className="text-[12px] text-white">Per employee per month</p>
           </div>
-          <p className="text-white text-[14px] font-worksans">
-            Take the first step towards a sustainable workplace.
+          <p className="text-[14px] font-worksans text-white">
+            Make the biggest difference for the environment.
           </p>
-          {renderSelect(globalTror, setGlobalTror)}
+          {renderSelect(standWork, setStandWork)}
         </div>
       </div>
       <div className="flex my-10 items-center justify-between w-full">

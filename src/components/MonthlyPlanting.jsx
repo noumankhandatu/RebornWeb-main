@@ -88,14 +88,21 @@ const MonthlyPlanting = ({ month }) => {
         {/* image and buttons main  */}
         <div
           style={{
-            backgroundImage: "url('/Screenshot 2024-06-24 131924.png')",
+            backgroundImage: "url('/images/TREE SELECTION PAGE.png')",
           }}
           className="w-full  px-10 flex flex-col min-h-[90vh] object-cover bg-no-repeat bg-cover object-center rounded-lg items-center justify-center"
         >
           <div className="flex h-full p-4 shadow-lg shadow-[#2c2c2c] bg-[#00000036] flex-col items-center py-20 justify-between">
-            <h2 className="text-center text-[16px] xsm:text-[18px] sm:text-[22px] font-semibold text-white">
+            <h2 className="font-poppins text-center text-[16px] xsm:text-[18px] sm:text-[22px] font-semibold text-white">
               Select Number of Trees
             </h2>
+            <Image
+              src={"/images/Number Trees Selection Box.png"}
+              height={500}
+              width={500}
+              alt="image"
+              className="w-[150px] h-[150px]"
+            />
             <div className="w-[200px] bg-white rounded-lg my-3 flex items-center justify-center flex-col h-auto px-8 text-center py-6">
               <input
                 type="number"
@@ -103,10 +110,16 @@ const MonthlyPlanting = ({ month }) => {
                 onChange={(e) => setTreeInp(e.target.value)}
                 className="bg-transparent text-[25px] font-semibold text-center outline-none w-1/2 h-full"
               />
-              <p className="font-semibold">Trees {month && "per month"}</p>
+              <p className="font-semibold font-poppins">
+                Trees {month && "per month"}
+              </p>
             </div>
-            <p className="text-[12px] text-[#fff]">
-              Please enter a minimum of 10 trees {month && "per month"}
+            <h2 className="font-poppins text-center text-[16px] xsm:text-[18px] sm:text-[22px] font-semibold text-white">
+              Grow your forest!
+            </h2>
+            <p className=" font-poppins text-[12px] text-[#fff]">
+              Choose how many trees you'll plant to make a difference
+              {/* Please enter a minimum of 10 trees {month && "per month"} */}
             </p>
           </div>
           <div className="flex flex-wrap my-10 items-center justify-center gap-10 sm:gap-0 mdd:justify-between  w-full sm:w-[90%] mdd:w-[85%] lg:w-[75%]">
@@ -124,7 +137,7 @@ const MonthlyPlanting = ({ month }) => {
               <AppButton onClick={() => setTreeInp(100)} text="100 Trees" />
             </div>
             <div className="flex gap-y-2 flex-col items-center justify-start">
-              <p className=" text-[12px] text-white sm:text-[14px] font-light font-poppins">
+              <p className="font-poppins text-[12px] text-white sm:text-[14px] font-light font-poppins">
                 Make a profound difference!
               </p>
               <AppButton onClick={() => setTreeInp(600)} text="600 Trees" />
@@ -138,7 +151,7 @@ const MonthlyPlanting = ({ month }) => {
           </div>
           <div className="flex my-10 items-center justify-between w-full">
             <p class="block max-w-sm p-6 bg-green  border border-green rounded-lg shadow hover:bg-lime-700 ">
-              <p class="font-normal text-white ">
+              <p class=" font-poppins font-normal text-white ">
                 Total: £ {treeInp}.00 / {month && "month"}
               </p>
             </p>
@@ -147,7 +160,7 @@ const MonthlyPlanting = ({ month }) => {
               onClick={handle}
               className={` ${
                 disable ? "bg-[#14a80050]" : "bg-green"
-              } px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px]  py-3 rounded-sm text-white font-semibold font-worksans tracking-wide`}
+              } px-4 font-poppins xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px]  py-3 rounded-sm text-white font-semibold  tracking-wide`}
             >
               Continus
             </button>

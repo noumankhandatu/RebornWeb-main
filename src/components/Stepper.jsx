@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react"; // Ensure useEffect is imported
+import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -70,9 +70,9 @@ export default function StepperComp() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, type: "easeInOut" }}
-              className="flex h-auto cursor-pointer lg:h-[520px] flex-col w-full lg:flex-row items-center justify-center"
+              className="flex h-auto cursor-pointer lg:h-[520px] flex-col w-full lg:flex-row items-flex-start justify-center"
             >
-              <div className=" h-full rounded-tr-lg rounded-tl-lg  lg:rounded-tr-none lg:rounded-s-xl  gre-card w-full  sm:w-[80%] mdd:w-[60%] py-16 lg:flex-1  flex items-center justify-center flex-col">
+              <div className=" h-[400px] rounded-tr-lg rounded-tl-lg  lg:rounded-tr-none lg:rounded-s-xl  gre-card w-full  sm:w-[80%] mdd:w-[60%] py-16 lg:flex-1  flex items-center justify-center flex-col">
                 <div className="w-full h-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
                   <p>
                     <Image
@@ -101,7 +101,7 @@ export default function StepperComp() {
                   height={1000}
                   alt="Plant Tree Image"
                   loading="lazy"
-                  className="w-full h-full"
+                  className="w-full lg:h-[400px] h-full"
                 />
                 {/* <div className='w-full overflow-hidden  h-full absolute top-0 left-0 bg-black opacity-30 z-0'></div> */}
               </div>
@@ -113,7 +113,7 @@ export default function StepperComp() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, type: "easeInOut" }}
-              className="flex my-24 cursor-pointer h-auto lg:h-[520px] flex-col w-full lg:flex-row items-center justify-center"
+              className="flex my-24 cursor-pointer h-auto lg:h-[400px] flex-col w-full lg:flex-row items-center justify-center"
             >
               <div className=" overflow-hidden rounded-tr-lg rounded-tl-lg  lg:rounded-tr-none lg:rounded-s-xl  w-full h-full relative sm:w-[80%] mdd:w-[60%] lg:flex-1">
                 <Image
@@ -122,7 +122,7 @@ export default function StepperComp() {
                   height={1000}
                   alt="bussnessec2"
                   loading="lazy"
-                  className="w-full border h-full"
+                  className="w-full border lg:h-[400px] h-full"
                 />
               </div>
 
@@ -174,7 +174,7 @@ export default function StepperComp() {
                     Input your team size, we&apos;ll take care of the carbon
                     credits & trees
                   </p>
-                  <BsArrowRight size={30} className="my-5 arrow" />
+                  <FaTree size={30} className="my-5 arrow" />
                 </div>
                 <Link
                   href={"/contact"}
@@ -187,7 +187,7 @@ export default function StepperComp() {
                     Use our extensive network of trusted projects that can cater
                     to any size. Contact us to discuss your needs.
                   </p>
-                  <BsArrowRight size={30} className="my-5 arrow" />
+                  <FaTree size={30} className="my-5 arrow" />
                 </Link>
                 <Link
                   href={"/contact"}
@@ -200,7 +200,7 @@ export default function StepperComp() {
                     Got a specific idea or need help deciding how best to make
                     an impact? Contact us!
                   </p>
-                  <BsArrowRight size={30} className="my-5 arrow" />
+                  <FaTree size={30} className="my-5 arrow" />
                 </Link>
               </div>
             ) : (
@@ -221,7 +221,7 @@ export default function StepperComp() {
                   onClick={everymonth}
                   className=" cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px]  hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <BsArrowRight size={30} className="mb-8 arrow text-white" />
+                  <FaTree size={30} className="mb-8 arrow text-white" />
 
                   <h4 className="text-2xl text-white  font-semibold">
                     Monthly{" "}
@@ -241,7 +241,7 @@ export default function StepperComp() {
                   onClick={oneOff}
                   className="cursor-pointer  border-2 border-green w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <BsArrowRight size={30} className=" arrow text-white" />
+                  <FaTree size={30} className=" arrow text-white" />
 
                   <h4 className="text-2xl mt-5  font-semibold">
                     <span className="text-white gr-span">Occasional</span>
@@ -260,7 +260,7 @@ export default function StepperComp() {
                   href={"/contact"}
                   className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-green hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <BsArrowRight size={30} className="mb-10 arrow text-white" />
+                  <FaTree size={30} className="mb-10 arrow text-white" />
                   <h4 className="text-2xl  font-semibold">
                     <span className=" text-white gr-span">
                       Tree Planting Integration
