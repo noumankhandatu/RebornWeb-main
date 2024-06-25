@@ -137,7 +137,7 @@ const MonthlyPlanting = ({ month }) => {
               <AppButton onClick={() => setTreeInp(100)} text="100 Trees" />
             </div>
             <div className="flex gap-y-2 flex-col items-center justify-start">
-              <p className="font-poppins text-[12px] text-white sm:text-[14px] font-light font-poppins">
+              <p className="font-poppins text-[12px] text-white sm:text-[14px] font-light ">
                 Make a profound difference!
               </p>
               <AppButton onClick={() => setTreeInp(600)} text="600 Trees" />
