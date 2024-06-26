@@ -164,43 +164,61 @@ export default function StepperComp() {
                 className="flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap"
               >
                 <div
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                    boxShadow: "2px 4px 8px #434343",
+                    borderRadius: "30px 0px 30px 0px",
+                  }}
                   onClick={step2teamClick}
                   className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <h4 className="text-2xl  font-semibold">
-                    My <span className="text-green gr-span">Team</span>
+                  <FaTree size={30} className="my-5 arrow  text-white" />
+                  <h4 className="text-2xl  text-white font-semibold">
+                    My <span className=" text-white gr-span">Team</span>
                   </h4>
-                  <p className="text-[16px]  font-worksans pt-2">
+                  <p className="text-[16px]  text-white  font-worksans pt-2">
                     Input your team size, we&apos;ll take care of the carbon
                     credits & trees
                   </p>
-                  <FaTree size={30} className="my-5 arrow" />
                 </div>
                 <Link
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                    boxShadow: "2px 4px 8px #434343",
+                    borderRadius: "31% 31% 20% 23% / 30% 26% 26% 28%",
+                  }}
                   href={"/contact"}
                   className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <h4 className="text-2xl  font-semibold">
-                    My <span className="text-green gr-span">company</span>
+                  <FaTree size={30} className="my-5 arrow text-white" />
+                  <h4 className="text-2xl  text-white font-semibold">
+                    My <span className="text-white gr-span">company</span>
                   </h4>
-                  <p className="text-[16px]  font-worksans pt-2">
+                  <p className="text-[16px] text-white  font-worksans pt-2">
                     Use our extensive network of trusted projects that can cater
                     to any size. Contact us to discuss your needs.
                   </p>
-                  <FaTree size={30} className="my-5 arrow" />
                 </Link>
                 <Link
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(20,168,0,1) 0%, rgba(6,38,2,1) 100%)",
+                    boxShadow: "2px 4px 8px #434343",
+                    borderRadius: "30px 30px 0px 0px",
+                  }}
                   href={"/contact"}
-                  className="cursor-pointer w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
+                  className="cursor-pointer  text-white w-full sm:flex-1 hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-5 md:px-10 py-10 min-h-[300px] bg-white hover:shadow-xl card  z-10 shadow-lg"
                 >
-                  <h4 className="text-2xl  font-semibold">
-                    Something <span className="text-green gr-span">else</span>
+                  <FaTree size={30} className="my-5 arrow  text-white" />
+                  <h4 className="text-2xl  text-white  font-semibold">
+                    Something <span className=" text-white gr-span">else</span>
                   </h4>
-                  <p className="text-[16px]  font-worksans pt-2">
+                  <p className="text-[16px]  text-white  font-worksans pt-2">
                     Got a specific idea or need help deciding how best to make
                     an impact? Contact us!
                   </p>
-                  <FaTree size={30} className="my-5 arrow" />
                 </Link>
               </div>
             ) : (

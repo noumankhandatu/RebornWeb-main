@@ -55,8 +55,8 @@ const MyTeamOffset = () => {
         >
           <Image
             src="/svg/£8.25 Per employee per month (1).svg"
-            width={60}
-            height={60}
+            width={100}
+            height={100}
             alt="image"
           />
           <h3 className="text-[22px] font-semibold font-poppins text-white">
@@ -76,8 +76,8 @@ const MyTeamOffset = () => {
         <div className="min-h-[450px] border-4 border-green  rounded-lg hover:shadow-sm  px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm bg-white flex items-center flex-col justify-center">
           <Image
             src="/svg/£15.50 Per employee per month.svg"
-            width={60}
-            height={60}
+            width={100}
+            height={100}
             alt="image"
           />
           <h3 className="text-[22px] font-semibold font-poppins text-black-text">
@@ -99,8 +99,8 @@ const MyTeamOffset = () => {
         <div className="rounded-lg min-h-[450px]  hover:shadow-sm border px-4 mdd:px-9 gap-6 text-center py-10 shadow-sm bg-green flex items-center flex-col justify-center">
           <Image
             src="/svg/£26.70 Per employee per month.svg"
-            width={60}
-            height={60}
+            width={100}
+            height={100}
             alt="image"
           />
           <h3 className="text-[22px] font-semibold font-poppins text-white">
@@ -117,8 +117,11 @@ const MyTeamOffset = () => {
         </div>
       </div>
       <div className="flex my-10 items-center justify-between w-full">
-        <p className="font-semibold text-[16px] xsm:text-[20px] sm:text-[30px] text-black">
-          Total: £{allPrice.toFixed(2)} / month
+        <p class="block max-w-sm p-6 bg-green  border border-green rounded-lg shadow hover:bg-lime-700 ">
+          <p class=" font-poppins font-normal text-white ">
+            {" "}
+            Total: £{allPrice.toFixed(2)} / month
+          </p>
         </p>
         <Link href={"/login"}>
           <button

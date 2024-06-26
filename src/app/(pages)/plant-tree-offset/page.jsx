@@ -42,8 +42,8 @@ export default function page() {
               </span>
               <p className="text-[16px] ">
                 Certified Carbon Credits will be allocated to your company,
-                which can be used to offset your emissions and <br /> included
-                in your EGS (Environmental, Social, and Governance) reports.
+                which can be used to offset your emissions and included in your
+                EGS (Environmental, Social, and Governance) reports.
               </p>
             </h1>
             <motion.div

@@ -92,18 +92,18 @@ const MonthlyPlanting = ({ month }) => {
           }}
           className="w-full  px-10 flex flex-col min-h-[90vh] object-cover bg-no-repeat bg-cover object-center rounded-lg items-center justify-center"
         >
-          <div className="flex h-full p-4 shadow-lg shadow-[#2c2c2c] bg-[#00000036] flex-col items-center py-20 justify-between">
-            <h2 className="font-poppins text-center text-[16px] xsm:text-[18px] sm:text-[22px] font-semibold text-white">
+          <div className=" relative flex h-full p-4 shadow-lg shadow-[#2c2c2c] bg-[#00000036] flex-col items-center py-20 justify-between">
+            {/* <h2 className="font-poppins text-center text-[16px] xsm:text-[18px] sm:text-[22px] font-semibold text-white">
               Select Number of Trees
-            </h2>
+            </h2> */}
             <Image
               src={"/images/Number Trees Selection Box.png"}
               height={500}
               width={500}
               alt="image"
-              className="w-[150px] h-[150px]"
+              className="w-[300px] h-[300px]"
             />
-            <div className="w-[200px] bg-white rounded-lg my-3 flex items-center justify-center flex-col h-auto px-8 text-center py-6">
+            <div className="absolute bottom-[156px] w-[200px] bg-white rounded-lg my-3 flex items-center justify-center flex-col h-auto px-8 text-center py-6">
               <input
                 type="number"
                 value={treeInp}
@@ -114,7 +114,8 @@ const MonthlyPlanting = ({ month }) => {
                 Trees {month && "per month"}
               </p>
             </div>
-            <h2 className="font-poppins text-center text-[16px] xsm:text-[18px] sm:text-[22px] font-semibold text-white">
+            <div className="h-[40px]" />
+            <h2 className="font-poppins text-center text-[16px] xsm:text-[18px] sm:text-[30px] font-semibold text-white">
               Grow your forest!
             </h2>
             <p className=" font-poppins text-[12px] text-[#fff]">
