@@ -9,38 +9,38 @@ import Link from "next/link";
 
 const workse2cData = [
   {
-    icon: <FaCalculator size={40} className="text-green" />,
-    title: "No double counting",
-    des: "We ensure that the carbon sequestered from our trees is not counted more than once. Each tree is planted directly due to an action by a user or business partner.",
+    icon: "/Tree Protection.svg",
+    title: "Tree Protection",
+    des: "The tree planting sites we endorse are under protective agreements with local governments and communities. These agreements guarantee the preservation of the land, safeguarding it from being acquired or repurposed for other activities.",
   },
   {
-    icon: <PiPottedPlant size={40} className="text-green" />,
-    title: "Longevity",
-    des: "Our tree planting sites are protected by local government and community contracts. By doing so, land is safeguarded from being bought or used for a different purpose.",
+    icon: "/Landscape Restoration.svg",
+    title: "Landscape Restoration",
+    des: "Our strategy goes beyond conventional tree planting methods by adopting sa comprehensive Landscape Restoration approach. This approach brings real advantages to local communities, enhances biodiversity and ecosystem services, and plays a part in creating lasting positive effects to fight against climate change.",
   },
   {
-    icon: <LiaSearchSolid size={40} className="text-green" />,
-    title: "Transparency",
-    des: "With 150+ species planted across our global sites, we pride ourselves on transparency.",
+    icon: "/Ensuring Global Standards.svg",
+    title: "Ensuring Global Standards",
+    des: "Each project meticulously follows industry best practices and global standards, ensuring seamless integration with national policies. We exceed evolving carbon and biodiversity benchmarks, adapting as standards progress.",
   },
 ];
 
 const sec3TimelineData = [
   {
     id: 1,
-    desc: "Trees must benefit the local communities in planting zones.",
+    desc: "By strategically planting tree species known for high CO2 absorption rates.",
   },
   {
     id: 2,
-    desc: "Contracts between landowners and local governments are a necessity and last 15+ years.",
+    desc: "Prioritizing regions where new forests can create diverse habitats for threatened species",
   },
   {
     id: 3,
-    desc: "Financial statements & external audits are reviewed by Treeapp in detail.",
+    desc: "Integrating tree-planting initiatives with programs that empower local communities through job creation and sustainable practices.",
   },
   {
     id: 4,
-    desc: "Other factors such as access to sites, fencing and local seed providers are all closely evaluated. This enables us to have 85%+ of trees reaching maturity.",
+    desc: "Focus on promoting gender equality in regions where employment opportunities for women are limited.",
   },
 ];
 
@@ -58,7 +58,7 @@ const page = () => {
           transition={{ duration: 0.5 }}
           className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
-          <span className="text-green">Tree-Tastic: </span>Planting for Success!
+          <span className="text-green">Trees </span> for Our Future
         </motion.h3>
         <motion.p
           initial={{ y: 200 }}
@@ -67,7 +67,8 @@ const page = () => {
           transition={{ duration: 0.5 }}
           className=" w-full font-worksans mt-6 sm:w-[70%] mdd:w-[60%] text-white z-[1] text-center"
         >
-          Discover Our Commitment to Sustainable and Transparent Operations!
+          Trees are powerful allies in the fight against climate change, and by
+          planting together, we can create a lasting impact.
         </motion.p>
 
         <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
@@ -83,7 +84,8 @@ const page = () => {
           className="w-full flex flex-col items-center justify-center"
         >
           <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-[#3d3d3d]">
-            <span className="text-[#14a800]">Our </span> working principles
+            <span className="text-[#14a800]">We Use Best Practices for </span>{" "}
+            Optimal Tree Planting
           </h1>
         </motion.div>
 
@@ -91,10 +93,16 @@ const page = () => {
           {workse2cData?.map((item, index) => (
             <div
               key={index}
-              className=" transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[300px] gap-8 text-left py-10 shadow-sm bg-white flex items-start flex-col justify-start"
+              className=" transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[350px] gap-8 text-left py-10 shadow-sm bg-white flex items-start flex-col justify-start"
             >
               <div className="flex items-center gap-5">
-                <p>{item.icon}</p>
+                <Image
+                  src={item.icon}
+                  alt="img"
+                  height={1000}
+                  width={1000}
+                  className="w-[50px] h-[50px]"
+                />
                 <h5 className="font-poppins font-semibold text-[18px]">
                   {item.title}
                 </h5>
@@ -117,19 +125,21 @@ const page = () => {
           className="w-full flex flex-col items-center justify-center"
         >
           <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-[#3d3d3d]">
-            Why plant trees with us?
+            Why Plant Trees with RebornGreen?
           </h1>
           <p className="text-[16px] font-worksans text-green font-semibold sm:text-[18px]">
-            Treeapp helps grow your positive impact on the planet in 3 steps
+            We focus on strategic reforestation projects in areas that need it
+            most, ensuring the long-term survival and impact of your
+            contribution.
           </p>
         </motion.div>
 
-        <div className="w-full my-10">
+        <div className="w-full my-[200px] ">
           <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             <li>
               <div className="timeline-middle mx-3">
                 <Image
-                  src="/assets/images/ecology.png"
+                  src="/svgnew/Improving Survival Rate.svg"
                   alt="Images"
                   width={70}
                   height={50}
@@ -138,12 +148,11 @@ const page = () => {
               </div>
               <div className="timeline-start md:text-end mb-10">
                 <div className="text-[30px] font-poppins font-semibold">
-                  Acknowledge
+                  Improving Survival Rate:
                 </div>
-                Forests are crucial for all life, but climate change is
-                escalating faster than we can manage. Coastal areas, like
-                Madagascar, endure prolonged droughts devastating communities
-                and farms. The answer: urgent ecosystem restoration.
+                Despite employing best practices, planting the right tree at the
+                right time does not guarantee a 100% survival rate. Therefore,
+                we annually plant an additional 5% to ensure impactful results.
               </div>
               <hr />
             </li>
@@ -151,7 +160,7 @@ const page = () => {
               <hr />
               <div className="timeline-middle mx-3">
                 <Image
-                  src="/assets/images/list__image-remote-worker.svg"
+                  src="/svgnew/Plantation Site Verification.svg"
                   alt="Images"
                   width={70}
                   height={50}
@@ -160,14 +169,13 @@ const page = () => {
               </div>
               <div className="timeline-end mb-10">
                 <div className="text-[30px] font-poppins font-semibold">
-                  Monitor
+                  Plantation Site Verification:
                 </div>
-                We&#39;re documenting our sites on the open-source platform
-                restor.eco, a collaborative effort by Crowther Lab, ETH Zurich,
-                and Google to democratize reforestation. Restor provides public
-                access to our sites, allowing anyone to view them. Using
-                satellite imagery, we analyze land-use changes over time with
-                research-backed methods.
+                The monitoring process includes pre-intervention, planting, and
+                post-intervention phases. During these stages, the planting
+                activities are documented. The monitoring team verifies photo
+                coordinates to ensure they align with the correct planting site
+                boundaries
               </div>
               <hr />
             </li>
@@ -175,7 +183,7 @@ const page = () => {
             <li>
               <div className="timeline-middle mx-3">
                 <Image
-                  src="/assets/images/ecology.png"
+                  src="/svgnew/Innovative project (2).svg"
                   alt="Images"
                   width={70}
                   height={50}
@@ -184,13 +192,12 @@ const page = () => {
               </div>
               <div className="timeline-start md:text-end mb-10">
                 <div className="text-[30px] font-poppins font-semibold">
-                  Measure
+                  Amplifying Impact:
                 </div>
-                We employ allometric equations, onsite data, and academic
-                sources to accurately estimate carbon sequestration in our
-                forests over their lifespan. With Treeapp, monitor your carbon
-                footprint and determine the number of trees needed for carbon
-                neutrality.
+                With each sponsored tree, a portion of the proceeds is
+                reinvested into innovative projects that maximize environmental
+                impact and educate more people on environmental practices. This
+                approach accelerates our fight against climate change.
               </div>
               <hr />
             </li>
@@ -208,7 +215,7 @@ const page = () => {
             className={`flex gap-15 flex-col lg:flex-row my-20 items-center justify-center`}
           >
             <Image
-              src="/assets/images/tpp.jpg"
+              src="/svgnew/55.jpg"
               width={700}
               height={500}
               alt="bussnessec2"
@@ -218,11 +225,15 @@ const page = () => {
             <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
               <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
                 <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
-                  Uniting Experts for Impactful Tree-Planting
+                  Trees Act as Nature's Air Filters!
                 </h3>
                 <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
-                  Tree planting requires expertise. Our expert board ensures
-                  care and knowledge in growing nurseries.
+                  They absorb carbon dioxide (CO2), a gas that traps heat and
+                  contributes to global warming. With rising CO2 levels,
+                  planting trees is more important than ever. Trees capture this
+                  excess carbon, storing it as they grow. This helps fight
+                  climate change and create a cleaner, healthier planet for
+                  everyone.
                 </p>
               </div>
             </div>
@@ -240,11 +251,11 @@ const page = () => {
           className="w-full flex flex-col items-center justify-center"
         >
           <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-[#3d3d3d]">
-            Selecting Our Planting Partner&#39;s
+            Strategic Tree Planting for Maximum Impact
           </h1>
           <p className="text-[16px] font-worksans text-green font-semibold sm:text-[18px]">
-            Our forestry board meticulously assesses partner&#39;s planting
-            methods.
+            With a long-term vision for a healthier planet, RebornGreen focuses
+            on areas where trees can maximize their impact by:
           </p>
         </motion.div>
 
@@ -275,9 +286,9 @@ const page = () => {
             </ul>
           </div>
           <Image
-            src="/assets/images/farmer.jpg"
-            width={600}
-            height={600}
+            src="/svgnew/BP 3.jpg"
+            width={1000}
+            height={1000}
             alt="bussnessec2"
             loading="lazy"
             className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
@@ -295,9 +306,9 @@ const page = () => {
             className={`flex gap-15 flex-col lg:flex-row my-20 items-center justify-center`}
           >
             <Image
-              src="/assets/images/bussnessmain.jpg"
-              width={600}
-              height={600}
+              src="/svgnew/Madagascar (2).png"
+              width={1000}
+              height={1000}
               alt="bussnessec2"
               loading="lazy"
               className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
@@ -305,24 +316,21 @@ const page = () => {
             <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
               <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
                 <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
-                  Tree Planting in the UK
+                  Madagascar{" "}
                 </h3>
                 <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
-                  Plant trees for your company in our local sites!
-                </p>
-                <p>
-                  Contact us at{" "}
-                  <Link
-                    className="underline font-semibold text-green"
-                    href="mailto:hello@thetreeapp.org"
-                  >
-                    hello@thetreeapp.org
-                  </Link>
+                  Madagascar, an island nation off the coast of Africa, is a
+                  global biodiversity hotspot teeming with unique plant and
+                  animal life found nowhere else on Earth. However,
+                  deforestation threatens this irreplaceable ecosystem. By
+                  planting trees in Madagascar, we're helping to restore lost
+                  habitats, protect endangered species like lemurs, and ensure
+                  the island's natural beauty thrives for generations to come{" "}
                 </p>
               </div>
             </div>
           </motion.div>
-
+          {/* 2 */}
           <motion.div
             initial={{ y: 200, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -332,27 +340,158 @@ const page = () => {
             <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
               <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
                 <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
-                  Our 2023 Impact Report{" "}
+                  Mozambique
                 </h3>
                 <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
-                  Discover the profound impact we&#34;ve achieved year after
-                  year. Dive into our comprehensive 2023 Impact Report to
-                  witness our accomplishments and unveil our ambitious future
-                  endeavors!
+                  Mozambique's long coastline is vital to its economy and
+                  culture. However, deforestation has led to increased soil
+                  erosion and weakened coastal defenses, making communities more
+                  vulnerable to cyclones and floods. Our tree planting
+                  initiatives in Mozambique focus on restoring coastal mangrove
+                  forests, which act as natural barriers against storms and
+                  provide vital nursery grounds for marine life.
                 </p>
               </div>
             </div>
             <Image
-              src="/assets/images/aboutmain.jpg"
-              width={600}
-              height={600}
+              src="/svgnew/Mozambique.png"
+              width={1000}
+              height={1000}
               alt="bussnessec2"
               loading="lazy"
               className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
             />
           </motion.div>
 
-          <div className="flex items-center gap-10 justify-center flex-col">
+          {/* 3 */}
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ type: "tween", duration: 0.5 }}
+            className={`flex gap-15 flex-col lg:flex-row my-20 items-center justify-center`}
+          >
+            <Image
+              src="/svgnew/Kenya (1).png"
+              width={1000}
+              height={1000}
+              alt="bussnessec2"
+              loading="lazy"
+              className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
+            />
+            <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
+              <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
+                <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
+                  Kenya
+                </h3>
+                <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
+                  Kenya's vast landscapes are home to diverse ecosystems, from
+                  savannas teeming with wildlife to fertile agricultural lands.
+                  However, deforestation has led to land degradation and
+                  decreased water security. Through reforestation efforts in
+                  Kenya, we're planting trees that restore vital ecosystems,
+                  improve soil health, and provide local communities with a
+                  sustainable source of income through responsible forestry
+                  practices.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+          {/* 4 */}
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ type: "tween", duration: 0.5 }}
+            className={`flex gap-15 flex-col lg:flex-row my-20 items-center justify-center`}
+          >
+            <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
+              <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
+                <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
+                  Honduras
+                </h3>
+                <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
+                  Honduras plays a critical role in Central America's ecological
+                  balance. Lush rainforests act as a natural filter for the
+                  region's water supply, but deforestation threatens this vital
+                  resource. Our reforestation projects in Honduras focus on
+                  restoring these rainforests, helping to ensure clean water for
+                  millions of people, and promoting biodiversity in the region.
+                </p>
+              </div>
+            </div>
+            <Image
+              src="/svgnew/Honduras (2).png"
+              width={1000}
+              height={1000}
+              alt="bussnessec2"
+              loading="lazy"
+              className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
+            />
+          </motion.div>
+          {/* 5 */}
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ type: "tween", duration: 0.5 }}
+            className={`flex gap-15 flex-col lg:flex-row my-20 items-center justify-center`}
+          >
+            <Image
+              src="/svgnew/Brazil (1).png"
+              width={1000}
+              height={1000}
+              alt="bussnessec2"
+              loading="lazy"
+              className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
+            />
+            <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
+              <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
+                <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
+                  Brazil{" "}
+                </h3>
+                <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
+                  The Amazon rainforest is crucial for global climate
+                  regulation. However, deforestation poses a significant threat
+                  to its health. By planting trees in Brazil, we're contributing
+                  to reforestation efforts in the Amazon, helping to mitigate
+                  climate change, preserve vital habitats for countless species,
+                  and ensure the rainforest remains the "lungs of the planet"
+                  for generations to come.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+          {/* 6 */}
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ type: "tween", duration: 0.5 }}
+            className={`flex gap-15 flex-col lg:flex-row my-20 items-center justify-center`}
+          >
+            <div className="  w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
+              <div className="w-full xsm:w-10/12 lg:flex-1 flex items-center text-center lg:text-start lg:items-start  justify-center flex-col">
+                <h3 className=" text-center lg:text-left mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
+                  Ethiopia
+                </h3>
+                <p className="leading-[30px] text-sm sm:text-[16px]  font-worksans tracking-wide text-black-text">
+                  Ethiopia, once known as the "Green Gold of Africa," has faced
+                  significant challenges with deforestation. This has led to
+                  soil erosion, decreased agricultural productivity, and reduced
+                  water availability. Our tree planting initiatives in Ethiopia
+                  focus on restoring native forests, improving soil health, and
+                  promoting sustainable land management practices for a more
+                  resilient future.
+                </p>
+              </div>
+            </div>
+            <Image
+              src="/svgnew/Ethiopia (1).png"
+              width={1000}
+              height={1000}
+              alt="bussnessec2"
+              loading="lazy"
+              className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
+            />
+          </motion.div>
+          {/* <div className="flex items-center gap-10 justify-center flex-col">
             <h1 className=" text-center mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
               Offset the carbon footprint of your business
             </h1>
@@ -380,7 +519,7 @@ const page = () => {
             <Link href="/contact" className="btn">
               Contact Us
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
