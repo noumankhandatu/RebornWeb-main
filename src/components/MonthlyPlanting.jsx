@@ -36,14 +36,15 @@ const MonthlyPlanting = ({ month }) => {
     } else {
       try {
         const apiUrl = process.env.API_URL;
-
+        const unitCost = 5; // cost per tree
+        const totalAmount = treeInp / unitCost; // total cost
         // Assume you already have the accessToken available
 
         const authenticatedResponse = await axios.post(
           `${apiUrl}/order`,
           {
-            unit_cost: "5",
-            tree_count: treeInp,
+            unit_cost: unitCost,
+            tree_count: totalAmount,
           },
           {
             headers: {

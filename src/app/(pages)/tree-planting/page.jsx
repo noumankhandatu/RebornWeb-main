@@ -1,10 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaCalculator, FaSearch } from "react-icons/fa";
-import { PiPottedPlant } from "react-icons/pi";
-import { LiaSearchSolid } from "react-icons/lia";
 import Image from "next/image";
-import ProjectsCard from "@/components/ProjectsCard";
 import Link from "next/link";
 
 const workse2cData = [
@@ -32,7 +28,7 @@ const sec3TimelineData = [
   },
   {
     id: 2,
-    desc: "Prioritizing regions where new forests can create diverse habitats for threatened species",
+    desc: "Prioritizing regions where new forests can create diverse habitats for threatened species.",
   },
   {
     id: 3,
@@ -93,7 +89,9 @@ const page = () => {
           {workse2cData?.map((item, index) => (
             <div
               key={index}
-              className=" transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[350px] gap-8 text-left py-10 shadow-sm bg-white flex items-start flex-col justify-start"
+              className={` ${
+                index === 1 ? "shadow-lg " : "shadow-sm"
+              } transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[350px] gap-8 text-left py-10  bg-white flex items-start flex-col justify-start`}
             >
               <div className="flex items-center gap-5">
                 <Image
@@ -101,7 +99,7 @@ const page = () => {
                   alt="img"
                   height={1000}
                   width={1000}
-                  className="w-[50px] h-[50px]"
+                  className="w-[80px] h-[80px]"
                 />
                 <h5 className="font-poppins font-semibold text-[18px]">
                   {item.title}
@@ -141,14 +139,14 @@ const page = () => {
                 <Image
                   src="/svgnew/Improving Survival Rate.svg"
                   alt="Images"
-                  width={70}
-                  height={50}
+                  width={120}
+                  height={120}
                   className=""
                 />
               </div>
               <div className="timeline-start md:text-end mb-10">
                 <div className="text-[30px] font-poppins font-semibold">
-                  Improving Survival Rate:
+                  Improving Survival Rate
                 </div>
                 Despite employing best practices, planting the right tree at the
                 right time does not guarantee a 100% survival rate. Therefore,
@@ -162,14 +160,14 @@ const page = () => {
                 <Image
                   src="/svgnew/Plantation Site Verification.svg"
                   alt="Images"
-                  width={70}
-                  height={50}
+                  width={120}
+                  height={120}
                   className=""
                 />
               </div>
               <div className="timeline-end mb-10">
                 <div className="text-[30px] font-poppins font-semibold">
-                  Plantation Site Verification:
+                  Plantation Site Verification
                 </div>
                 The monitoring process includes pre-intervention, planting, and
                 post-intervention phases. During these stages, the planting
@@ -185,14 +183,14 @@ const page = () => {
                 <Image
                   src="/svgnew/Innovative project (2).svg"
                   alt="Images"
-                  width={70}
-                  height={50}
+                  width={120}
+                  height={120}
                   className=""
                 />
               </div>
               <div className="timeline-start md:text-end mb-10">
                 <div className="text-[30px] font-poppins font-semibold">
-                  Amplifying Impact:
+                  Amplifying Impact
                 </div>
                 With each sponsored tree, a portion of the proceeds is
                 reinvested into innovative projects that maximize environmental
@@ -271,7 +269,7 @@ const page = () => {
                 return (
                   <li key={item.id}>
                     <hr />
-                    <div className="timeline-middle w-[80px] text-white text-2xl h-[80px] flex items-center justify-center font-semibold bg-yellow-500 rounded-full mx-3">
+                    <div className="timeline-middle w-[80px] text-white text-2xl h-[80px] flex items-center justify-center font-semibold bg-green rounded-full mx-3">
                       {item.id}
                     </div>
                     <div className="timeline-end bg-white shadow-md px-4 py-6 mb-10">
@@ -299,6 +297,9 @@ const page = () => {
       {/* sec 4  */}
       <section className="bg-[#f6f6f6]">
         <div className="w-full max-w-[1800px] my-[40px]   px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto">
+          <h1 className="mt-4 text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-[#3d3d3d]">
+            Where are the tress planted?
+          </h1>
           <motion.div
             initial={{ y: 200, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -328,6 +329,11 @@ const page = () => {
                   the island's natural beauty thrives for generations to come{" "}
                 </p>
               </div>
+              <Link href={"/madagascar"}>
+                <button className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300 mt-4">
+                  Read More
+                </button>
+              </Link>
             </div>
           </motion.div>
           {/* 2 */}
@@ -352,6 +358,11 @@ const page = () => {
                   provide vital nursery grounds for marine life.
                 </p>
               </div>
+              <Link href={"/mozambique"}>
+                <button className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300 mt-4">
+                  Read More
+                </button>
+              </Link>
             </div>
             <Image
               src="/svgnew/Mozambique.png"
@@ -362,7 +373,6 @@ const page = () => {
               className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
             />
           </motion.div>
-
           {/* 3 */}
           <motion.div
             initial={{ y: 200, opacity: 0 }}
@@ -394,6 +404,11 @@ const page = () => {
                   practices.
                 </p>
               </div>
+              <Link href={"/kenya"}>
+                <button className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300 mt-4">
+                  Read More
+                </button>
+              </Link>
             </div>
           </motion.div>
           {/* 4 */}
@@ -417,6 +432,11 @@ const page = () => {
                   millions of people, and promoting biodiversity in the region.
                 </p>
               </div>
+              <Link href={"/honduras"}>
+                <button className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300 mt-4">
+                  Read More
+                </button>
+              </Link>
             </div>
             <Image
               src="/svgnew/Honduras (2).png"
@@ -457,6 +477,11 @@ const page = () => {
                   for generations to come.
                 </p>
               </div>
+              <Link href={"/ethiopia"}>
+                <button className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300 mt-4">
+                  Read More
+                </button>
+              </Link>
             </div>
           </motion.div>
           {/* 6 */}
@@ -481,6 +506,11 @@ const page = () => {
                   resilient future.
                 </p>
               </div>
+              <Link href={"/ethiopia"}>
+                <button className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300 mt-4">
+                  Read More
+                </button>
+              </Link>
             </div>
             <Image
               src="/svgnew/Ethiopia (1).png"

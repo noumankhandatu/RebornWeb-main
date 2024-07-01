@@ -242,11 +242,11 @@ export default function StepperComp() {
                   <FaTree size={30} className="mb-8 arrow text-white" />
 
                   <h4 className="text-2xl text-white  font-semibold">
-                    Monthly{" "}
-                    <span className="text-white gr-span"> Subscription</span>
+                    My Team
                   </h4>
                   <p className="text-[16px] text-white  font-worksans pt-2">
-                    Making the planet greener every month.
+                    Input your team size, we'll take care of the carbon credits
+                    & trees
                   </p>
                 </div>
                 <div
@@ -262,10 +262,11 @@ export default function StepperComp() {
                   <FaTree size={30} className=" arrow text-white" />
 
                   <h4 className="text-2xl mt-5  font-semibold">
-                    <span className="text-white gr-span">Occasional</span>
+                    <span className="text-white gr-span">My company</span>
                   </h4>
                   <p className="text-[16px]  text-white font-worksans pt-2">
-                    Flexible tree planting support.
+                    Use our extensive network of trusted projects that can cater
+                    to any size. Contact us to discuss your needs.
                   </p>
                 </div>
                 <Link
@@ -280,13 +281,11 @@ export default function StepperComp() {
                 >
                   <FaTree size={30} className="mb-10 arrow text-white" />
                   <h4 className="text-2xl  font-semibold">
-                    <span className=" text-white gr-span">
-                      Tree Planting Integration
-                    </span>
+                    <span className=" text-white gr-span">Something else</span>
                   </h4>
                   <p className="text-[16px] text-white  font-worksans pt-2">
-                    Plant a tree for every sale or other company activity using
-                    our API integrations.
+                    Got a specific idea or need help deciding how best to make
+                    an impact? Contact us!
                   </p>
                 </Link>
               </div>

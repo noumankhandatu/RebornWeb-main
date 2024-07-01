@@ -63,11 +63,17 @@ const MyTeamOffset = () => {
             Start Sustainable
           </h3>
           <div>
-            <h5 className="text-[20px] font-semibold text-white">£8.25</h5>
-            <p className="text-[12px] text-white">Per employee per month</p>
+            <h5 className="text-[20px] font-semibold text-white font-poppins">
+              £8.25
+            </h5>
+            <p className="text-[12px] text-white font-poppins">
+              Per employee per month
+            </p>
           </div>
-          <p className="text-white text-[14px] font-worksans">
-            Take the first step towards a sustainable workplace.
+          <p className="text-white text-[14px] font-poppins">
+            <b>
+              <i> Take the first step towards a sustainable workplace.</i>
+            </b>
           </p>
           {renderSelect(globalTror, setGlobalTror)}
         </div>
@@ -84,13 +90,16 @@ const MyTeamOffset = () => {
             Reduce Your Footprint
           </h3>
           <div>
-            <h5 className="text-[20px] font-semibold">£15.50</h5>
-            <p className="text-[12px] text-black-text">
+            <h5 className="text-[20px] font-semibold font-poppins">£15.50</h5>
+            <p className="text-[12px] text-black-text font-poppins">
               Per employee per month
             </p>
           </div>
-          <p className="text-black-text text-[14px] font-worksans">
-            Do your part for a greener future.
+          <p className="text-black-text text-[14px] font-poppins">
+            <i>
+              {" "}
+              <b>Do your part for a greener future.</b>
+            </i>
           </p>
           {renderSelect(freqTravel, setFreqTravel)}
         </div>
@@ -107,11 +116,17 @@ const MyTeamOffset = () => {
             Big Impact
           </h3>
           <div>
-            <h5 className="text-[20px] font-semibold  text-white">£26.70</h5>
-            <p className="text-[12px] text-white">Per employee per month</p>
+            <h5 className="text-[20px] font-semibold  text-white font-poppins">
+              £26.70
+            </h5>
+            <p className="text-[12px] text-white font-poppins">
+              Per employee per month
+            </p>
           </div>
-          <p className="text-[14px] font-worksans text-white">
-            Make the biggest difference for the environment.
+          <p className="text-[14px] font-poppins text-white">
+            <i>
+              <b> Make the biggest difference for the environment.</b>
+            </i>
           </p>
           {renderSelect(standWork, setStandWork)}
         </div>
@@ -119,7 +134,6 @@ const MyTeamOffset = () => {
       <div className="flex my-10 items-center justify-between w-full">
         <p class="block max-w-sm p-6 bg-green  border border-green rounded-lg shadow hover:bg-lime-700 ">
           <p class=" font-poppins font-normal text-white ">
-            {" "}
             Total: £{allPrice.toFixed(2)} / month
           </p>
         </p>
