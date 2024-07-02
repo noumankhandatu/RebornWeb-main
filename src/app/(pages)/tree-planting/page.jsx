@@ -44,7 +44,10 @@ const page = () => {
   return (
     <div className="overflow-hidden h-full">
       <div
-        style={{ backgroundImage: "url('/assets/images/treeplantmain.jpg')" }}
+        style={{
+          backgroundImage:
+            "url('/tree-plating/Untitled design - 2024-06-22T091341.388.png')",
+        }}
         className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
       >
         <motion.h3

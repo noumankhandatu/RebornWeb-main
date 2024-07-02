@@ -5,6 +5,7 @@ import { FaHandshake, FaLightbulb, FaRecycle } from "react-icons/fa";
 import { IoMdLeaf } from "react-icons/io";
 import { MdTravelExplore } from "react-icons/md";
 import Head from "next/head";
+import ContactCom from "@/components/ContactCom";
 
 // Define metadata
 
@@ -229,10 +230,19 @@ const Page = () => {
         </div>
       </section>
 
-      <h3 className="w-fulls  leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-black-text font-medium font-worksans text-center">
-        Go Green, Achieve Carbon Neutrality, <br /> Shape the Future. Start Your
-        Journey Today!
-      </h3>
+      <div className="overflow-hidden h-full">
+        <section className="w-full mt-20 bg-[#f6f6f6]  max-w-[1800px] px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+          <div className="w-full flex flex-col items-center justify-center">
+            <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]"></h1>
+            <p className=" mb-12  text-black text-center text-[30px]">
+              Go Green, Achieve Carbon Neutrality, Shape the Future. <br />{" "}
+              Start Your Journey Today!
+            </p>
+          </div>
+
+          <ContactCom />
+        </section>
+      </div>
       {/* <section className="w-full max-w-[1800px] my-[160px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto">
         <div className="flex gap-20 flex-col lg:flex-row items-center justify-center">
           <div className=" w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1  flex items-center justify-center flex-col">
