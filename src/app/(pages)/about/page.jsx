@@ -15,24 +15,28 @@ const sec2CardData = [
     icon: "/aboutus/Transparency.svg",
     text1:
       "We are dedicated to maintaining transparency and honesty in all our endeavors. Rest assured, we will consistently align our actions with our words so you cantrust us to fulfill our commitments.",
+    link: "/carbon-offsets",
   },
   {
     title: "Continuous Innovation",
     icon: "/aboutus/Continuous Innovation.svg",
     text1:
-      "Innovation is in our DNA. We're always on the lookout for fresh and unique ideas and cutting-edge technologies to boost our impact on the environment, such as our Instant <<<< Carbon Footprint Offset Luggage Tag>>> and our <<<Coffee Shop Loyalty Program>>>.",
+      "Innovation is in our DNA. We're always on the lookout for fresh and unique ideas and cutting-edge technologies to boost our impact on the environment, such as our Instant ",
+    link: "/carbon-offsets",
   },
   {
     title: "Education",
     icon: "/aboutus/Education.svg",
     text1:
       "Education is key. That's why we're passionate about sharing information and resources to empower individuals to make sustainable choices. Through education and support, we strive to inspire action and create a greener future for all.",
+    link: "/carbon-offsets",
   },
   {
     title: "Collaboration",
     icon: "/aboutus/Colaboration.svg",
     text1:
       "Together, we're a force to be reckoned with. Our collaborative approach brings people together to work towards a common goal: protecting our planet. By fostering a sense of community and unity, we amplify our impact for a more sustainable tomorrow.",
+    link: "/carbon-offsets",
   },
 ];
 
@@ -76,7 +80,10 @@ const Page = () => {
         style={{ backgroundImage: "url('/aboutus/Our Story .png')" }}
         className=" mb-[80px] bg-cover w-full px-[30px] lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
       >
-        <h3 className="  leading-normal text-center mt-5 lg:leading-[40px] xll:leading-[100px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[35px] text-white font-medium font-worksans">
+        <h3
+          style={{ lineHeight: "60px" }}
+          className="  leading-normal text-center mt-5 lg:leading-[40px] xll:leading-[100px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[35px] text-white font-medium font-worksans"
+        >
           Our Story About Why and How We Became <br /> Involved In Saving the
           Planet
         </h3>
@@ -151,26 +158,25 @@ const Page = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mdd:grid-cols-3 xl:grid-cols-4 gap-6 items-center justify-center">
           {sec2CardData?.map((item, index) => (
-            <div
-              key={index}
-              className=" w-full h-full hover:scale-90 text-center p flex items-start justify-between bg-white duration-500 rounded-xl border "
-            >
-              <div className="gap-y-3 px-2 py-8  w-full h-full rounded-xl flex items-center justify-start flex-col  ">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  height={2000}
-                  width={2000}
-                  className="w-[55px] h-[55px]"
-                />
-                <h1 className="text-center font-poppins text-[20px] lg:text-[25px] font-[500] text-[#3d3d3d]">
-                  {item.title}
-                </h1>
-                <p className=" text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6 capitalize text-black-text font-worksans">
-                  {item.text1}
-                </p>
+            <Link href={item.link} key={index}>
+              <div className=" w-full h-[450px] hover:scale-90 text-center p flex items-start justify-between bg-white duration-500 rounded-xl border ">
+                <div className="gap-y-3 px-2 py-8  w-full h-full rounded-xl flex items-center justify-start flex-col  ">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    height={2000}
+                    width={2000}
+                    className="w-[75px] h-[75px]"
+                  />
+                  <h1 className="text-center font-poppins text-[20px] lg:text-[25px] font-[500] text-[#3d3d3d] h-[90px]">
+                    {item.title}
+                  </h1>
+                  <p className=" text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6  text-black-text font-worksans">
+                    {item.text1}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
