@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           path === "/for-Business" ||
           path === "/tree-planting" ||
           path === "/Register" ||
-          path === "/Login" ||
+          path === "/login" ||
           path === "/Reset-password" ||
           path === "/Forget-password" ||
           path === "/about" ||

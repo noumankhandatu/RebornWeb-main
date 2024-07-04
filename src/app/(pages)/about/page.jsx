@@ -225,7 +225,7 @@ const Page = () => {
           </div>
           <div className=" w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1 relative flex items-center justify-center flex-col">
             <Image
-              src="/aboutus/Mission Statement.png"
+              src="/aboutus/Mission_Statement.jpeg"
               width={2000}
               height={2000}
               alt="bussnessec2"
