@@ -157,24 +157,27 @@ const Page = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mdd:grid-cols-3 xl:grid-cols-4 gap-6 items-center justify-center">
           {sec2CardData?.map((item, index) => (
-              <div className=" w-full h-[450px] hover:scale-90 text-center p flex items-start justify-between bg-white duration-500 rounded-xl border ">
-                <div className="gap-y-3 px-2 py-8  w-full h-full rounded-xl flex items-center justify-start flex-col  ">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    height={2000}
-                    width={2000}
-                    className="w-[75px] h-[75px]"
-                  />
-                  <h1 className="text-center font-poppins text-[20px] lg:text-[25px] font-[500] text-[#3d3d3d] h-[90px]">
-                    {item.title}
-                  </h1>
-                  <p
-                    className="text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6 text-black-text font-worksans"
-                    dangerouslySetInnerHTML={{ __html: item.text1 }}
-                  ></p>
-                </div>
+            <div
+              key={index}
+              className="w-full h-[450px] hover:scale-90 text-center p flex items-start justify-between bg-white duration-500 rounded-xl border"
+            >
+              <div className="gap-y-3 px-2 py-8 w-full h-full rounded-xl flex items-center justify-start flex-col">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  height={75}
+                  width={75}
+                  className="w-[75px] h-[75px]"
+                />
+                <h1 className="text-center font-poppins text-[20px] lg:text-[25px] font-[500] text-[#3d3d3d] h-[90px]">
+                  {item.title}
+                </h1>
+                <p
+                  className="text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6 text-black-text font-worksans"
+                  dangerouslySetInnerHTML={{ __html: item.text1 }}
+                ></p>
               </div>
+            </div>
           ))}
         </div>
       </section>
