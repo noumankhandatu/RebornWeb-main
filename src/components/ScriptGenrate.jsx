@@ -140,7 +140,7 @@ const ScriptGenrate = ({ userApi }) => {
           onClick={() => generateScript()}
           className="px-8 py-4 bg-blue-800 text-white hover:bg-blue-900 rounded-md"
         >
-          Genrate Script
+          Generate Script
         </button>
       )}
     </div>

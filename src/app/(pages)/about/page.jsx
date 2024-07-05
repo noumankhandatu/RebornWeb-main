@@ -20,8 +20,7 @@ const sec2CardData = [
   {
     title: "Continuous Innovation",
     icon: "/aboutus/Continuous Innovation.svg",
-    text1:
-      "Innovation is in our DNA. We're always on the lookout for fresh and unique ideas and cutting-edge technologies to boost our impact on the environment, such as our Instant ",
+    text1: `Innovation is in our DNA. We're always on the lookout for fresh and unique ideas and cutting-edge technologies to boost our impact on the environment, such as our <a href="/carbon-offsets">Carbon Footprint Offset Luggage Tag</a> and our <a href="/coffee">Coffee Shop Loyalty Program</a>.`,
     link: "/carbon-offsets",
   },
   {
@@ -158,7 +157,6 @@ const Page = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mdd:grid-cols-3 xl:grid-cols-4 gap-6 items-center justify-center">
           {sec2CardData?.map((item, index) => (
-            <Link href={item.link} key={index}>
               <div className=" w-full h-[450px] hover:scale-90 text-center p flex items-start justify-between bg-white duration-500 rounded-xl border ">
                 <div className="gap-y-3 px-2 py-8  w-full h-full rounded-xl flex items-center justify-start flex-col  ">
                   <Image
@@ -171,12 +169,12 @@ const Page = () => {
                   <h1 className="text-center font-poppins text-[20px] lg:text-[25px] font-[500] text-[#3d3d3d] h-[90px]">
                     {item.title}
                   </h1>
-                  <p className=" text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6  text-black-text font-worksans">
-                    {item.text1}
-                  </p>
+                  <p
+                    className="text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6 text-black-text font-worksans"
+                    dangerouslySetInnerHTML={{ __html: item.text1 }}
+                  ></p>
                 </div>
               </div>
-            </Link>
           ))}
         </div>
       </section>

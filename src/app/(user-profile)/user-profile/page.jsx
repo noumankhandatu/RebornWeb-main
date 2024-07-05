@@ -131,9 +131,9 @@ getTreeData()
                <LeftSideBar />
                <main className='max-w-[1800px] flex-1 bg-[#fbfbfb] px-[0px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto h-full'>
           <h3 className=' text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-black-text font-medium font-worksans'>Welcome <span className='text-green font-semibold'>{name && name}</span></h3>
-{
+{/* {
   isGenrateApi && <ScriptGenrate userApi={userApi}  />
-}
+} */}
           <div className='w-full flex flex-col gap-5 items-center justify-center'>
           <div style={{ backgroundImage: "url('/assets/images/treeplantmain.jpg')" }} className='bg-white w-[90%] flex relative items-center flex-col justify-center px-3 h-[300px] mt-4 shadow-2xl py-10 bg-cover bg-no-repeat rounded-xl '>
                 <h1 className='z-10 text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-white font-medium font-worksans'>{treePlanted} trees planted</h1>

@@ -165,7 +165,7 @@ const MyTeam = () => {
             disable ? "bg-[#14a80050]" : "bg-green"
           } px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px]  py-3 rounded-sm text-white font-semibold font-worksans tracking-wide`}
         >
-          Continus
+          Continue
         </button>
       </div>
     </section>

@@ -81,13 +81,13 @@ const Page = () => {
 
 
 
-                    <div className='my-12 flex items-center justify-start flex-col gap-6'>
+                    {/* <div className='my-12 flex items-center justify-start flex-col gap-6'>
                     <h3 className=' text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[30px] lg:text-[40px] xll:text-[50px] text-black-text font-medium font-worksans'>Account Management</h3>
                     <div className=' w-full sm:w-[70%] flex items-center justify-center flex-col gap-1 px-4 text-center py-5 bg-white border shadow-lg min-h-[200px]'>
                         <p className=' text-[18px] xsm:text-[20px]'>Would you like to close your account with Treeapp?</p>
                         <button className='text-red-600 hover:text-red-400 duration-200 px-6 py-3 rounded-sm text-lg font-semibold'>Delete Your Account</button>
                     </div>
-                    </div>
+                    </div> */}
 
 
                 </main>

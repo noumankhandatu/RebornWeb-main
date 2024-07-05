@@ -33,28 +33,28 @@ const Page = () => {
       TDes: "Here you will see the trees for which you will be billed at the end of this billing period. Seeing unbilled trees allows you to understand if the API integration worked successfully.",
       TData:true,
     },
-    {
-      name: "Zapier",
-      title: "Guide",
-      desc: "Zapier allows you to integrate tree planting into your business without any coding. To set it up, just open our step-by-step guide by clicking the button to the right.  ",
-      li: false,
-      liData: '',
-      sTitle: "Zapier Keys",
-      sDes: " These keys will allow you to connect Zapier to Treeapp.",
-      tTitle: "Unbilled trees",
-      TDes: "Here you will see the trees for which you will be billed at the end of this billing period. Seeing unbilled trees allows you to understand if the Zapier integration worked successfully.",
-      TData:true,
-    },
-    {
-      name: "widget",
-      title: "Guide",
-      desc: "The Treeapp tree counter widget is a dynamic graphic element that can be added to your website pages to display the number of trees you've planted with Treeapp. This allows anyone who visits your website to see the tree-mendous positive impact your company has on the environment! To set it up, just open our step-by-step guide by clicking the button to the right.  ",
-      li: true,
-      liData: ["Generate an API key below by clicking “+ Add a new API key” and inputting your payment details or choosing to pay by invoice.", "Copy the API key and send it to your developers along with the link to our documentation (View the Docs to the right).", "If you’d like to test the integration with a test API key first, contact us and we’ll provide one!"],
-      sTitle: "Widget Keys",
-      sDes: "This key will allow you to set up a tree counter widget on your website",
-      TData:false,
-    },
+    // {
+    //   name: "Zapier",
+    //   title: "Guide",
+    //   desc: "Zapier allows you to integrate tree planting into your business without any coding. To set it up, just open our step-by-step guide by clicking the button to the right.  ",
+    //   li: false,
+    //   liData: '',
+    //   sTitle: "Zapier Keys",
+    //   sDes: " These keys will allow you to connect Zapier to Treeapp.",
+    //   tTitle: "Unbilled trees",
+    //   TDes: "Here you will see the trees for which you will be billed at the end of this billing period. Seeing unbilled trees allows you to understand if the Zapier integration worked successfully.",
+    //   TData:true,
+    // },
+    // {
+    //   name: "widget",
+    //   title: "Guide",
+    //   desc: "The Treeapp tree counter widget is a dynamic graphic element that can be added to your website pages to display the number of trees you've planted with Treeapp. This allows anyone who visits your website to see the tree-mendous positive impact your company has on the environment! To set it up, just open our step-by-step guide by clicking the button to the right.  ",
+    //   li: true,
+    //   liData: ["Generate an API key below by clicking “+ Add a new API key” and inputting your payment details or choosing to pay by invoice.", "Copy the API key and send it to your developers along with the link to our documentation (View the Docs to the right).", "If you’d like to test the integration with a test API key first, contact us and we’ll provide one!"],
+    //   sTitle: "Widget Keys",
+    //   sDes: "This key will allow you to set up a tree counter widget on your website",
+    //   TData:false,
+    // },
   ]
   const [filteredItems, setFilteredItems] = useState([]);
   const [filter, setFilter] = useState('Api');
@@ -90,7 +90,7 @@ const Page = () => {
           <p className='text-[13px] xsm:text-[16px] font-poppins text-black w-[90%]  sm:w-[70%] mx-auto font-normal xsm:font-medium text-center tracking-wide mb-6 '>Explore our automated solutions and easily integrate tree planting into your business </p>
           <div className='flex flex-col xsm:flex-row items-center gap-9 justify-center w-full'>
             <button onClick={() => setFilter('Api')} className={`${filter === 'Api' ? 'bg-[#8b8239]' : 'bg-[#cbb92d]' } text-[20px] font-worksans text-[#fff] hover:scale-105 duration-200 px-6 py-2  rounded-md`}>Api</button>
-            <button onClick={() => setFilter('Zapier')}  className={`${filter === 'Zapier' ? 'bg-[#8b8239]' : 'bg-[#cbb92d]' } text-[20px] font-worksans text-[#fff] hover:scale-105 duration-200 px-6 py-2 bg-[#cbb92d] rounded-md`}>Zapier</button>
+            {/* <button onClick={() => setFilter('Zapier')}  className={`${filter === 'Zapier' ? 'bg-[#8b8239]' : 'bg-[#cbb92d]' } text-[20px] font-worksans text-[#fff] hover:scale-105 duration-200 px-6 py-2 bg-[#cbb92d] rounded-md`}>Zapier</button> */}
             <button onClick={() => setFilter('Widget')}  className={`${filter === 'Widget' ? 'bg-[#8b8239]' : 'bg-[#cbb92d]' } text-[20px] font-worksans text-[#fff] hover:scale-105 duration-200 px-6 py-2 bg-[#cbb92d] rounded-md`}>Widget</button>
           </div>
           <div className='w-full flex flex-col gap-5 items-center justify-center'>

@@ -94,7 +94,7 @@ const page = () => {
               key={index}
               className={` ${
                 index === 1 ? "shadow-lg " : "shadow-sm"
-              } transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[350px] gap-8 text-left py-10  bg-white flex items-start flex-col justify-start`}
+              } transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[400px] gap-8 text-left py-10  bg-white flex items-start flex-col justify-start`}
             >
               <div className="flex items-center gap-5">
                 <Image
