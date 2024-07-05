@@ -6,14 +6,13 @@ import { parseCookies } from "nookies";
 import { useEffect, useState, React } from "react";
 
 import { useUser } from "../../../../lib/UserConext";
-const page = () => {
+const Page = () => {
   const userData = useUser();
 
   const cookies = parseCookies();
   const accesstoken = cookies?.access_token;
   const [userApi, setUserApi] = useState(null);
   const [isGenrateApi, setIsGenrateApi] = useState(false);
-  const [disable, setDiable] = useState(false);
 
   if (!accesstoken) {
     redirect("/login");
@@ -98,4 +97,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
