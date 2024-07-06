@@ -10,6 +10,7 @@ const Page = () => {
   const cookies = parseCookies();
   const accessToken = cookies?.access_token;
   const [userApi, setUserApi] = useState(null);
+  const [isCancelled, setIsCancelled] = useState(false);
 
   const [subscriptionData, setSubscriptionData] = useState([]);
 
@@ -51,6 +52,8 @@ const Page = () => {
   }, [userData, userApi]);
 
   const cancelSubscription = async (subscriptionId) => {
+    setIsCancelled(true);
+
     try {
       const apiUrl = `${process.env.API_URL}/subscription/cancel`;
       const response = await fetch(apiUrl, {
@@ -72,6 +75,7 @@ const Page = () => {
         console.error("Failed to cancel subscription:", response.status);
       }
     } catch (error) {
+        setIsCancelled(false)
       console.error("Request failed:", error.message);
     }
   };
@@ -105,6 +109,7 @@ const Page = () => {
                 {subscription.status !== "canceled" && (
                   <button
                     onClick={() => cancelSubscription(subscription.id)}
+                    disabled={isCancelled} // Disable the button when isCancelled is true
                     className="cancel-button"
                   >
                     Cancel
