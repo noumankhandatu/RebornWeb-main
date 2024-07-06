@@ -2,13 +2,10 @@
 import LeftSideBar from "@/components/LeftSideBar";
 import { redirect } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import { parseCookies } from "nookies";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import toast from "react-hot-toast";
 import { useUser } from "../../../../lib/UserConext";
-import ScriptGenrate from "@/components/ScriptGenrate";
 const Page = () => {
   const userData = useUser();
 
@@ -19,7 +16,7 @@ const Page = () => {
   const [isGenrateApi, setIsGenrateApi] = useState(false);
   const [treePlanted, setTreePlanted] = useState(0);
   const [climatePoints, setClimatePoints] = useState(0);
-  const [profilePicture, setProfilePicture] = useState('')
+  const [profilePicture, setProfilePicture] = useState("");
 
   useEffect(() => {
     const cookies = parseCookies();
@@ -28,9 +25,10 @@ const Page = () => {
     setName(name);
     if (userData !== undefined) {
       setUserApi(userData?.data.api_key);
-      if(userData?.data.logo)
-      setProfilePicture(`https://backend.reborngreen.org/${userData?.data.logo}`); // Assuming profile picture URL is in userData
-
+      if (userData?.data.logo)
+        setProfilePicture(
+          `https://backend.reborngreen.org/${userData?.data.logo}`
+        ); // Assuming profile picture URL is in userData
     }
     if (userApi !== undefined && userApi !== null) {
       setIsGenrateApi(true);
@@ -112,56 +110,163 @@ const Page = () => {
       <section className="w-full flex items-start justify-start mt-20 min-h-screen ">
         <LeftSideBar />
         <main className="max-w-[1800px] flex-1 bg-[#fbfbfb] px-[0px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto h-full">
-          <h3 className=" text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-black-text font-medium font-worksans">
-            Welcome{" "}
-            <span className="text-green font-semibold">{name && name}</span>
-          </h3>
-          {profilePicture && (
-            <div className='flex justify-center mt-4'>
-              <Image src={profilePicture} alt='Profile Picture' width={100} height={100} className='rounded-full' />
+          <div
+            style={{
+              backgroundImage: "url('/assets/dashboard/Backgroung.png')",
+            }}
+            className="w-full flex flex-col gap-5 items-center min-h-1/3 bg-cover bg-center"
+          >
+            <div className="flex items-center justify-center gap-4 mt-4">
+              {profilePicture && (
+                <div className="flex-shrink-0">
+                  <Image
+                    src={profilePicture}
+                    alt="Profile Picture"
+                    width={100}
+                    height={100}
+                    className="rounded-full"
+                  />
+                </div>
+              )}
+              <h3 className="text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-black-text font-medium font-worksans">
+                Welcome{" "}
+                <span className="text-green font-semibold">{name && name}</span>
+              </h3>
             </div>
-          )}
-          {/* {
-  isGenrateApi && <ScriptGenrate userApi={userApi}  />
-} */}
-          <div className="w-full flex flex-col gap-5 items-center justify-center">
-            <div
-              style={{
-                backgroundImage: "url('/assets/images/treeplantmain.jpg')",
-              }}
-              className="bg-white w-[90%] flex relative items-center flex-col justify-center px-3 h-[300px] mt-4 shadow-2xl py-10 bg-cover bg-no-repeat rounded-xl "
-            >
-              <h1 className="z-10 text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-white font-medium font-worksans">
-                {treePlanted} trees planted
-              </h1>
 
-              <div className="absolute overflow-hidden rounded-xl z-0 top-0 left-0 w-full h-full bg-[#000] opacity-[0.4]"></div>
-            </div>
-            {!isGenrateApi && (
-              <div className="flex items-center justify-center w-full my-6">
-                <button
-                  disabled={disable}
-                  onClick={() => generateApi()}
-                  className={` ${
-                    disable && "opacity-50"
-                  } text-lg bg-secondary font-semibold hover:bg-green cursor-pointer px-4 py-3 rounded-lg text-white`}
-                >
-                  Genrate a Key
-                </button>
+            <h3 className=" text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-black-text font-medium font-worksans">
+              An Overview of your Climate Impact
+            </h3>
+
+            {/* two cards */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="w-1/4 max-w-lg bg-blue-100 shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
+                <img
+                  className="w-32 h-auto object-cover"
+                  src="/assets/dashboard/1.svg"
+                  alt="Card Image"
+                />
+
+                <div className="p-4 text-center">
+                  <h2 className="text-xl font-semibold text-gray-800">
+                    {treePlanted} Tree Planted
+                  </h2>
+                  <p className="text-gray-600 mt-2">
+                    Your trees will absorb {treePlanted * 0.1096} tonnes of CO2
+                    through their lifetime.
+                  </p>
+                </div>
               </div>
-            )}
 
-            <div
-              style={{ backgroundImage: "url('/assets/images/reforest.jpg')" }}
-              className="bg-white w-[90%] flex relative items-center flex-col justify-center px-3 h-[300px] mt-4 shadow-2xl py-10 bg-cover bg-no-repeat rounded-xl "
-            >
-              <h1 className="z-10 text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-white font-medium font-worksans">
-                You have {climatePoints} climate points
-              </h1>
+              <div className="w-1/4 max-w-lg bg-blue-100 shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
+                <img
+                  className="w-32 h-auto object-cover"
+                  src="/assets/dashboard/2.svg"
+                  alt="Card Image"
+                />
 
-              {/* <Link href='' className='text-white text-2xl underline my-3 z-20 font-semibold' >See All Assets</Link> */}
+                <div className="p-4 text-center">
+                  <h2 className="text-xl font-semibold text-gray-800">
+                    {climatePoints} Tonnes CO2 Offset
+                  </h2>
+                  <p className="text-gray-600 mt-2">
+                    You have supported verified carbon projects across the
+                    globe.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <div className="absolute overflow-hidden rounded-xl z-0 top-0 left-0 w-full h-full bg-[#000] opacity-[0.4]"></div>
+          {/* // bottom section */}
+
+          <div
+            style={{ backgroundColor: "lightgrey", marginTop: "4px" }}
+            className="h-screen h-1/4 bg-cover bg-center flex items-center justify-center"
+          >
+            <div className="flex flex-wrap justify-center max-w-screen-xl gap-8 p-4">
+              {/* First Card */}
+              <div className="w-full sm:w-1/2 md:w-1/4">
+                <div className="">
+                  <img
+                    className="w-1/2 "
+                    src="/assets/dashboard/car.svg"
+                    alt="Card Image"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      Equivalent Car Emissions
+                    </h2>
+                    <p className="text-gray-600 mt-2">
+                      Avoiding{" "}
+                      {(treePlanted * 0.1096 + climatePoints).toFixed(2)} tonnes
+                      of CO2 is like taking a car off the road for about{" "}
+                      {((treePlanted * 0.1096 + climatePoints) / 0.408).toFixed(
+                        2
+                      )}{" "}
+                      kilometers (
+                      {(
+                        ((treePlanted * 0.1096 + climatePoints) / 0.408) *
+                        0.621371
+                      ).toFixed(2)}{" "}
+                      miles).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Second Card */}
+              <div className="w-full sm:w-1/2 md:w-1/4">
+                <div className="">
+                  <img
+                    className="w-1/2"
+                    src="/assets/dashboard/house.svg"
+                    alt="Card Image"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      Equivalent Energy Used
+                    </h2>
+                    <p className="text-gray-600 mt-2">
+                      Avoiding{" "}
+                      {(treePlanted * 0.1096 + climatePoints).toFixed(2)} tonnes
+                      of CO2 is equivalent to the annual electricity use of an
+                      average household for about{" "}
+                      {(
+                        ((treePlanted * 0.1096 + climatePoints) * 3.6) /
+                        11000
+                      ).toFixed(2)}{" "}
+                      month
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Third Card */}
+              <div className="w-full sm:w-1/2 md:w-1/4">
+                <div className="">
+                  <img
+                    className="w-1/2"
+                    src="/assets/dashboard/cycle.svg"
+                    alt="Card Image"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      Equivalent Waste Recycling
+                    </h2>
+                    <p className="text-gray-600 mt-2">
+                      Avoiding{" "}
+                      {(treePlanted * 0.1096 + climatePoints).toFixed(2)} tonnes
+                      of CO2 is equivalent to recycling about{" "}
+                      {(
+                        ((treePlanted * 0.1096 + climatePoints) * 1000) /
+                        0.15
+                      ).toFixed(2)}{" "}
+                      plastic bottles instead of sending them to landfill
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </main>
