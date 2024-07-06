@@ -1,9 +1,6 @@
-import BgNavbar from "@/components/BgNavbar";
+"use client";
+import { easeIn, easeInOut, motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { FaHandshake, FaLightbulb, FaRecycle } from "react-icons/fa";
-import { IoMdLeaf } from "react-icons/io";
-import { MdTravelExplore } from "react-icons/md";
 import Head from "next/head";
 import ContactCom from "@/components/ContactCom";
 
@@ -77,16 +74,23 @@ const Page = () => {
 
       <div
         style={{ backgroundImage: "url('/aboutus/Our Story .png')" }}
-        className=" mb-[80px] bg-cover w-full px-[30px] lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
+        className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
       >
-        <h3
-          style={{ lineHeight: "60px" }}
-          className="  leading-normal text-center mt-5 lg:leading-[40px] xll:leading-[100px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[35px] text-white font-medium font-worksans"
+        <motion.h3
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
           Our Story About Why and How We Became <br /> Involved In Saving the
           Planet
-        </h3>
+        </motion.h3>
+       
+
+        <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
       </div>
+
 
       {/* about sec 1  */}
       <section className="w-full max-w-[1800px] mb-[160px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto">

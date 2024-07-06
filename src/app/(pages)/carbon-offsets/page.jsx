@@ -36,14 +36,14 @@ const Page = () => {
     <div className="overflow-hidden h-full">
       <div
         style={{ backgroundImage: "url('/Untitled design - 2024-05-15T170119.931.png')" }}
-        className="flex-col h-[95vh] flex items-center justify-center bg-cover w-full px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
+        className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
       >
         <motion.h3
           initial={{ y: 200 }}
           viewport={{ once: true }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.5 }}
-          className="z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[30px] xll:text-[30px] text-white font-medium font-worksans"
+          className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
           <span className="text-white">Start Your Net Zero Journey!</span>
         </motion.h3>
