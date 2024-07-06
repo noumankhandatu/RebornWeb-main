@@ -73,6 +73,7 @@ const Page = () => {
         // Subscription successfully cancelled
         // You may want to update the UI or fetch subscription data again
         console.log("Subscription cancelled successfully");
+        getSubscriptionData()
       } else {
         // Handle HTTP error responses
         console.error("Failed to cancel subscription:", response.status);
