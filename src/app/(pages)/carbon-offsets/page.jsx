@@ -2,6 +2,7 @@
 import TracingBeam from '@/components/TracingBeam';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Link from 'next/link'
 
 const items = [
   {
@@ -200,6 +201,7 @@ const Page = () => {
                 </h2>
                 <p style={{ lineHeight: 2, fontSize: 15 }} className=" text-[#B3917E] mb-6">
                   Reduce your environmental footprint with high-quality projects that benefit the planet. Select your plan directly from your  account.                </p>
+                  <Link href="/login">
                 <button className="bg-blue-600 text-white font-semibold py-4 px-8 rounded ">
                   <div className='flex w-[150px] justify-center'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
@@ -214,6 +216,7 @@ const Page = () => {
                   </div>
 
                 </button>
+                </Link>
 
               </div>
               <div className="w-full lg:w-1/2 flex justify-center lg:justify-end flex-col">
