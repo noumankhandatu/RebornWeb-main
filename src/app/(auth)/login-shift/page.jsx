@@ -82,7 +82,7 @@ const Login = () => {
             httpOnly: false,
           });
 
-          router.push("/");
+          router.push("/user-profile");
         } else if (response.data.status === 400) {
           console.log(response);
           setLoading(false);
