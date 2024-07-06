@@ -73,7 +73,7 @@ const MyTeamOffset = () => {
         );
 
         if (authenticatedResponse.status === 200) {
-          redirectToStripe(authenticatedResponse.data.data.id);
+          await redirectToStripe(authenticatedResponse.data.data.id);
           setDisable(false);
         } else {
           // Handle error response

@@ -109,7 +109,7 @@ const Page = () => {
                   <p>Subscription Cost: {subscription.grand_total} GBP</p>
                 </div>
                 {subscription.status !== "canceled" && (
-                  <button onClick={cancelSubscription(subscription.id)} className="cancel-button">Cancel</button>
+                    <button onClick={() => cancelSubscription(subscription.id)} className="cancel-button">Cancel</button>
                 )}
               </div>
             ))}
