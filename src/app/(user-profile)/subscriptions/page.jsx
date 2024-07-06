@@ -1,17 +1,21 @@
-"use client";
-import LeftSideBar from "@/components/LeftSideBar";
-import { redirect } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { parseCookies } from "nookies";
-import { useEffect, useState, React } from "react";
-import { useUser } from "../../../../lib/UserConext";
+import LeftSideBar from "@/components/LeftSideBar";
+import { useUser } from "../../../../lib/UserContext";
+
 const Page = () => {
+  const router = useRouter();
+  const { access_token: accessToken } = parseCookies();
   const userData = useUser();
-
-  const cookies = parseCookies();
-  const accesstoken = cookies?.access_token;
   const [userApi, setUserApi] = useState(null);
-
   const [subscriptionData, setSubscriptionData] = useState([]);
+
+  useEffect(() => {
+    if (!accessToken) {
+      router.push("/login");
+    }
+  }, [accessToken, router]);
 
   const getSubscriptionData = async () => {
     try {
@@ -25,37 +29,33 @@ const Page = () => {
 
       if (response.ok) {
         const data = await response.json();
-        if (data.status !== 200) {
-        } else {
+        if (data.status === 200) {
           setSubscriptionData(data.data);
+        } else {
+          console.error("Failed to fetch subscription data:", data.message);
         }
       } else {
+        console.error("Failed to fetch subscription data:", response.status);
       }
     } catch (error) {
       console.error("Request failed:", error.message);
     }
   };
 
-  if (!accesstoken) {
-    redirect("/login");
-  }
+  
 
   useEffect(() => {
-    const cookies = parseCookies();
-
-    if (userData !== undefined) {
-      setUserApi(userData?.data.api_key);
+    if (userData) {
+      setUserApi(userData.data.api_key);
     }
+  }, [userData]);
 
-    const accessToken = cookies?.access_token;
-    if (!accessToken) {
-      redirect("/login");
-    }
+  useEffect(() => {
 
     if (userApi) {
       getSubscriptionData();
     }
-  }, [userData, userApi]);
+  }, [accessToken, userApi]);
 
   const cancelSubscription = async (subscriptionId) => {
     try {
@@ -64,18 +64,15 @@ const Page = () => {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accesstoken}`,
+          Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify({ subscriptionId }),
       });
 
       if (response.ok) {
-        // Subscription successfully cancelled
-        // You may want to update the UI or fetch subscription data again
         console.log("Subscription cancelled successfully");
         await getSubscriptionData();
       } else {
-        // Handle HTTP error responses
         console.error("Failed to cancel subscription:", response.status);
       }
     } catch (error) {
@@ -85,12 +82,10 @@ const Page = () => {
 
   return (
     <div className="overflow-hidden h-full">
-      {/* about sec 1  */}
-      <section className="w-full flex items-start justify-start mt-20 min-h-screen ">
+      <section className="w-full flex items-start justify-start mt-20 min-h-screen">
         <LeftSideBar />
         <main className="max-w-[1800px] flex-1 bg-[#fbfbfb] px-[0px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto h-full">
-          <h3 className=" text-center leading-normal my-7 lg:leading-[50px] xll:leading-[60px] text-[30px] lg:text-[40px] xll:text-[50px] text-black-text font-medium font-worksans">
-            {" "}
+          <h3 className="text-center leading-normal my-7 lg:leading-[50px] xll:leading-[60px] text-[30px] lg:text-[40px] xll:text-[50px] text-black-text font-medium font-worksans">
             Subscriptions
           </h3>
           <div className="my-12 flex flex-row gap-6">
