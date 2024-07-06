@@ -19,6 +19,7 @@ const Page = () => {
   const [accessToken,setAccessToken] = useState(null)
   const [isGenrateApi,setIsGenrateApi] = useState(false)
   const [treePlanted,setTreePlanted] = useState(0)
+  const [climatePoints,setClimatePoints] = useState(0)
 
   useEffect(() =>{
     const cookies = parseCookies();
@@ -56,7 +57,8 @@ const Page = () => {
               // toast.error(data.message) 
               setDiable(false);
             }else{
-              setTreePlanted(data.data.tree_planted)      
+              setTreePlanted(data.data.tree_planted)   
+              setClimatePoints(data.data.climate_points)   
               setDiable(false);
             }
           
@@ -148,9 +150,9 @@ getTreeData()
           }
          
           <div style={{ backgroundImage: "url('/assets/images/reforest.jpg')" }} className='bg-white w-[90%] flex relative items-center flex-col justify-center px-3 h-[300px] mt-4 shadow-2xl py-10 bg-cover bg-no-repeat rounded-xl '>
-                <h1 className='z-10 text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-white font-medium font-worksans'>You have 0 climate points</h1>
+                <h1 className='z-10 text-center leading-normal lg:leading-[50px] xll:leading-[60px] text-[25px] lg:text-[35px] xll:text-[45px] text-white font-medium font-worksans'>You have {climatePoints} climate points</h1>
 
-                <Link href='' className='text-white text-2xl underline my-3 z-20 font-semibold' >See All Assets</Link>
+                {/* <Link href='' className='text-white text-2xl underline my-3 z-20 font-semibold' >See All Assets</Link> */}
 
                 <div className='absolute overflow-hidden rounded-xl z-0 top-0 left-0 w-full h-full bg-[#000] opacity-[0.4]'></div>
           </div>
