@@ -13,6 +13,29 @@ const Page = () => {
 
   const [subscriptionData, setSubscriptionData] = useState([]);
 
+  const getSubscriptionData = async () => {
+    try {
+      const apiUrl = `${process.env.API_URL}/subscription`;
+      const response = await fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.status !== 200) {
+        } else {
+          setSubscriptionData(data.data);
+        }
+      } else {
+      }
+    } catch (error) {
+      console.error("Request failed:", error.message);
+    }
+  };
+
   if (!accesstoken) {
     redirect("/login");
   }
@@ -30,31 +53,8 @@ const Page = () => {
     }
 
     if (userApi) {
-        const getSubscriptionData = async () => {
-          try {
-            const apiUrl = `${process.env.API_URL}/subscription`;
-            const response = await fetch(apiUrl, {
-              method: "GET",
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            });
-    
-            if (response.ok) {
-              const data = await response.json();
-              if (data.status !== 200) {
-              } else {
-                setSubscriptionData(data.data);
-              }
-            } else {
-            }
-          } catch (error) {
-            console.error("Request failed:", error.message);
-          }
-        };
-        getSubscriptionData();
-      }
-
+      getSubscriptionData();
+    }
   }, [userData, userApi]);
 
   const cancelSubscription = async (subscriptionId) => {
@@ -73,7 +73,7 @@ const Page = () => {
         // Subscription successfully cancelled
         // You may want to update the UI or fetch subscription data again
         console.log("Subscription cancelled successfully");
-        getSubscriptionData()
+        await getSubscriptionData();
       } else {
         // Handle HTTP error responses
         console.error("Failed to cancel subscription:", response.status);
@@ -110,7 +110,12 @@ const Page = () => {
                   <p>Subscription Cost: {subscription.grand_total} GBP</p>
                 </div>
                 {subscription.status !== "canceled" && (
-                    <button onClick={() => cancelSubscription(subscription.id)} className="cancel-button">Cancel</button>
+                  <button
+                    onClick={() => cancelSubscription(subscription.id)}
+                    className="cancel-button"
+                  >
+                    Cancel
+                  </button>
                 )}
               </div>
             ))}
