@@ -59,7 +59,7 @@ const Page = () => {
 
   const cancelSubscription = async (subscriptionId) => {
     try {
-      const apiUrl = `${process.env.API_URL}/subscription`;
+      const apiUrl = `${process.env.API_URL}/subscription/cancel`;
       const response = await fetch(apiUrl, {
         method: "PATCH",
         headers: {
