@@ -64,7 +64,7 @@ const Page = () => {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${accesstoken}`,
         },
         body: JSON.stringify({ subscriptionId }),
       });
