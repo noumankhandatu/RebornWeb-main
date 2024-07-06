@@ -30,6 +30,12 @@ const links = [
         value:'Settings',
         icon:<AiOutlineSetting className=' text-green text-[20px] sm:text-[30px]' />,
     },
+    {
+      id:5,
+      link:'/subscriptions',
+      value:'Subscriptions',
+      icon:<AiOutlineSetting className=' text-green text-[20px] sm:text-[30px]' />,
+  },
     // {
     //     id:5,
     //     link:'/api-integrations',
