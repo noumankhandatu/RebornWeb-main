@@ -59,10 +59,14 @@ const Page = () => {
               setDiable(false);
             } else {
               if (data.data.tree_planted) {
-                setTreePlanted((data.data.tree_planted).toFixed(3));
+                const treePlanted = parseFloat(data.data.tree_planted).toFixed(3);
+
+                setTreePlanted(treePlanted);
               }
               if (data.data.climate_points) {
-                setClimatePoints((data.data.climate_points).toFixed(3));
+                const climatePoints = parseFloat(data.data.climate_points).toFixed(3);
+
+                setClimatePoints(climatePoints);
               }
               setDiable(false);
             }
