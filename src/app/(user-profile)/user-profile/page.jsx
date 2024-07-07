@@ -59,12 +59,12 @@ const Page = () => {
               setDiable(false);
             } else {
               if (data.data.tree_planted) {
-                const treePlanted = parseFloat(data.data.tree_planted).toFixed(3);
+                const treePlanted = (data.data.tree_planted);
 
                 setTreePlanted(treePlanted);
               }
               if (data.data.climate_points) {
-                const climatePoints = parseFloat(data.data.climate_points).toFixed(3);
+                const climatePoints = (data.data.climate_points);
 
                 setClimatePoints(climatePoints);
               }
@@ -83,34 +83,6 @@ const Page = () => {
     }
   }, [userData, userApi, isGenrateApi]);
 
-  const generateApi = async () => {
-    setDiable(true);
-    try {
-      const apiUrl = process.env.API_URL;
-      const response = await fetch(`${apiUrl}/user/api-key`, {
-        method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setIsGenrateApi(true);
-        toast.success("Successfuly Genrate User Api");
-        setDiable(false);
-        //  redirect('/user-profile')
-      } else {
-        // Handle error response
-        console.log(response);
-      }
-    } catch (error) {
-      console.error("Request failed:", error.message);
-      setDiable(false);
-    }
-  };
-
-  // pages/utils/generateScript.js
 
   return (
     <div className="overflow-hidden h-full">
@@ -211,10 +183,8 @@ const Page = () => {
                       of CO2 is like taking a car off the road for about{" "}
                       {((treePlanted * 0.1096 + climatePoints) / 0.408).toFixed(3)}{" "}
                       kilometers (
-                      {(
-                        ((treePlanted * 0.1096 + climatePoints) / 0.408) *
-                        0.621371
-                      ).toFixed(3)}{" "}
+                      {(((treePlanted * 0.1096 + climatePoints) / 0.408) *0.621371).toFixed(3)}
+                      {" "}
                       miles).
                     </p>
                   </div>
@@ -262,9 +232,7 @@ const Page = () => {
                       {(treePlanted * 0.1096 + climatePoints).toFixed(3)} tonnes
                       of CO2 is equivalent to recycling about{" "}
                       {(
-                        ((treePlanted * 0.1096 + climatePoints) * 1000) /
-                        0.15
-                      ).toFixed(3)}{" "}
+                        ((treePlanted * 0.1096 + climatePoints) * 1000) /0.15).toFixed(3)}{" "}
                       plastic bottles instead of sending them to landfill
                     </p>
                   </div>
