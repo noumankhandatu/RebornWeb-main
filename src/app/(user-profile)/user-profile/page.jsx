@@ -58,8 +58,12 @@ const Page = () => {
               // toast.error(data.message)
               setDiable(false);
             } else {
-              setTreePlanted(data.data.tree_planted);
-              setClimatePoints(data.data.climate_points);
+              if (data.data.tree_planted) {
+                setTreePlanted((data.data.tree_planted).toFixed(3));
+              }
+              if (data.data.climate_points) {
+                setClimatePoints((data.data.climate_points).toFixed(3));
+              }
               setDiable(false);
             }
           } else {
@@ -199,16 +203,16 @@ const Page = () => {
                     </h2>
                     <p className="text-gray-600 mt-2">
                       Avoiding{" "}
-                      {(treePlanted * 0.1096 + climatePoints).toFixed(2)} tonnes
+                      {(treePlanted * 0.1096 + climatePoints).toFixed(3)} tonnes
                       of CO2 is like taking a car off the road for about{" "}
                       {((treePlanted * 0.1096 + climatePoints) / 0.408).toFixed(
-                        2
+                        3
                       )}{" "}
                       kilometers (
                       {(
                         ((treePlanted * 0.1096 + climatePoints) / 0.408) *
                         0.621371
-                      ).toFixed(2)}{" "}
+                      ).toFixed(3)}{" "}
                       miles).
                     </p>
                   </div>
@@ -229,13 +233,10 @@ const Page = () => {
                     </h2>
                     <p className="text-gray-600 mt-2">
                       Avoiding{" "}
-                      {(treePlanted * 0.1096 + climatePoints).toFixed(2)} tonnes
+                      {(treePlanted * 0.1096 + climatePoints).toFixed(3)} tonnes
                       of CO2 is equivalent to the annual electricity use of an
                       average household for about{" "}
-                      {(
-                        ((treePlanted * 0.1096 + climatePoints) * 3.6) /
-                        11000
-                      ).toFixed(2)}{" "}
+                      {((((treePlanted * 0.1096 + climatePoints) * 3.6) /916.66)).toFixed(3)}{" "}
                       month
                     </p>
                   </div>
@@ -256,12 +257,12 @@ const Page = () => {
                     </h2>
                     <p className="text-gray-600 mt-2">
                       Avoiding{" "}
-                      {(treePlanted * 0.1096 + climatePoints).toFixed(2)} tonnes
+                      {(treePlanted * 0.1096 + climatePoints).toFixed(3)} tonnes
                       of CO2 is equivalent to recycling about{" "}
                       {(
                         ((treePlanted * 0.1096 + climatePoints) * 1000) /
                         0.15
-                      ).toFixed(2)}{" "}
+                      ).toFixed(3)}{" "}
                       plastic bottles instead of sending them to landfill
                     </p>
                   </div>
