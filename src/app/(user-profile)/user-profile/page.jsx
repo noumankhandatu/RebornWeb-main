@@ -209,9 +209,7 @@ const Page = () => {
                       Avoiding{" "}
                       {(treePlanted * 0.1096 + climatePoints).toFixed(3)} tonnes
                       of CO2 is like taking a car off the road for about{" "}
-                      {((treePlanted * 0.1096 + climatePoints) / 0.408).toFixed(
-                        3
-                      )}{" "}
+                      {((treePlanted * 0.1096 + climatePoints) / 0.408).toFixed(3)}{" "}
                       kilometers (
                       {(
                         ((treePlanted * 0.1096 + climatePoints) / 0.408) *
