@@ -208,7 +208,7 @@ const Page = () => {
                       {(treePlanted * 0.1096 + climatePoints).toFixed(3)} tonnes
                       of CO2 is equivalent to the annual electricity use of an
                       average household for about{" "}
-                      {((((treePlanted * 0.1096 + climatePoints) * 3.6) /916.66)).toFixed(3)}{" "}
+                      {((((((treePlanted * 0.1096) + climatePoints) * 3.6) /(11000/12)))*1000).toFixed(3)}{" "}
                       month
                     </p>
                   </div>
