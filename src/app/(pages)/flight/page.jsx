@@ -357,10 +357,11 @@ const page = () => {
                   <p className="leading-[30px] text-sm sm:text-[16px] font-normal  font-sans  text-black-text">
                   Utilize RebornGreen{"'"}s flight calculator to determine the carbon footprint of your flight and offset it by supporting environmentally beneficial initiatives{"."}
                   </p>
-
+                  <Link href="/calculator">
                   <button className="border-none text-white rounded-sm hover:bg-secondary transition-all duration-500 outline-none px-5 hover:scale-95 py-5 my-6 bg-green flex items-center gap-2">
                   Flight Emissions Calculator <FaCalculator />
                   </button>
+                  </Link>
                
              
             
