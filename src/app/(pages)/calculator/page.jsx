@@ -77,8 +77,7 @@ const Page = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-API-KEY":
-              "sk_test_vfPTS9Tn2cBa6sXNTHe5O4QG7pyGT7zyO2mTk7B7mBGaO0imoasl7eQgoudhHKFieacR09veVxV2KWFeLrHvs",
+            "X-API-KEY": process.env.KLIM_SECRET_KEY,
             "X-LOCALE":"EN"
           },
           body: JSON.stringify(requestBody),
