@@ -6,6 +6,9 @@ import { parseCookies } from "nookies";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useUser } from "../../../../lib/UserConext";
+import { easeIn, easeInOut, motion } from "framer-motion";
+import Link from "next/link";
+
 const Page = () => {
   const userData = useUser();
 
@@ -119,7 +122,7 @@ const Page = () => {
 
             {/* two cards */}
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="w-1/4 max-w-lg bg-blue-100 shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
+              <div className="w-1/4 max-w-lg bg-green shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
                 <img
                   className="w-32 h-auto object-cover"
                   src="/assets/dashboard/1.svg"
@@ -127,17 +130,17 @@ const Page = () => {
                 />
 
                 <div className="p-4 text-center">
-                  <h2 className="text-xl font-semibold text-gray-800">
+                  <h2 className="text-xl font-semibold text-white">
                    Tree Planted
                   </h2>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-white mt-2">
                     You've planted {treePlanted}. These trees will absorbs  {treePlanted * 0.1096} tonnes of CO2 throughout their lifetime
                  
                   </p>
                 </div>
               </div>
 
-              <div className="w-1/4 max-w-lg bg-blue-100 shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
+              <div className="w-1/4 max-w-lg bg-green shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
                 <img
                   className="w-32 h-auto object-cover"
                   src="/assets/dashboard/2.svg"
@@ -145,10 +148,10 @@ const Page = () => {
                 />
 
                 <div className="p-4 text-center">
-                  <h2 className="text-xl font-semibold text-gray-800">
+                  <h2 className="text-xl font-semibold text-white">
                     {climatePoints} Tonnes CO2 Offset
                   </h2>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-white mt-2">
                     You have offset {climatePoints} tonnes of CO2 by supporting verified carbon projects around the world.({climatePoints} tonnes from additional carbon credits)
                   </p>
                 </div>
@@ -245,7 +248,63 @@ const Page = () => {
               </div>
             </div>
           </div>
+
+
         </main>
+      </section>
+
+
+
+      <section className="w-full flex items-center justify-start flex-col bg-white max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col items-center justify-center"
+        >
+          <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
+          Is Your Climate Impact Zero? Want to do More?
+          </h1>
+          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+           Explore our options and find perfect fit for you. Together, we can make a difference
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap"
+        >
+          <Link
+            className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green  z-10 rounded-xl "
+            href="/plant-tree"
+          >
+            <Image src="/Box 1.svg" alt="img" height={100} width={100} />
+            <h4 className="text-2xl text-white font-semibold mt-8">
+              Support Tree-Planting Projects
+            </h4>
+            <p className="text-[16px] text-white font-worksans pt-2">
+              Grow your business sustainably and make the planet greener.
+            </p>
+          </Link>
+
+          <Link
+            style={{ border: "1px solid green" }}
+            className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-white  z-10 rounded-xl "
+            href="/plant-tree-offset"
+          >
+            <Image src="/Box 2.svg" alt="img" height={100} width={100} />
+            <h4 className="text-2xl text-black font-semibold mt-8">
+              Support Verified Carbon Projects
+            </h4>
+            <p className="text-[16px] text-black font-worksans pt-2">
+              Offset your carbon footprint and fight climate change.
+            </p>
+          </Link>
+        </motion.div>
       </section>
     </div>
   );
