@@ -122,41 +122,40 @@ const Page = () => {
 
             {/* two cards */}
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="w-1/4 max-w-lg bg-green shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
-                <img
-                  className="w-32 h-auto object-cover"
-                  src="/assets/dashboard/1.svg"
-                  alt="Card Image"
-                />
+  <div className="w-full sm:w-1/2 md:w-1/4 max-w-lg bg-green shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center p-4">
+    <img
+      className="w-32 h-auto object-cover"
+      src="/assets/dashboard/1.svg"
+      alt="Card Image"
+    />
 
-                <div className="p-4 text-center">
-                  <h2 className="text-xl font-semibold text-white">
-                   Tree Planted
-                  </h2>
-                  <p className="text-white mt-2">
-                    You've planted {treePlanted}. These trees will absorbs  {treePlanted * 0.1096} tonnes of CO2 throughout their lifetime
-                 
-                  </p>
-                </div>
-              </div>
+    <div className="p-4 text-center">
+      <h2 className="text-xl font-semibold text-white">
+        Tree Planted
+      </h2>
+      <p className="text-white mt-2">
+        You've planted {treePlanted}. These trees will absorb {treePlanted * 0.1096} tonnes of CO2 throughout their lifetime.
+      </p>
+    </div>
+  </div>
 
-              <div className="w-1/4 max-w-lg bg-green shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center">
-                <img
-                  className="w-32 h-auto object-cover"
-                  src="/assets/dashboard/2.svg"
-                  alt="Card Image"
-                />
+  <div className="w-full sm:w-1/2 md:w-1/4 max-w-lg bg-green shadow-md rounded-lg overflow-hidden flex flex-col items-center justify-center p-4">
+    <img
+      className="w-32 h-auto object-cover"
+      src="/assets/dashboard/2.svg"
+      alt="Card Image"
+    />
 
-                <div className="p-4 text-center">
-                  <h2 className="text-xl font-semibold text-white">
-                    {climatePoints} Tonnes CO2 Offset
-                  </h2>
-                  <p className="text-white mt-2">
-                    You have offset {climatePoints} tonnes of CO2 by supporting verified carbon projects around the world.({climatePoints} tonnes from additional carbon credits)
-                  </p>
-                </div>
-              </div>
-            </div>
+    <div className="p-4 text-center">
+      <h2 className="text-xl font-semibold text-white">
+        {climatePoints} Tonnes CO2 Offset
+      </h2>
+      <p className="text-white mt-2">
+        You have offset {climatePoints} tonnes of CO2 by supporting verified carbon projects around the world. ({climatePoints} tonnes from additional carbon credits)
+      </p>
+    </div>
+  </div>
+</div>
           </div>
 
           {/* // bottom section */}

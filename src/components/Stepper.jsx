@@ -34,7 +34,7 @@ export default function StepperComp() {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
   const step1offsetClick = () => {
-    setStep1("offset");
+    setStep1("plant-tree");
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
   const step2teamClick = () => {
