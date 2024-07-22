@@ -131,7 +131,7 @@ const Page = () => {
 
     <div className="p-4 text-center">
       <h2 className="text-xl font-semibold text-white">
-        Tree Planted
+        {treePlanted} Tree Planted
       </h2>
       <p className="text-white mt-2">
         You've planted {treePlanted}. These trees will absorb {treePlanted * 0.1096} tonnes of CO2 throughout their lifetime.
