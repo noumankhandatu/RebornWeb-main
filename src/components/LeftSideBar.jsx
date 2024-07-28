@@ -12,12 +12,12 @@ const links = [
         value:'Profile',
         icon:<CgProfile className=' text-green text-[20px] sm:text-[30px]' />,
     },
-    {
-        id:2,
-        link:'/history',
-        value:'History',
-        icon:<AiOutlineHistory className=' text-green text-[20px] sm:text-[30px]' />,
-    },
+    // {
+    //     id:2,
+    //     link:'/history',
+    //     value:'History',
+    //     icon:<AiOutlineHistory className=' text-green text-[20px] sm:text-[30px]' />,
+    // },
     {
         id:3,
         link:'/assets',
@@ -31,11 +31,17 @@ const links = [
         icon:<AiOutlineSetting className=' text-green text-[20px] sm:text-[30px]' />,
     },
     {
-        id:5,
-        link:'/api-integrations',
-        value:'Integrations',
-        icon:<MdApi className=' text-green text-[20px] sm:text-[30px]' />,
-    },
+      id:5,
+      link:'/subscriptions',
+      value:'Subscriptions',
+      icon:<AiOutlineSetting className=' text-green text-[20px] sm:text-[30px]' />,
+  },
+    // {
+    //     id:5,
+    //     link:'/api-integrations',
+    //     value:'Integrations',
+    //     icon:<MdApi className=' text-green text-[20px] sm:text-[30px]' />,
+    // },
 ]
 const LeftSideBar = () => {
     const[navscroll,setNavscroll] = useState(false);

@@ -36,8 +36,8 @@ const MonthlyPlanting = ({ month }) => {
     } else {
       try {
         const apiUrl = process.env.API_URL;
-        const unitCost = 5; // cost per tree
-        const totalAmount = treeInp / unitCost; // total cost
+        const unitCost = 1; // cost per tree
+        const totalAmount = treeInp;
         // Assume you already have the accessToken available
 
         const authenticatedResponse = await axios.post(
@@ -164,7 +164,7 @@ const MonthlyPlanting = ({ month }) => {
                 disable ? "bg-[#14a80050]" : "bg-green"
               } px-4 font-poppins xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px]  py-3 rounded-sm text-white font-semibold  tracking-wide`}
             >
-              Continus
+              Continue
             </button>
           </div>
         </div>

@@ -34,14 +34,14 @@ const flatcardData = [
     title: "Make an Impact",
     intro: "For a healthy planet for future generations",
     text: "Utilize our flexible climate store for reforestation, carbon mitigation, and removal initiatives through e-commerce tools or monthly subscriptions.",
-    link: "/login",
+    link: "/user-profile",
   },
   {
     image: "/svg/Share Your Progress.svg",
     title: "Share Your Progress",
     intro: "Inspire others and showcase your commitment",
     text: "You can use your profile dashboard to track progress on climate-related initiatives and engage with clients, customers, employees, and stakeholders",
-    link: "/login",
+    link: "/user-profile",
   },
 ];
 const textcardData = [
