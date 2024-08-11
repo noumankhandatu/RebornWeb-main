@@ -2,29 +2,90 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { parseCookies } from "nookies";
+import { loadStripe } from "@stripe/stripe-js";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const MyTeamOffset = () => {
-  const [standWork, setStandWork] = useState(0);
-  const [freqTravel, setFreqTravel] = useState(0);
-  const [globalTror, setGlobalTror] = useState(0);
+  const stripePromise = loadStripe(
+    "pk_test_51P04IEFuASpzJP3Vnfivb5m5sBP5kWHqovoCzBEd2dceKS0au8CwoyzkZ8buLf3S5VECNDl4JM8MXFpTTZvHhZ6j00QT355vjk"
+  );
+
+  const [quater, setQuater] = useState(0);
+  const [half, setHalf] = useState(0);
+  const [full, setFull] = useState(0);
   const [allPrice, setAllPrice] = useState(0);
   const [disable, setDisable] = useState(true);
 
+  const cookies = parseCookies();
+
+  const accessToken = cookies?.access_token;
+
   useEffect(() => {
-    if (standWork < 1 && freqTravel < 1 && globalTror < 1) {
+    if (quater < 1 && half < 1 && full < 1) {
       setDisable(true);
     } else {
       setDisable(false);
     }
-    const sw = standWork * 26.7;
-    const ft = freqTravel * 15.5;
-    const gt = globalTror * 8.25;
+    const sw = full * 26.7;
+    const ft = half * 15.5;
+    const gt = quater * 8.25;
 
     setAllPrice(sw + ft + gt);
-  }, [standWork, freqTravel, globalTror]);
+  }, [quater, half, full]);
 
   const handleSelectChange = (setter) => (event) => {
     setter(parseInt(event.target.value));
+  };
+
+  const redirectToStripe = async (sessionId) => {
+    const stripe = await stripePromise;
+    await stripe.redirectToCheckout({ sessionId });
+  };
+
+  const handle = async () => {
+    setDisable(true);
+    console.log('quater', quater);
+    if (quater === 0 && half === 0 && full === 0) {
+      toast.error("Please select a plan");
+      setDisable(false);
+    } else if (!accessToken) {
+      setDisable(false);
+      router.push("/login");
+    } else {
+      try {
+        const apiUrl = process.env.API_URL;
+
+        const authenticatedResponse = await axios.post(
+          `${apiUrl}/order/climate-order`,
+          {
+            quaterQuantity: quater,
+            halfQuantity: half,
+            fullQuantity: full,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+
+        if (authenticatedResponse.status === 200) {
+          await redirectToStripe(authenticatedResponse.data.data.id);
+          setDisable(false);
+        } else {
+          // Handle error response
+          toast.error("Request failed");
+        }
+      } catch (error) {
+        // Handle error
+        toast.error("Request failed:", error.message);
+        console.log(error);
+        setDisable(false);
+      }
+    }
   };
 
   const renderSelect = (value, setter) => (
@@ -33,7 +94,7 @@ const MyTeamOffset = () => {
       onChange={handleSelectChange(setter)}
       className="text-[22px] font-semibold text-white bg-gray-800 max-h-40 overflow-y-auto"
     >
-      {[...Array(101).keys()].slice(1).map((num) => (
+      {[...Array(101).keys()].map((num) => (
         <option className="text-white" key={num} value={num}>
           {num}
         </option>
@@ -75,7 +136,7 @@ const MyTeamOffset = () => {
               <i> Take the first step towards a sustainable workplace.</i>
             </b>
           </p>
-          {renderSelect(globalTror, setGlobalTror)}
+          {renderSelect(quater, setQuater)}
         </div>
 
         {/* card 2 */}
@@ -101,7 +162,7 @@ const MyTeamOffset = () => {
               <b>Do your part for a greener future.</b>
             </i>
           </p>
-          {renderSelect(freqTravel, setFreqTravel)}
+          {renderSelect(half, setHalf)}
         </div>
 
         {/* card 3 */}
@@ -128,7 +189,7 @@ const MyTeamOffset = () => {
               <b> Make the biggest difference for the environment.</b>
             </i>
           </p>
-          {renderSelect(standWork, setStandWork)}
+          {renderSelect(full, setFull)}
         </div>
       </div>
       <div className="flex my-10 items-center justify-between w-full">
@@ -140,6 +201,7 @@ const MyTeamOffset = () => {
         <Link href={"/login"}>
           <button
             disabled={disable}
+            onClick={handle}
             className={`${
               disable ? "bg-[#14a80050]" : "bg-green"
             } px-4 xsm:px-6 sm:px-10 md:px-14 text-[14px] md:text-[18px] py-3 rounded-sm text-white font-semibold font-worksans tracking-wide`}
