@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           path === "/for-Business" ||
           path === "/tree-planting" ||
           path === "/Register" ||
-          path === "/Login" ||
+          path === "/login" ||
           path === "/Reset-password" ||
           path === "/Forget-password" ||
           path === "/about" ||
@@ -64,13 +64,13 @@ export default function RootLayout({ children }) {
           path === "/plant-tree" ||
           path === "/carbon-offsets" ? (
             <Navbar />
-          ) : (
+          ) : path === "/calculator" ? null : (
             <BgNavbar />
           )}
           <Toaster position="center-right" />
 
           {children}
-          <Footer />
+          {path === "/calculator" ? null : <Footer />}
         </UserProvider>
       </body>
     </html>

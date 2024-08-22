@@ -7,6 +7,8 @@ import BussnesCardReversed from "@/components/BussnesCardReversed";
 import { FaRecycle } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
+import apiImage from "../../../../public/API.webp";
+import showcaseImage from "../../../../public/Showcase.webp";
 
 // export const metadata = {
 //   title: "Explore Our Comprehensive Services | Joyn Digital",
@@ -25,13 +27,13 @@ const sec3CardData = [
     title: "Climate Impact for Your Team",
     desc: "Our monthly subscription plan is designed to empower your team to make a positive difference in the fight against climate change. By subscribing, you'll be supporting verified carbon avoidance and tree planting projects every month.",
     img: "/ca2.png",
-    link: "/plant-tree",
+    link: "#simplify-climate",
     btnText: "Subscribe Now",
   },
   {
     title: "APIs for Climate Change Solutions",
     desc: "Automatically plant trees with our API integration for every order, invoice, or other business activity. Use our widget to display the number of trees planted on your website, showcasing your commitment to environmental sustainability.",
-    img: "/ca3.png",
+    img: apiImage,
     link: "/Register",
     btnText: "Sign Up",
   },
@@ -78,7 +80,8 @@ const page = () => {
           transition={{ duration: 0.5 }}
           className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
-          Sustainable Solutions for Your Business
+          Sustainable Solutions for
+          <span className="text-[#14a800]"> Your Business</span>
         </motion.h3>
         <motion.p
           initial={{ y: 200 }}
@@ -94,7 +97,10 @@ const page = () => {
         <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
       </div>
       {/* simplify climate */}
-      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+      <section
+        id="simplify-climate"
+        className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto"
+      >
         <motion.div
           initial={{ y: 200 }}
           viewport={{ once: true }}
@@ -230,11 +236,12 @@ const page = () => {
           className="w-full flex flex-col items-center justify-center"
         >
           <h1 className="text-center  font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
-            What We
-            <span className="font-bold text-[#14a800]"> Offer</span>{" "}
+            Committed to a Sustainable
+            <span className="font-bold text-[#14a800]"> World?</span>
           </h1>
-          <p className=" w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
-            Accessible Climate Change Solutions for Any Business
+          <p className="w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-base">
+            Discover how our business solutions can help you make a positive
+            impact on both the planet and your business.
           </p>
         </motion.div>
       </section>
@@ -275,10 +282,12 @@ const page = () => {
             Showcase Your Positive Climate <br />
             <span className="font-bold text-[#14a800]"> Impact</span>{" "}
           </h1>
-          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
-            At RebornGreen, we believe in inspiring people. That's why we offer
-            a way to showcase your impact.
+          <p className="mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-base">
+            Let the world see your climate impact. Showcase your positive
+            climate actions with RebornGreen. Get started today and unlock
+            digital tools, certificates, and green rewards.
           </p>
+          <Image src={showcaseImage} alt="showcase" className="w-full h-auto" />
         </motion.div>
       </section>
       {/* Climate  */}
@@ -300,7 +309,7 @@ const page = () => {
             business. The globe can be customized to suit your business. Contact
             us to find out more.
           </p>
-          <ThreeImageCarousel />
+          {/* <ThreeImageCarousel /> */}
         </motion.div>
       </section>
       {/* Carbon  */}
@@ -335,16 +344,13 @@ const page = () => {
           className="w-full flex flex-col items-center justify-center"
         >
           <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
-            Climate change and
-            <span className="font-bold text-[#14a800]"> biodiversity</span> loss
-            require urgent action
+            Climate Change is a
+            <span className="font-bold text-[#14a800]"> Global Crisis</span>
           </h1>
-          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
-            Business operations are being impacted by the physical changes in
-            our environment, and, in turn, the way businesses operate. Climate
-            changes are contributing to biodiversity loss on our planet. By
-            supporting our projects, your business can take part in addressing
-            these issues.
+          <p className="w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Businesses must lead the transition to a sustainable future. Reduce
+            your carbon footprint, protect biodiversity, and build resilience.
+            Together, we can prevent future disasters
           </p>
 
           <Image

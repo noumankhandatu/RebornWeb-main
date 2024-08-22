@@ -34,7 +34,7 @@ export default function StepperComp() {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
   const step1offsetClick = () => {
-    setStep1("offset");
+    setStep1("plant-tree");
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
   const step2teamClick = () => {
@@ -175,11 +175,10 @@ export default function StepperComp() {
                 >
                   <FaTree size={30} className="my-5 arrow  text-white" />
                   <h4 className="text-2xl  text-white font-semibold">
-                    My <span className=" text-white gr-span">Team</span>
+                   Monthly Subscription
                   </h4>
                   <p className="text-[16px]  text-white  font-worksans pt-2">
-                    Input your team size, we&apos;ll take care of the carbon
-                    credits & trees
+                   Making the planet greener every month.
                   </p>
                 </div>
                 <Link
@@ -194,11 +193,10 @@ export default function StepperComp() {
                 >
                   <FaTree size={30} className="my-5 arrow text-white" />
                   <h4 className="text-2xl  text-white font-semibold">
-                    My <span className="text-white gr-span">company</span>
+                 Occasional
                   </h4>
                   <p className="text-[16px] text-white  font-worksans pt-2">
-                    Use our extensive network of trusted projects that can cater
-                    to any size. Contact us to discuss your needs.
+                 Flexible tree planting support.
                   </p>
                 </Link>
                 <Link
@@ -213,11 +211,10 @@ export default function StepperComp() {
                 >
                   <FaTree size={30} className="my-5 arrow  text-white" />
                   <h4 className="text-2xl  text-white  font-semibold">
-                    Something <span className=" text-white gr-span">else</span>
+                    Tree Planting Integration
                   </h4>
                   <p className="text-[16px]  text-white  font-worksans pt-2">
-                    Got a specific idea or need help deciding how best to make
-                    an impact? Contact us!
+                   Plant a tree for every sale or other company activity using our API integrations.
                   </p>
                 </Link>
               </div>
@@ -242,11 +239,10 @@ export default function StepperComp() {
                   <FaTree size={30} className="mb-8 arrow text-white" />
 
                   <h4 className="text-2xl text-white  font-semibold">
-                    My Team
+Monthly Subscription
                   </h4>
                   <p className="text-[16px] text-white  font-worksans pt-2">
-                    Input your team size, we'll take care of the carbon credits
-                    & trees
+                    Making the planet greener every month.
                   </p>
                 </div>
                 <div
@@ -262,11 +258,10 @@ export default function StepperComp() {
                   <FaTree size={30} className=" arrow text-white" />
 
                   <h4 className="text-2xl mt-5  font-semibold">
-                    <span className="text-white gr-span">My company</span>
+                    <span className="text-white gr-span">Occasional</span>
                   </h4>
                   <p className="text-[16px]  text-white font-worksans pt-2">
-                    Use our extensive network of trusted projects that can cater
-                    to any size. Contact us to discuss your needs.
+                 Flexible tree planting support.
                   </p>
                 </div>
                 <Link
@@ -281,11 +276,10 @@ export default function StepperComp() {
                 >
                   <FaTree size={30} className="mb-10 arrow text-white" />
                   <h4 className="text-2xl  font-semibold">
-                    <span className=" text-white gr-span">Something else</span>
+                    <span className=" text-white gr-span">Tree Planting Integration</span>
                   </h4>
                   <p className="text-[16px] text-white  font-worksans pt-2">
-                    Got a specific idea or need help deciding how best to make
-                    an impact? Contact us!
+                  Plant a tree for every sale or other company activity using our API integrations.
                   </p>
                 </Link>
               </div>

@@ -4,6 +4,8 @@ const nextConfig = {
     images: {
         domains: [
           "iconscout.com",
+         'backend.reborngreen.org',
+
         ],
       },
       env: {
