@@ -2,13 +2,27 @@
 import PlantingPartner from "@/components/PlantingPartner";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
+const benefitsList = (
+  <div className="flex gap-2 flex-col">
+    <div className="flex items-center gap-x-1 text-xs ssm:text-sm xlg:text-base font-medium">
+      <FaRegCheckCircle size={14} />
+      <p>Provide stability against erosion</p>
+    </div>
+    <div className="flex items-center gap-x-1 text-xs ssm:text-sm xlg:text-base font-medium">
+      <FaRegCheckCircle size={14} />
+      <p>Improve ocean and coral reef health</p>
+    </div>
+  </div>
+);
 const textcardData = [
   {
     image:
       "/assets/treeplanting-images/Mozambique/20190822_Mozambique_0333.jpg",
     title: "A Lifeline for Ecosystems",
-    text: "Mozambique vast forests are vital for its ecological health. They provide habitat for countless species, protect soil from erosion, and regulate water flow. Restoration combats deforestation and safeguards these irreplaceable ecosystems.",
+    text: `Mozambique's vast forests are vital for its ecological health. They provide habitat for countless species, protect soil from erosion, and regulate water flow. Restoration combats deforestation and safeguards these irreplaceable ecosystems.`,
     btnText: "Explore Our Work",
     btnLink: "/",
   },
@@ -60,17 +74,58 @@ const sec3TimelineData = [
       />
     ),
     title: "Benefits",
-    desc: "Provide stability against erosion/ Improve ocean and coral reef health",
+    desc: benefitsList,
   },
 ];
 
 const page = () => {
   return (
     <div className="overflow-hidden h-full">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Restoring Mangrove Forests in Mozambique Coastal | Defense Trees{" "}
+        </title>
+        <meta
+          name="title"
+          content="Restoring Mangrove Forests in Mozambique Coastal | Defense Trees "
+        />
+        <meta
+          name="description"
+          content="Strengthen coastal defenses, reduce soil erosion, and protect communities from cyclones and floods while nurturing marine life."
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://reborngreen.org" />
+        <meta
+          property="og:title"
+          content="Restoring Mangrove Forests in Mozambique Coastal | Defense Trees "
+        />
+        <meta
+          property="og:description"
+          content="Strengthen coastal defenses, reduce soil erosion, and protect communities from cyclones and floods while nurturing marine life."
+        />
+        <meta property="og:image" content="" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://website.com" />
+        <meta
+          property="twitter:title"
+          content="Restoring Mangrove Forests in Mozambique Coastal | Defense Trees "
+        />
+        <meta
+          property="twitter:description"
+          content="Strengthen coastal defenses, reduce soil erosion, and protect communities from cyclones and floods while nurturing marine life."
+        />
+        <meta property="twitter:image" content="" />
+      </Helmet>
+
       <div
         style={{
           backgroundImage:
-            "url('/assets/treeplanting-images/Mozambique/green123.png')",
+            "url('/tree-planting/mozambique/header.png')",
         }}
         className=" flex-col   h-[95vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
       >
@@ -112,7 +167,7 @@ const page = () => {
               </div>
             </div>
             <Image
-              src="/assets/treeplanting-images/Mozambique/20190822_Mozambique_0347wm.jpg"
+              src="/tree-planting/mozambique/20190822_Mozambique_0347wm.jpg"
               width={700}
               height={600}
               alt="bussnessec2"
@@ -135,18 +190,19 @@ const page = () => {
               key={index}
               style={{
                 backgroundImage: `url(${item.image})`,
-                filter: "brightness(1.5)",
+                filter: "brightness(0.80)",
+                backgroundSize:"cover"
               }}
               className={`${
                 index === 4 ? "ima " : ""
-              }w-full xsm:w-[90%] flex items-end relative bg-cover bg-no-repeat justify-between duration-500 hover:scale-110 md:w-[48%] xlg:w-[30%] xll:w-[30%] h-full rounded-xl shadow-lg border min-h-[520px]`}
+              } object-cover w-full xsm:w-[90%] flex items-end relative bg-cover bg-no-repeat justify-between duration-500 hover:scale-110 md:w-[48%] xlg:w-[30%] xll:w-[30%] h-full rounded-xl shadow-lg border min-h-[520px]`}
             >
               <div className="gap-y-5 mb-20 relative z-20 text-center w-full h-full rounded-xl flex items-center justify-center flex-col p-4">
                 <div>
                   <h2 className="text-[#ffffff] text-[18px] xsm:text-[24px] font-worksans font-semibold">
                     {item.title}
                   </h2>
-                  <p className="text-[14px] tracking-wide capitalize text-[#ffffffc2] font-poppins mt-3">
+                  <p className="text-[14px] tracking-wide text-[#ffffff] font-poppins mt-3">
                     {item.text}
                   </p>
                 </div>
@@ -188,9 +244,9 @@ const page = () => {
                       <h5 className="text-black-text text-[20px] font-semibold mb-1 font-poppins">
                         {item.title}
                       </h5>
-                      <p className="text-[#6E6B6B] font-medium text-[14px] font-worksans">
+                      <div className="text-[#6E6B6B] font-medium text-[14px] font-worksans">
                         {item.desc}
-                      </p>
+                      </div>
                     </div>
                     <hr />
                   </li>

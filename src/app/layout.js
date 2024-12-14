@@ -1,10 +1,10 @@
 "use client";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "../../src/components/Navbar";
+import Footer from "../../src/components/Footer";
 import Head from "next/head";
 import { usePathname } from "next/navigation";
-import BgNavbar from "@/components/BgNavbar";
+import BgNavbar from "../../src/components/BgNavbar";
 import { Toaster } from "react-hot-toast";
 import { UserProvider } from "../../lib/UserConext";
 
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           path === "/for-Business" ||
           path === "/tree-planting" ||
           path === "/Register" ||
-          path === "/Login" ||
+          path === "/login" ||
           path === "/Reset-password" ||
           path === "/Forget-password" ||
           path === "/about" ||
@@ -64,13 +64,33 @@ export default function RootLayout({ children }) {
           path === "/plant-tree" ||
           path === "/carbon-offsets" ? (
             <Navbar />
-          ) : (
+          ) : path === "/calculator" ||
+            path === "/user-profile" ||
+            path === "/climate-impact" ||
+            path === "/tree-planting-api" ||
+            path === "/purchase-history" ||
+            path === "/subscriptions" ||
+            path === "/notifications" ||
+            path === "/settings" ||
+            path === "/certificate" ||
+            path === "/tree-widget" ? null : (
             <BgNavbar />
           )}
           <Toaster position="center-right" />
 
           {children}
-          <Footer />
+          {path === "/calculator" ||
+          path === "/user-profile" ||
+          path === "/climate-impact" ||
+          path === "/tree-planting-api" ||
+          path === "/purchase-history" ||
+          path === "/subscriptions" ||
+          path === "/notifications" ||
+          path === "/settings" ||
+          path === "/certificate" ||
+          path === "/tree-widget" ? null : (
+            <Footer />
+          )}
         </UserProvider>
       </body>
     </html>

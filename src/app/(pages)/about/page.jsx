@@ -1,11 +1,9 @@
-import BgNavbar from "@/components/BgNavbar";
+"use client";
+import { easeIn, easeInOut, motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { FaHandshake, FaLightbulb, FaRecycle } from "react-icons/fa";
-import { IoMdLeaf } from "react-icons/io";
-import { MdTravelExplore } from "react-icons/md";
 import Head from "next/head";
 import ContactCom from "@/components/ContactCom";
+import { Helmet } from 'react-helmet';
 
 // Define metadata
 
@@ -20,8 +18,7 @@ const sec2CardData = [
   {
     title: "Continuous Innovation",
     icon: "/aboutus/Continuous Innovation.svg",
-    text1:
-      "Innovation is in our DNA. We're always on the lookout for fresh and unique ideas and cutting-edge technologies to boost our impact on the environment, such as our Instant ",
+    text1: `Innovation is in our DNA. We're always on the lookout for fresh and unique ideas and cutting-edge technologies to boost our impact on the environment, such as our <a href="/carbon-offsets">Carbon Footprint Offset Luggage Tag</a> and our <a href="/coffee">Coffee Shop Loyalty Program</a>.`,
     link: "/carbon-offsets",
   },
   {
@@ -43,7 +40,7 @@ const sec2CardData = [
 const Page = () => {
   return (
     <div className="overflow-hidden h-full">
-      <Head>
+      <Helmet>
         {/* Primary Meta Tags */}
         <title>About RebornGreen | RebornGreen</title>
         <meta name="title" content="About RebornGreen | RebornGreen" />
@@ -74,19 +71,33 @@ const Page = () => {
           content="Our mission is to empower businesses and individuals to accelerate climate action."
         />
         <meta property="twitter:image" content="" />
-      </Head>
+      </Helmet>
 
       <div
         style={{ backgroundImage: "url('/aboutus/Our Story .png')" }}
-        className=" mb-[80px] bg-cover w-full px-[30px] lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
+        className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
       >
-        <h3
-          style={{ lineHeight: "60px" }}
-          className="  leading-normal text-center mt-5 lg:leading-[40px] xll:leading-[100px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[35px] text-white font-medium font-worksans"
+        <motion.h3
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
-          Our Story About Why and How We Became <br /> Involved In Saving the
-          Planet
-        </h3>
+          Leading the Charge for Sustainability
+        </motion.h3>
+        <motion.p
+          initial={{ y: 200 }}
+          viewport={{ once: true }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className=" w-full font-worksans mt-6 sm:w-[70%] mdd:w-[60%] text-white z-[1] text-center"
+        >
+          Inspired by the urgent need to protect our planet, we embarked on a
+          mission to create sustainable solutions.
+        </motion.p>
+
+        <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
       </div>
 
       {/* about sec 1  */}
@@ -158,25 +169,27 @@ const Page = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mdd:grid-cols-3 xl:grid-cols-4 gap-6 items-center justify-center">
           {sec2CardData?.map((item, index) => (
-            <Link href={item.link} key={index}>
-              <div className=" w-full h-[450px] hover:scale-90 text-center p flex items-start justify-between bg-white duration-500 rounded-xl border ">
-                <div className="gap-y-3 px-2 py-8  w-full h-full rounded-xl flex items-center justify-start flex-col  ">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    height={2000}
-                    width={2000}
-                    className="w-[75px] h-[75px]"
-                  />
-                  <h1 className="text-center font-poppins text-[20px] lg:text-[25px] font-[500] text-[#3d3d3d] h-[90px]">
-                    {item.title}
-                  </h1>
-                  <p className=" text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6  text-black-text font-worksans">
-                    {item.text1}
-                  </p>
-                </div>
+            <div
+              key={index}
+              className="w-full h-[450px] hover:scale-90 text-center p flex items-start justify-between bg-white duration-500 rounded-xl border"
+            >
+              <div className="gap-y-3 px-2 py-8 w-full h-full rounded-xl flex items-center justify-start flex-col">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  height={75}
+                  width={75}
+                  className="w-[75px] h-[75px]"
+                />
+                <h1 className="text-center font-poppins text-[20px] lg:text-[25px] font-[500] text-[#3d3d3d] h-[90px]">
+                  {item.title}
+                </h1>
+                <p
+                  className="text-[10px] text-center ssm:text-[12px] xsm:text-[14px] xll:text-[15px] leading-4 ssm:leading-5 xsm:leading-6 text-black-text font-worksans"
+                  dangerouslySetInnerHTML={{ __html: item.text1 }}
+                ></p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -225,7 +238,7 @@ const Page = () => {
           </div>
           <div className=" w-full mt-8 lg:mt-0 xsm:w-10/12 lg:flex-1 relative flex items-center justify-center flex-col">
             <Image
-              src="/aboutus/Mission Statement.png"
+              src="/aboutus/Mission_Statement.jpeg"
               width={2000}
               height={2000}
               alt="bussnessec2"

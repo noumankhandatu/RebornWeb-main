@@ -6,7 +6,15 @@ import BussnesCard from "@/components/BussnesCard";
 import BussnesCardReversed from "@/components/BussnesCardReversed";
 import { FaRecycle } from "react-icons/fa";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import apiImage from "../../../../public/API.webp";
+import showcaseImage from "../../../../public/Showcase.webp";
+import { Helmet } from "react-helmet";
+import { parseCookies } from "nookies";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // export const metadata = {
 //   title: "Explore Our Comprehensive Services | Joyn Digital",
@@ -24,14 +32,14 @@ const sec3CardData = [
   {
     title: "Climate Impact for Your Team",
     desc: "Our monthly subscription plan is designed to empower your team to make a positive difference in the fight against climate change. By subscribing, you'll be supporting verified carbon avoidance and tree planting projects every month.",
-    img: "/ca2.png",
-    link: "/plant-tree",
+    img: "/climate_impact.png",
+    link: "#simplify-climate",
     btnText: "Subscribe Now",
   },
   {
     title: "APIs for Climate Change Solutions",
     desc: "Automatically plant trees with our API integration for every order, invoice, or other business activity. Use our widget to display the number of trees planted on your website, showcasing your commitment to environmental sustainability.",
-    img: "/ca3.png",
+    img: apiImage,
     link: "/Register",
     btnText: "Sign Up",
   },
@@ -64,9 +72,57 @@ const projCardDara = [
   // },
 ];
 
-const page = () => {
+const Page = () => {
+  const [accessToken, setAccessToken] = useState("");
+  useEffect(() => {
+    const cookies = parseCookies();
+
+    const accesstoken = cookies?.access_token;
+    setAccessToken(accesstoken);
+  }, []);
+
   return (
     <div className="overflow-hidden h-full">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Positive Climate Action - Business Sustainability Services
+        </title>
+        <meta
+          name="title"
+          content="Positive Climate Action - Business Sustainability Services"
+        />
+        <meta
+          name="description"
+          content="Join us and reach your ESG and net-zero commitments. A partnership that boosts the fight against climate change and drives sustainable growth for your business."
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://reborngreen.org" />
+        <meta
+          property="og:title"
+          content="Positive Climate Action - Business Sustainability Services"
+        />
+        <meta
+          property="og:description"
+          content="Our mission is to empower businesses and individuals to accelerate climate action."
+        />
+        <meta property="og:image" content="" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://website.com" />
+        <meta
+          property="twitter:title"
+          content="Positive Climate Action - Business Sustainability Services"
+        />
+        <meta
+          property="twitter:description"
+          content="Our mission is to empower businesses and individuals to accelerate climate action."
+        />
+        <meta property="twitter:image" content="" />
+      </Helmet>
       <div
         style={{ backgroundImage: "url('/sus.png')" }}
         className=" flex-col h-[80vh] flex items-center justify-center bg-cover w-full  px-[30px] relative lg:px-[60px] xll:px-[120px] py-[6rem] mx-auto"
@@ -78,7 +134,8 @@ const page = () => {
           transition={{ duration: 0.5 }}
           className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
-          Sustainable Solutions for Your Business
+          Sustainable Solutions for
+          <span className="text-[#14a800]"> Your Business</span>
         </motion.h3>
         <motion.p
           initial={{ y: 200 }}
@@ -94,7 +151,10 @@ const page = () => {
         <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50 z-0"></div>
       </div>
       {/* simplify climate */}
-      <section className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto">
+      <section
+        id="simplify-climate"
+        className="w-full flex items-center justify-start flex-col bg-white mt-10 max-w-[1800px] mb-[60px]  px-[30px] lg:px-[60px] xll:px-[120px] py-[4rem] mx-auto"
+      >
         <motion.div
           initial={{ y: 200 }}
           viewport={{ once: true }}
@@ -121,8 +181,8 @@ const page = () => {
           className="flex items-center mt-6 justify-center gap-7 sm:gap-16 flex-wrap"
         >
           <Link
-            className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green  z-10 rounded-xl "
-            href="/plant-tree"
+            className="w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-green z-10 rounded-xl"
+            href={!accessToken ? "/login?is_pricing=true" : "/plant-tree"}
           >
             <Image src="/Box 1.svg" alt="img" height={100} width={100} />
             <h4 className="text-2xl text-white font-semibold mt-8">
@@ -136,7 +196,11 @@ const page = () => {
           <Link
             style={{ border: "1px solid green" }}
             className=" w-[340px] sm:w-[500px] hover:scale-110 duration-300 flex items-center justify-center flex-col text-center px-4 py-5 min-h-[300px] bg-white  z-10 rounded-xl "
-            href="/plant-tree-offset"
+            href={
+              !accessToken
+                ? "/login?is_pricing=true&isLink=true"
+                : "/plant-tree-offset"
+            }
           >
             <Image src="/Box 2.svg" alt="img" height={100} width={100} />
             <h4 className="text-2xl text-black font-semibold mt-8">
@@ -230,11 +294,12 @@ const page = () => {
           className="w-full flex flex-col items-center justify-center"
         >
           <h1 className="text-center  font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
-            What We
-            <span className="font-bold text-[#14a800]"> Offer</span>{" "}
+            Committed to a Sustainable
+            <span className="font-bold text-[#14a800]"> World?</span>
           </h1>
-          <p className=" w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
-            Accessible Climate Change Solutions for Any Business
+          <p className="w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-base">
+            Discover how our business solutions can help you make a positive
+            impact on both the planet and your business.
           </p>
         </motion.div>
       </section>
@@ -275,10 +340,12 @@ const page = () => {
             Showcase Your Positive Climate <br />
             <span className="font-bold text-[#14a800]"> Impact</span>{" "}
           </h1>
-          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
-            At RebornGreen, we believe in inspiring people. That's why we offer
-            a way to showcase your impact.
+          <p className="mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-base">
+            Let the world see your climate impact. Showcase your positive
+            climate actions with RebornGreen. Get started today and unlock
+            digital tools, certificates, and green rewards.
           </p>
+          <Image src={showcaseImage} alt="showcase" className="object-cover" />
         </motion.div>
       </section>
       {/* Climate  */}
@@ -335,16 +402,13 @@ const page = () => {
           className="w-full flex flex-col items-center justify-center"
         >
           <h1 className="text-center mb-[20px] font-poppins text-[30px] xsm:text-[40px] lg:text-[55px] xll:text-[60px] font-[500] text-[#3d3d3d]">
-            Climate change and
-            <span className="font-bold text-[#14a800]"> biodiversity</span> loss
-            require urgent action
+            Climate Change is a
+            <span className="font-bold text-[#14a800]"> Global Crisis</span>
           </h1>
-          <p className=" mb-12 w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
-            Business operations are being impacted by the physical changes in
-            our environment, and, in turn, the way businesses operate. Climate
-            changes are contributing to biodiversity loss on our planet. By
-            supporting our projects, your business can take part in addressing
-            these issues.
+          <p className="w-full xsm:w-[90%] leading-5 tracking-normal font-worksans mdd:w-[60%] text-center text-black-text text-sm xsm:text-[16px]">
+            Businesses must lead the transition to a sustainable future. Reduce
+            your carbon footprint, protect biodiversity, and build resilience.
+            Together, we can prevent future disasters
           </p>
 
           <Image
@@ -353,7 +417,7 @@ const page = () => {
             width={1000}
             height={1000}
             layout="intrinsic"
-            className="w-full h-full xl:w-[95%] xl:h-[95%]"
+            className="w-full h-full xl:w-[95%] xl:h-[95%] object-cover"
           />
         </motion.div>
         <div id="GIT" />
@@ -406,7 +470,7 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -423,11 +487,43 @@ const GetInTouch = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission logic here (e.g., send data to backend, show success message)
     console.log(formData);
-    // Optionally, clear form fields after submission
+
+    try {
+      // Send data to server
+      await axios.post("https://backend.reborngreen.org/send-email", formData);
+      toast.success("Your message has been sent!", {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
+      
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        "There was an error sending your message. Please try again later.",
+        {
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
+    }
+
     setFormData({
       name: "",
       email: "",
@@ -437,118 +533,145 @@ const GetInTouch = () => {
   };
 
   return (
-    <div className="bg-white shadow-xl rounded-lg p-6 w-full sm:w-[80%] lg:w-[60%] mx-auto mb-12">
-      <h2 className="text-2xl font-semibold text-center text-[#3d3d3d] mb-4">
-        Get in Touch
-      </h2>
-      <p className="text-center text-gray-600 mb-6">
-        If your business plans to make a positive impact but is unsure where to
-        begin, contact us. Our team is here to guide you on your sustainability
-        journey.
-      </p>
+    <>
+      <div className="bg-white shadow-xl rounded-lg p-6 w-full sm:w-[80%] lg:w-[60%] mx-auto mb-12">
+        <h2 className="text-2xl font-semibold text-center text-[#3d3d3d] mb-4">
+          Get in Touch
+        </h2>
+        <p className="text-center text-gray-600 mb-6">
+          If your business plans to make a positive impact but is unsure where
+          to begin, contact us. Our team is here to guide you on your
+          sustainability journey.
+        </p>
 
-      <form onSubmit={handleSubmit}>
-        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
-          <label
-            htmlFor="name"
-            className="block text-gray-700 font-medium mb-1"
+        <form onSubmit={handleSubmit}>
+          <div
+            style={{ boxShadow: "2px 4px 8px #DCDCDC" }}
+            className="mb-4 p-2"
           >
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark"
-            placeholder="Enter your full name"
-            required
-          />
-        </div>
+            <label
+              htmlFor="name"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
 
-        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 font-medium mb-1"
+          <div
+            style={{ boxShadow: "2px 4px 8px #DCDCDC" }}
+            className="mb-4 p-2"
           >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark"
-            placeholder="Enter your email address"
-            required
-          />
-        </div>
+            <label
+              htmlFor="email"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
 
-        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
-          <label
-            htmlFor="assistanceType"
-            className="block text-gray-700 font-medium mb-1"
+          <div
+            style={{ boxShadow: "2px 4px 8px #DCDCDC" }}
+            className="mb-4 p-2"
           >
-            How can we assist you?
-          </label>
-          <select
-            id="assistanceType"
-            name="assistanceType"
-            value={formData.assistanceType}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark"
-            required
-          >
-            <option value="">Select an option</option>
-            <option value="Calculate Your Carbon Footprint">
-              Calculate Your Carbon Footprint
-            </option>
-            <option value="More details about Climate Impact for your team">
-              More details about Climate Impact for your team
-            </option>
-            <option value="Integrate the API for Climate Change Solutions">
-              Integrate the API for Climate Change Solutions
-            </option>
-            <option value="Obtain the Climate Impact Globe for my workplace">
-              Obtain the Climate Impact Globe for my workplace
-            </option>
-            <option value="Other reason">Other reason</option>
-          </select>
-        </div>
+            <label
+              htmlFor="assistanceType"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              How can we assist you?
+            </label>
+            <select
+              id="assistanceType"
+              name="assistanceType"
+              value={formData.assistanceType}
+              onChange={handleInputChange}
+              className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark"
+              required
+            >
+              <option value="">Select an option</option>
+              <option value="Calculate Your Carbon Footprint">
+                Calculate Your Carbon Footprint
+              </option>
+              <option value="More details about Climate Impact for your team">
+                More details about Climate Impact for your team
+              </option>
+              <option value="Integrate the API for Climate Change Solutions">
+                Integrate the API for Climate Change Solutions
+              </option>
+              <option value="Obtain the Climate Impact Globe for my workplace">
+                Obtain the Climate Impact Globe for my workplace
+              </option>
+              <option value="Other reason">Other reason</option>
+            </select>
+          </div>
 
-        <div style={{ boxShadow: "2px 4px 8px #DCDCDC" }} className="mb-4 p-2">
-          <label
-            htmlFor="message"
-            className="block text-gray-700 font-medium mb-1"
+          <div
+            style={{ boxShadow: "2px 4px 8px #DCDCDC" }}
+            className="mb-4 p-2"
           >
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark h-32"
-            placeholder="Provide any additional details or questions you have"
-            required
-          />
-        </div>
+            <label
+              htmlFor="message"
+              className="block text-gray-700 font-medium mb-1"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-green-dark h-32"
+              placeholder="Provide any additional details or questions you have"
+              required
+            />
+          </div>
 
-        <div className="text-center">
-          <button
-            type="submit"
-            className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-green text-white py-2 px-4 rounded-md hover:bg-green-dark transition duration-300"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
 
-      <p className="text-center text-gray-600 mt-4">
-        We aim to respond to all inquiries within 2-3 business days.
-      </p>
-    </div>
+        <p className="text-center text-gray-600 mt-4">
+          We aim to respond to all inquiries within 2-3 business days.
+        </p>
+      </div>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </>
   );
 };

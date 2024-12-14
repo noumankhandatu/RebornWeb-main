@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Helmet } from "react-helmet";
 
 const workse2cData = [
   {
@@ -43,6 +44,44 @@ const sec3TimelineData = [
 const page = () => {
   return (
     <div className="overflow-hidden h-full">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Tree Planting | Verified Projects Worldwide</title>
+        <meta
+          name="title"
+          content="Tree Planting | Verified Projects Worldwide"
+        />
+        <meta
+          name="description"
+          content="Join us in supporting verified tree planting projects worldwide, delivering the highest social and climate impact. Make a difference with every tree planted."
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://reborngreen.org" />
+        <meta
+          property="og:title"
+          content="Tree Planting | Verified Projects Worldwide"
+        />
+        <meta
+          property="og:description"
+          content="Join us in supporting verified tree planting projects worldwide, delivering the highest social and climate impact. Make a difference with every tree planted."
+        />
+        <meta property="og:image" content="" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://website.com" />
+        <meta
+          property="twitter:title"
+          content="Tree Planting | Verified Projects Worldwide"
+        />
+        <meta
+          property="twitter:description"
+          content="Join us in supporting verified tree planting projects worldwide, delivering the highest social and climate impact. Make a difference with every tree planted."
+        />
+        <meta property="twitter:image" content="" />
+      </Helmet>
       <div
         style={{
           backgroundImage:
@@ -94,7 +133,7 @@ const page = () => {
               key={index}
               className={` ${
                 index === 1 ? "shadow-lg " : "shadow-sm"
-              } transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[350px] gap-8 text-left py-10  bg-white flex items-start flex-col justify-start`}
+              } transition-all duration-300 hover:shadow-2xl px-4 mdd:px-9 h-[400px] gap-8 text-left py-10  bg-white flex items-start flex-col justify-start`}
             >
               <div className="flex items-center gap-5">
                 <Image
@@ -300,9 +339,16 @@ const page = () => {
       {/* sec 4  */}
       <section className="bg-[#f6f6f6]">
         <div className="w-full max-w-[1800px] my-[40px]   px-[30px] lg:px-[60px] xll:px-[120px] py-[2rem] mx-auto">
-          <h1 className="mt-4 text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-[#3d3d3d]">
-            Where are the tress planted?
-          </h1>
+          <div className="flex flex-col items-center gap-y-4">
+            <h1 className="mt-4 text-center mb-[20px] font-poppins text-[30px] xsm:text-[35px] lg:text-[50x] xll:text-[55px] font-[500] text-[#3d3d3d]">
+              Read to Join Our Mission?
+            </h1>
+            <p className="w-full md:max-w-screen-lg leading-5 tracking-normal font-worksans text-center text-black-text text-sm xsm:text-base">
+              Simple actions can have a significant impact. Determine how you
+              would like to contribute to climate initiatives and discover the
+              best options for both your business and the planet.
+            </p>
+          </div>
           <motion.div
             initial={{ y: 200, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -524,6 +570,20 @@ const page = () => {
               className=" rounded-lg w-full sm:w-[80%] mdd:w-[50%] h-auto"
             />
           </motion.div>
+          <div className="bg-[#43b933]/80 flex flex-col gap-y-4 px-8 lg:px-16 xll:px-32 py-4 lg:py-8 py-2 flex justify-center">
+            <h2 className="text-3xl font-semibold text-white">
+              Ready to Join Our Mission?
+            </h2>
+            <p className="text-white">
+              Make a lasting impact. Choose your planting frequency: monthly,
+              occasional, or automated. Every tree planted brings us closer to a
+              healthier planet
+            </p>
+            <Link href="/user-profile" className="btn w-fit">
+              Let's grow together
+            </Link>
+          </div>
+
           {/* <div className="flex items-center gap-10 justify-center flex-col">
             <h1 className=" text-center mb-[20px] font-poppins text-[25px] xsm:text-[30px] lg:text-[35px] xll:text-[40px] font-[500] text-green">
               Offset the carbon footprint of your business

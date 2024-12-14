@@ -1,7 +1,18 @@
 "use client";
+import BenefitsList from "@/components/BenefitsList";
 import PlantingPartner from "@/components/PlantingPartner";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Helmet } from "react-helmet";
+
+const tropicalRainforestBenefitsList = [
+  `Maintaining healthy water supplies.`,
+  `Supports rich ecosystems and exceptional biodiversity.`,
+];
+const tropicalDryForestBenefitsList = [
+  `Restoring ecosystems vital for local food security.`,
+  `Helping to combat deforestation and land degradation.`,
+];
 
 const textcardData = [
   {
@@ -57,7 +68,7 @@ const sec3TimelineData = [
       />
     ),
     title: "Benefits",
-    desc: "Maintaining healthy water supplies. / Supports rich ecosystems and exceptional biodiversity.",
+    desc: <BenefitsList benefitList={tropicalRainforestBenefitsList} />,
   },
 ];
 const sec3TimelineData2 = [
@@ -90,13 +101,51 @@ const sec3TimelineData2 = [
       />
     ),
     title: "Benefits",
-    desc: "- Restoring ecosystems vital for local food security. - Helping to combat deforestation and land degradation.",
+    desc: <BenefitsList benefitList={tropicalDryForestBenefitsList} />,
   },
 ];
 
 const page = () => {
   return (
     <div className="overflow-hidden h-full">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Restore Honduras’ Forests | Combat Pine Beetle Infestation</title>
+        <meta
+          name="title"
+          content="Restore Honduras’ Forests | Combat Pine Beetle Infestation"
+        />
+        <meta
+          name="description"
+          content="Support reforestation efforts in Honduras to heal ecosystems ravaged by pine beetle infestations."
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://reborngreen.org" />
+        <meta
+          property="og:title"
+          content="Restore Honduras’ Forests | Combat Pine Beetle Infestation"
+        />
+        <meta
+          property="og:description"
+          content="Support reforestation efforts in Honduras to heal ecosystems ravaged by pine beetle infestations."
+        />
+        <meta property="og:image" content="" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://website.com" />
+        <meta
+          property="twitter:title"
+          content="Restore Honduras’ Forests | Combat Pine Beetle Infestation"
+        />
+        <meta
+          property="twitter:description"
+          content="Support reforestation efforts in Honduras to heal ecosystems ravaged by pine beetle infestations."
+        />
+        <meta property="twitter:image" content="" />
+      </Helmet>
       <div
         style={{
           backgroundImage:
