@@ -51,9 +51,10 @@ const page = () => {
           viewport={{ once: true }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.5 }}
-          className=" z-[1] leading-normal text-center text-[30px]  xll:text-[40px] text-white font-medium font-poppins"
+          className=" z-[1] leading-normal text-center lg:leading-[70px] xll:leading-[80px] text-[30px] sm:text-[50px] lg:text-[60px] xll:text-[65px] text-white font-medium font-worksans"
         >
-          Project Create by Us{","} Supported by You{","} For Our Planet
+          Project Create by Us{","} Supported by You{","} For Our 
+          <span className="text-green font-bold">Planet</span>
         </motion.h3>
 
         <div className="w-full h-full absolute top-0 left-0 bg-black opacity-20 z-0"></div>
@@ -357,10 +358,11 @@ const page = () => {
                   <p className="leading-[30px] text-sm sm:text-[16px] font-normal  font-sans  text-black-text">
                   Utilize RebornGreen{"'"}s flight calculator to determine the carbon footprint of your flight and offset it by supporting environmentally beneficial initiatives{"."}
                   </p>
-
+                  <Link href="/calculator">
                   <button className="border-none text-white rounded-sm hover:bg-secondary transition-all duration-500 outline-none px-5 hover:scale-95 py-5 my-6 bg-green flex items-center gap-2">
                   Flight Emissions Calculator <FaCalculator />
                   </button>
+                  </Link>
                
              
             
